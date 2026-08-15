@@ -7,7 +7,7 @@ from collections import OrderedDict
 
 RAW_DIR = 'data/raw'
 SUM_DIR = 'data/summaries'
-SITE_DIR = 'site'
+SITE_DIR = 'docs'
 
 TOPIC_ORDER = [
     '计算机/机器学习', '计算机/自然语言处理', '计算机/人工智能', '计算机/计算机视觉',
