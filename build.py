@@ -93,7 +93,7 @@ def main():
     plist = sorted(papers.values(), key=lambda x: x['date'], reverse=True)
     json.dump(plist, open(os.path.join(SITE_DIR, 'papers.json'), 'w', encoding='utf-8'),
               ensure_ascii=False, indent=1)
-    print('site/papers.json: %d papers' % len(plist))
+    print(SITE_DIR + '/papers.json: %d papers' % len(plist))
 
     by_date = {}
     for p in plist:
