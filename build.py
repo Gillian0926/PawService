@@ -6,6 +6,7 @@ import os
 from collections import OrderedDict
 
 RAW_DIR = 'data/raw'
+CONF_DIR = 'data/conferences'
 SUM_DIR = 'data/summaries'
 SITE_DIR = 'docs'
 
@@ -21,17 +22,40 @@ CROSSOVER_ORDER = ['计算材料学', '计算建模', '材料器件', 'AI4Scienc
 def load_raw():
     papers = {}
     for f in sorted(glob.glob(os.path.join(RAW_DIR, '*.json'))):
-        date = os.path.basename(f).replace('.json', '')
+        fname = os.path.basename(f).replace('.json', '')
+        date = fname[len('conferences-'):] if fname.startswith('conferences-') else fname
         for p in json.load(open(f, encoding='utf-8')):
-            aid = p['id'].rsplit('/', 1)[-1]
-            aid = aid.replace('v1', '').replace('v2', '').replace('v3', '').replace('v4', '')
+            if p.get('source') and p['source'] != 'arxiv':
+                # 非 arXiv 来源（openreview 等）：id/link 直接使用原始值
+                aid = p['id']
+                link = p.get('link') or ('https://arxiv.org/abs/' + aid)
+            else:
+                aid = p['id'].rsplit('/', 1)[-1]
+                aid = aid.replace('v1', '').replace('v2', '').replace('v3', '').replace('v4', '')
+                link = 'https://arxiv.org/abs/' + aid
             papers[aid] = {
                 'id': aid, 'date': date, 'title': p['title'],
                 'authors': p.get('authors', []),
-                'link': 'https://arxiv.org/abs/' + aid,
-                'category': p['category'], 'topic': p['topic'],
+                'link': link,
+                'category': p.get('category', ''), 'topic': p['topic'],
+                'source': p.get('source', 'arxiv'),
             }
     return papers
+
+
+def load_confs():
+    confs = []
+    for f in sorted(glob.glob(os.path.join(CONF_DIR, '*.json'))):
+        try:
+            data = json.load(open(f, encoding='utf-8'))
+            for c in data:
+                # DBLP 的 venue 字段偶尔是数组，规范化为字符串
+                if isinstance(c.get('venue'), list):
+                    c['venue'] = c['venue'][0] if c['venue'] else ''
+            confs.extend(data)
+        except Exception as ex:
+            print('WARN: ' + f + ': ' + str(ex))
+    return confs
 
 
 def load_summaries():
@@ -90,6 +114,11 @@ def main():
             print('WARN: summary for unknown id ' + aid)
 
     os.makedirs(SITE_DIR, exist_ok=True)
+    confs = load_confs()
+    json.dump(confs, open(os.path.join(SITE_DIR, 'conferences.json'), 'w', encoding='utf-8'),
+              ensure_ascii=False, indent=1)
+    print(SITE_DIR + '/conferences.json: %d papers' % len(confs))
+
     plist = sorted(papers.values(), key=lambda x: x['date'], reverse=True)
     json.dump(plist, open(os.path.join(SITE_DIR, 'papers.json'), 'w', encoding='utf-8'),
               ensure_ascii=False, indent=1)

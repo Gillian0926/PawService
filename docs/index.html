@@ -19,6 +19,8 @@
     --cs-soft: #e7f7f6;
     --mat: #a855f7;
     --mat-soft: #f4ebff;
+    --conf: #d97706;
+    --conf-soft: #fef3e2;
   }
   * { box-sizing: border-box; }
   body {
@@ -44,6 +46,17 @@
     font-size: 13px; color: var(--muted);
   }
   .stat b { display: block; font-size: 20px; color: var(--ink); }
+  .tabs { display: flex; gap: 8px; margin: 16px 0 4px; }
+  .tab {
+    border: 1px solid var(--line); background: var(--card); color: var(--muted);
+    padding: 8px 20px; border-radius: 12px 12px 0 0; cursor: pointer;
+    font-size: 14px; font-weight: 600; user-select: none; transition: .15s;
+    border-bottom: 2px solid transparent;
+  }
+  .tab:hover { color: var(--accent); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); background: #fff; }
+  .view { display: none; }
+  .view.active { display: block; }
   .controls { position: sticky; top: 0; background: var(--bg); padding: 12px 0; z-index: 5; }
   .search {
     width: 100%; padding: 12px 16px; border: 1px solid var(--line);
@@ -76,6 +89,8 @@
   .badge.topic.mat { background: var(--mat-soft); color: var(--mat); }
   .badge.cross { background: var(--cross-soft); color: var(--cross); }
   .badge.date { background: #eef0f3; color: var(--muted); }
+  .badge.conf { background: var(--conf-soft); color: var(--conf); }
+  .badge.source { background: #e8eaf3; color: #5a6070; }
   .summary { color: #3a4152; font-size: 14px; margin: 0 0 8px; }
   .meta { color: var(--muted); font-size: 12px; }
   .empty { text-align: center; color: var(--muted); padding: 60px 0; }
@@ -94,21 +109,36 @@
     <div class="stat"><b id="statTotal">—</b>论文总数</div>
     <div class="stat"><b id="statCross">—</b>交叉学科</div>
     <div class="stat"><b id="statDays">—</b>覆盖天数</div>
+    <div class="stat"><b id="statConf">—</b>顶会论文</div>
   </div>
 
-  <div class="controls">
-    <input class="search" id="search" placeholder="搜索标题 / 摘要 / 作者 …" />
-    <div class="filters" id="domainFilter">
-      <div class="chip active" data-domain="all">全部</div>
-      <div class="chip cross" data-domain="cross">🔬 交叉学科</div>
-      <div class="chip" data-domain="计算机">计算机</div>
-      <div class="chip" data-domain="材料">材料</div>
+  <div class="tabs">
+    <div class="tab active" data-view="daily">📰 每日速览</div>
+    <div class="tab" data-view="confs">🏆 顶会论文</div>
+  </div>
+
+  <div class="view active" id="view-daily">
+    <div class="controls">
+      <input class="search" id="search" placeholder="搜索标题 / 摘要 / 作者 …" />
+      <div class="filters" id="domainFilter">
+        <div class="chip active" data-domain="all">全部</div>
+        <div class="chip cross" data-domain="cross">🔬 交叉学科</div>
+        <div class="chip" data-domain="计算机">计算机</div>
+        <div class="chip" data-domain="材料">材料</div>
+      </div>
+      <div class="filters" id="crossFilter"></div>
+      <div class="count" id="count"></div>
     </div>
-    <div class="filters" id="crossFilter"></div>
-    <div class="count" id="count"></div>
+    <div id="list"></div>
   </div>
 
-  <div id="list"></div>
+  <div class="view" id="view-confs">
+    <div class="controls">
+      <input class="search" id="confSearch" placeholder="搜索顶会论文标题 / 作者 / 会议 …" />
+      <div class="count" id="confCount"></div>
+    </div>
+    <div id="confList"></div>
+  </div>
 </div>
 
 <footer>
@@ -117,9 +147,11 @@
 
 <script>
 let PAPERS = [];
+let CONF = [];
 let domain = 'all';
 let crossTag = null;
 let query = '';
+let confQuery = '';
 
 const CROSS_ORDER = ['计算材料学','计算建模','材料器件','AI4Science','量子信息','机器学习材料'];
 
@@ -133,6 +165,17 @@ fetch('papers.json')
   })
   .catch(e => {
     document.getElementById('list').innerHTML = '<div class="empty">加载数据失败：' + e + '</div>';
+  });
+
+fetch('conferences.json')
+  .then(r => r.json())
+  .then(data => {
+    CONF = data;
+    document.getElementById('statConf').textContent = CONF.length;
+    renderConf();
+  })
+  .catch(() => {
+    document.getElementById('confList').innerHTML = '<div class="empty">顶会数据暂不可用 🦉</div>';
   });
 
 function initStats() {
@@ -185,11 +228,48 @@ function card(p) {
   const badges =
     '<span class="badge ' + topicCls + '">' + esc(p.topic) + '</span>' +
     (p.crossover ? '<span class="badge cross">交叉·' + esc(p.crossover) + '</span>' : '') +
+    (p.source && p.source !== 'arxiv' ? '<span class="badge source">' + esc(p.source) + '</span>' : '') +
     '<span class="badge date">' + esc(p.date) + '</span>';
   return '<div class="card">' +
     '<h3><a href="' + esc(p.link) + '" target="_blank">' + esc(p.title) + '</a></h3>' +
     '<div class="badges">' + badges + '</div>' +
     '<p class="summary">' + esc(p.summary || '') + '</p>' +
+    '<div class="meta">' + esc(authors) + '</div>' +
+    '</div>';
+}
+
+function matchesConf(c) {
+  if (confQuery) {
+    const q = confQuery.toLowerCase();
+    const hay = (c.title + ' ' + (c.authors || []).join(' ') + ' ' + (c.venue || '') + ' ' + (c.year || '')).toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+function renderConf() {
+  const list = CONF.filter(matchesConf);
+  document.getElementById('confCount').textContent = '显示 ' + list.length + ' / ' + CONF.length + ' 篇顶会论文';
+  const el = document.getElementById('confList');
+  if (!list.length) {
+    el.innerHTML = '<div class="empty">没有匹配的论文 🦉</div>';
+    return;
+  }
+  el.innerHTML = list.map(confCard).join('');
+}
+
+function confCard(c) {
+  const isMat = (c.topic || '').startsWith('材料');
+  const topicCls = isMat ? 'topic mat' : 'topic';
+  const authors = (c.authors || []).slice(0, 5).join(', ') + ((c.authors || []).length > 5 ? ' 等' : '');
+  const venueLabel = (c.venue || '') + ' ' + (c.year || '');
+  return '<div class="card">' +
+    '<h3><a href="' + esc(c.link) + '" target="_blank">' + esc(c.title) + '</a></h3>' +
+    '<div class="badges">' +
+    '<span class="badge conf">' + esc(venueLabel) + '</span>' +
+    '<span class="badge ' + topicCls + '">' + esc(c.topic || '') + '</span>' +
+    (c.doi ? '<span class="badge date">doi:' + esc(c.doi) + '</span>' : '') +
+    '</div>' +
     '<div class="meta">' + esc(authors) + '</div>' +
     '</div>';
 }
@@ -200,9 +280,23 @@ function esc(s) {
   }[c]));
 }
 
+function switchView(v) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.view === v));
+  document.querySelectorAll('.view').forEach(x => x.classList.toggle('active', x.id === 'view-' + v));
+}
+
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => switchView(t.dataset.view));
+});
+
 document.getElementById('search').addEventListener('input', e => {
   query = e.target.value.trim().toLowerCase();
   render();
+});
+
+document.getElementById('confSearch').addEventListener('input', e => {
+  confQuery = e.target.value.trim().toLowerCase();
+  renderConf();
 });
 
 document.getElementById('domainFilter').addEventListener('click', e => {
