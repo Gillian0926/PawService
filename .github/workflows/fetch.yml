@@ -1,0 +1,61 @@
+name: daily-fetch
+
+on:
+  schedule:
+    # UTC 03:00 = 北京 11:00（arXiv 每天更新后抓取）
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: install deps
+        run: pip install feedparser
+
+      - name: fetch arXiv
+        run: python fetch.py
+
+      - name: skip weekend duplicates
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          latest=$(ls -1 data/raw/*.json 2>/dev/null | sort | tail -1)
+          prev=$(ls -1 data/raw/*.json 2>/dev/null | sort | tail -2 | head -1)
+          if [ -z "$latest" ]; then
+            echo "no raw file, abort"; exit 0
+          fi
+          # 空批次（网络失败/无结果）也跳过
+          if [ "$(python -c "import json,sys; d=json.load(open('$latest')); print(len(d))" 2>/dev/null)" = "0" ]; then
+            echo "empty batch, remove $latest"; rm -f "$latest"; exit 0
+          fi
+          if [ -n "$prev" ] && cmp -s "$latest" "$prev"; then
+            echo "same as $prev (weekend), skip"; rm -f "$latest"; exit 0
+          fi
+          echo "new batch: $latest"
+
+      - name: build site data
+        run: python build.py
+
+      - name: commit & push
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name "PawService"
+          git config user.email "pawservice@users.noreply.github.com"
+          if ! git diff --quiet && git diff --cached --quiet; then
+            :
+          fi
+          git add -A
+          if git diff --cached --quiet; then
+            echo "nothing to commit"; exit 0
+          fi
+          git commit -m "daily update $(date +%F): $(ls -1 data/raw | tail -1)"
+          git push
