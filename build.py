@@ -119,7 +119,11 @@ def main():
               ensure_ascii=False, indent=1)
     print(SITE_DIR + '/conferences.json: %d papers' % len(confs))
 
-    plist = sorted(papers.values(), key=lambda x: x['date'], reverse=True)
+    # 只发布已有中文摘要的论文；新抓取未摘要的等爪爪补上摘要后由 build-on-summaries 自动发布
+    plist = sorted((p for p in papers.values() if p.get('summary')), key=lambda x: x['date'], reverse=True)
+    skipped = len(papers) - len(plist)
+    if skipped:
+        print('SKIP %d papers without summary (waiting for PawService)' % skipped)
     json.dump(plist, open(os.path.join(SITE_DIR, 'papers.json'), 'w', encoding='utf-8'),
               ensure_ascii=False, indent=1)
     print(SITE_DIR + '/papers.json: %d papers' % len(plist))
