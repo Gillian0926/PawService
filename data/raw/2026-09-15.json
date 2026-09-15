@@ -1,0 +1,417 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2609.15987v1",
+    "title": "Bellman Policy Optimization",
+    "published": "2026-09-14T17:59:47Z",
+    "authors": [
+      "Zhuoqing Song",
+      "Haotian Xu",
+      "Xikun Zhang",
+      "Lidong Bing"
+    ],
+    "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves the reasoning capabilities of large language models (LLMs). We introduce Bellman Policy Optimization (BPO), a critic-free method derived from Policy Mirror Descent (PMD). For autoregressive generation with terminal rewards, BPO uses the Bellman equations to reformulate PMD as a trajectory-level objective. The reformulation avoids estimating state values at intermediate states. We prove that it has the same unique optimal solution as the original PMD objective. We derive the practical BPO loss by approximating this objective. Its mismatch-correction weight is a smoothed ratio of complementary token probabilities. Experiments on mathematical reasoning benchmarks demonstrate the effectiveness of BPO.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.15987v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15983v1",
+    "title": "Stellar Colosseum: A Many-Agent Harness for Long-Horizon Research in Mathematics and Theoretical Computer Science",
+    "published": "2026-09-14T17:58:55Z",
+    "authors": [
+      "Honghao Lin",
+      "David P. Woodruff",
+      "Yuan Deng",
+      "Jieming Mao",
+      "Song Zuo",
+      "Vahab Mirrokni"
+    ],
+    "abstract": "Language models can produce plausible short proofs, but may still be unreliable on long-horizon research problems, where progress depends on a sequence of uncertain and interdependent decisions. We introduce Stellar Colosseum, a model-agnostic harness for allocating inference across research in mathematics and theoretical computer science. Colosseum explores alternative strategies before proof construction, uses a readiness gate to decide when a route is mature enough to decompose, represents the proof plan as interdependent section-level subproblems, and routes verifier findings back to the affected part of the argument. Across these stages, it generates candidates in parallel, attacks them with targeted falsification, and combines candidates and their critiques into a single research artifact through overlapping random-sample tree aggregation. The Colosseum workflow has also been integrated into Google Antigravity's Teamwork framework as the Long Proof pattern. We demonstrate the capabilities of Colosseum through open-ended research and evaluations on theorem-proving and competitive programming benchmarks. Using Colosseum with Gemini 3.1 Pro, we obtain several new results that address open problems arising from papers published at top venues such as FOCS and JMLR. On TCS-Bench, a benchmark of research-level theorem-proving tasks drawn from papers published at FOCS, STOC, and SODA, Colosseum achieves 71.0% accuracy using Gemini 3.1 Pro and Gemini 3.7 Flash. In a separate Codeforces evaluation using Gemini 3.1 Pro, the proof-oriented pipeline with execution feedback solves 218 of 222 problems.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.15983v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15982v1",
+    "title": "The Router Within: Eliciting Native Skill Routing from a Frozen LLM",
+    "published": "2026-09-14T17:58:27Z",
+    "authors": [
+      "Ruishuo Chen",
+      "Xun Wang",
+      "Yu Chen",
+      "Zhuoran Li",
+      "Longbo Huang"
+    ],
+    "abstract": "Skills extend an LLM agent beyond its parametric knowledge, and the gain they promise rests on picking the right one. Deployed harnesses route by preloading every skill's metadata into the context, which disperses the agent's attention and caps the library size. Retrieval pipelines move the selection out of the context, but also out of the agent's capability. We show that the frozen agent LLM already carries the routing signal in its own forward passes, and that two linear maps suffice to read it out with no skill text in the context. Gavel (Glance And Verdict from a frozen LLM) reads it in two steps. A glance projects the task's and each skill's mid-layer states through the two maps, the only parameters trained, and scores the full library against compact per-skill banks that one forward pass builds at installation. A verdict then resumes the shortlisted skills' forward passes and reads the model's own likelihood and yes/no judgment, fused with the glance as a product of experts. Trained once, Gavel transfers zero-shot to three public benchmarks and SkillTraj, our new benchmark of 372 simulated agent trajectories. On Qwen3-32B it outperforms progressive disclosure and retrieve-and-rerank pipelines that add 1.2B to 16B external parameters, by up to 13.4 points on written tasks and up to 21.9 when the need for a skill arises mid-rollout. Routing accuracy improves as the backbone does, and in a bash-agent harness the same 32B triggers the correct skill on Skill-Use more often than far larger frontier models running in Codex.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.15982v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15980v1",
+    "title": "A Chosen Future Can Still Be Rewritten: Causal Writability in Video Models",
+    "published": "2026-09-14T17:58:11Z",
+    "authors": [
+      "Xingyun Wang",
+      "Haomin Zheng",
+      "Man Yuan",
+      "Leqian Yang",
+      "Ziming Liu"
+    ],
+    "abstract": "When a video model generates physically incorrect motion, did it fail to learn the correct motion, or did it learn it but fail to use it? We show the latter: the correct motion remains available inside the model and can still be made to control the generated video. We train on videos where red masses oscillate slowly and blue masses oscillate quickly, then test a red mass with fast observed motion. Even when the model generates slow motion in this conflicting case, a low-dimensional edit predicted from simple physical variables restores the correct fast motion. We call this ability causal writability. At fixed strength, we find a sharp depth boundary: the same edit changes the video before the boundary but not after it. This closure marks commitment for that write. The motion signal nevertheless remains, and a stronger downstream write can restore physical motion, while excessive gain overshoots. Early causal writability predicts which errors training later corrects: those errors are writable at more network depths than errors that persist. We reproduce both causal writability and its sharp closure in a pretrained 1.3B video model, supporting generality across model scale and training regime.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.15980v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15975v1",
+    "title": "Disentangling Representation Evolution in Transformers through Directional Decomposition",
+    "published": "2026-09-14T17:56:19Z",
+    "authors": [
+      "Shwai He",
+      "Haichao Zhang",
+      "Shen Yan"
+    ],
+    "abstract": "Transformer representations evolve through learned additive transformations that either preserve their current direction or redirect it. We study this evolution as a functional geometry, decomposing learned updates into parallel and perpendicular components. Across pretrained models, we find substantial parallel components beyond the residual identity path. We then apply the decomposition in two spaces: to attention and MLP updates relative to the hidden state, and to attention value aggregation relative to the current token's value. Targeted edits reveal a strongly space-dependent asymmetry: exclude-self value-space parallel manipulation is markedly more robust than residual-space and perpendicular counterparts, preserving the direct self message while scaling only the non-self aggregate. The same decomposition gives a component-resolved description of compression-induced update error: perpendicular error separates compression methods more clearly than parallel error. Extensive experiments further demonstrate that full-aggregate parallel suppression during from-scratch pretraining lowers validation-loss trajectories and improves downstream averages, with the value-space variant strongest. Together, these results connect representation geometry to editing robustness, compression diagnosis, and training-time intervention. Code is available in the \\href{https://github.com/Shwai-He/Transformer-Geometry}{project repository}.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.15975v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15972v1",
+    "title": "Mind2Dialogue: Training Human-Aware Language Models by Simulating User Mental States",
+    "published": "2026-09-14T17:55:58Z",
+    "authors": [
+      "Zixuan Wang",
+      "Yufan Zhou",
+      "Jinzhou Tang",
+      "Xinle Yu",
+      "Chengjun Wu",
+      "Lyumanshan Ye",
+      "Zhaoxiang Feng",
+      "Letian Peng",
+      "Adyasha Patra",
+      "Fan Bai",
+      "Enze Ma",
+      "Zhengding Hu",
+      "Jianyang Gu",
+      "Zhao Wang",
+      "Yufei Ding",
+      "Jingbo Shang",
+      "Tianmin Shu",
+      "Zhiting Hu",
+      "Zhen Wang"
+    ],
+    "abstract": "As language models become more capable, long-term collaboration in learning, reasoning, and decision-making calls for a deeper understanding of the people they serve. Yet training such human-aware language models faces a fundamental supervision gap because current datasets for LLM assistant training contain few if any well-informed responses explicitly grounded in users' unspoken beliefs and goals. Scaling such supervision is inherently constrained, as users' underlying states are not directly observable. We thus propose the Mind2Dialogue framework to mitigate this gap by simulating users' mental states and turning them into privileged supervision for human-aware training. Specifically, we first propose a psychology-guided simulator that preserves personal characteristics while updating mental states through interaction to generate coherent conversations. The key idea is to enforce a shared evolving mental state that drives user behavior and guides an Oracle assistant's responses. Our privileged distillation then trains models on the Oracle's well-informed responses to assist users without direct access to their mental states at deployment. Moreover, we propose to evaluate human-aware learning by combining personalization and theory of mind, examining how models understand people and act on that understanding. Training on the full Mind2Dialogue corpus improves every reported personalization metric over the corresponding Qwen, Llama, and OLMo instruction-tuned baselines, including gains of 26.6 to 40.9 percentage points in preference-following generation. The gains extend to belief and action reasoning on Qwen and Llama, beyond personalized assistance. Looking forward, Mind2Dialogue makes user simulation a foundation for genuine AI collaborators that understand beliefs and intentions behind people's words and support their long-term goals across education, work, and everyday life.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.15972v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15950v1",
+    "title": "Privacy-Aligned Personalized Federated Learning with Compact Adaptation and Variable-Length Gaussian Communication",
+    "published": "2026-09-14T17:48:11Z",
+    "authors": [
+      "Yilin Xu",
+      "Chun Hei Michael Shiu",
+      "Chih Wei Ling",
+      "Linqi Song"
+    ],
+    "abstract": "Record-level differential privacy exposes a structural misalignment in personalized federated learning when client-specific variation is low-dimensional while training repeatedly releases high-dimensional updates. In this paper, we address this misalignment by releasing a private client context once and confining repeated adaptation to a fixed coefficient space. Beyond dimensionality reduction, the factorized generator induces an adaptive optimization geometry that reshapes noisy updates, and controlled ablations show that most of its private-training gain is retained by radial evolution. To further reduce the communication cost, we realize the Gaussian mechanism for coefficient updates directly through variable-length quantization with finite expected code length, so that the quantization error itself serves as the required privacy perturbation rather than extra distortion. Across MNIST and CIFAR-10, our design matches or outperforms full-model private adaptation across privacy budgets and client heterogeneity, while reducing protected uplink by a factor of 2.67 at \\(\\varepsilon=16\\) on CIFAR-10 with comparable future-client accuracy.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.15950v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15915v1",
+    "title": "Safe Meta-Reinforcement Learning via Information Space Reachability",
+    "published": "2026-09-14T17:27:11Z",
+    "authors": [
+      "Zeyang Li",
+      "Sunbochen Tang",
+      "Navid Azizan"
+    ],
+    "abstract": "Meta-reinforcement learning (meta-RL) enables agents to adapt to unseen tasks with limited experience. Despite its promise, the application of meta-RL in real-world tasks is hindered by safety requirements, which have been underexplored in prior work. In this paper, we propose a safe meta-RL framework that explicitly accounts for safety during adaptation. Our key insight is to reason about safety in the information space, which captures both the physical state and the agent's belief over the underlying task. Within this space, we introduce a safety value function that measures the probability of the agent avoiding unsafe regions indefinitely. We show that this function satisfies a self-consistency condition and a Bellman equation, which make it learnable via meta-RL. Based on this formulation, we develop a safe meta-RL algorithm that learns the safety value function and leverages it for safety filtering and constrained policy optimization. Experiments on meta-RL benchmarks demonstrate the effectiveness of the proposed method.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.15915v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15973v1",
+    "title": "Discovery Foundation Models: Toward Open-Ended Discovery Intelligence",
+    "published": "2026-09-14T17:56:00Z",
+    "authors": [
+      "Ling Yang",
+      "Zhenfei Yin",
+      "Yingcheng Wu"
+    ],
+    "abstract": "Foundation models have progressed from learning and reasoning over existing knowledge, to increasingly learning through action, tool use, and outcome feedback. We argue that the next frontier is a further transition: from solving and acting within problems specified by humans to participating in the process by which new problems, representations, explanations, and knowledge are created. We refer to this capability as Discovery Intelligence. We formulate Discovery Foundation Models (DFMs) as general-purpose model systems for open-ended discovery. A DFM operates over a revisable research state and supports seven coupled capabilities spanning problem discovery, formulation, representation construction, hypothesis formation, intervention, evidence-grounded revision, and continual discovery improvement. We instantiate this framework with Zetema, which couples explicit research-state dynamics, verification and experimental gating, external grounding, and cross-task Discovery Skill evolution. We further ground the framework with GALILEO, a real therapeutic-discovery system in which Dry-Lab reasoning, robotic and hands-on Wet-Lab experimentation, external biological evidence, and iterative hypothesis and design revision form a closed physical discovery loop. We then formulate a unified approach to capability formation and process-centered evaluation, enabling discovery behavior to be trained, improved, and measured beyond final-answer performance. Together, these components establish discovery as a learnable, executable, and evaluable capability of foundation-model systems. We view this shift as a broader progression in intelligence scaling: from learning over existing knowledge, to learning from action outcomes, and ultimately to participating in the construction, testing, and revision of the structures through which new knowledge is discovered. Code: https://github.com/Gen-Verse/DFM-Plans",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.15973v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15964v1",
+    "title": "Verifiable by Construction: Claim-Level Evaluation of Verbatim Citation in Clinical Question Answering",
+    "published": "2026-09-14T17:53:51Z",
+    "authors": [
+      "Jiashuo Zhang",
+      "Yuling Chen",
+      "Yvonne Commodore-Mensah",
+      "Michael Oberst"
+    ],
+    "abstract": "Large language models (LLMs) have been widely adopted for clinical question answering (QA). Current systems can attach citations to their answers, but these often point to broad texts, leaving time-pressed clinicians unable to verify them efficiently. An alternative is to ensure that responses are verifiable by construction: providing fine-grained verbatim quotes from reference material that substantiate claims, so users can verify an answer without opening other documents. In this paper, we evaluate the ability of current models to perform this task end-to-end: from providing citations for every factual claim, to producing verbatim quotes, to ensuring that those quotes fully substantiate the claims. To do so, we build a standardized harness over four clinical practice guidelines and evaluate twelve LLMs on 222 synthetic clinical questions, measuring each of these stages separately. We find that most models can attach verbatim quotes to over 90% of their claims from prompting alone, apart from some lightweight models such as claude-haiku-4.5. Yet these quotes often fail to substantiate every detail of the claims they accompany. For instance, claude-opus-5 produces verbatim quotes for 98.0% of its claims, but fully substantiates only 37.1%. Our work provides insights into the current capability gap of LLMs in building verifiable clinical QA systems, along with artifacts for future research.",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.15964v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15938v1",
+    "title": "HypoEvolve: Genetic Algorithms Enable Multi-Agent LLMs to Discover Scientific Hypotheses",
+    "published": "2026-09-14T17:44:49Z",
+    "authors": [
+      "Jieyuan Liu",
+      "Mengzhou Hu",
+      "Jefferson Chen",
+      "JungHo Kong",
+      "Pratibha Jagannatha",
+      "Yiming Gao",
+      "Dexter Pratt",
+      "Hsin-Yuan Lee",
+      "Zhiting Hu",
+      "Trey Ideker",
+      "Wei Wang",
+      "Eric P. Xing",
+      "Zhen Wang"
+    ],
+    "abstract": "Scientific agents contribute to hypothesis discovery by synthesizing evidence, assessing proposals, and developing new explanations. Recent systems combine scientific agents with evolutionary search through critique, comparison, and revision. However, how different forms of agent collaboration affect hypothesis quality remains an open question. Answering this question requires separating the effects of agents' scientific capabilities from those of their collaboration. A framework must therefore preserve agents' scientific roles and support rules for combining, revising, and retaining hypotheses. Building on this view, we introduce HypoEvolve, which makes collaboration explicit through successive updates to a hypothesis population. Specifically, we propose a generational genetic algorithm to coordinate specialized large language model (LLM) agents that integrate mechanistic arguments, reconsider assumptions, and assess evidence and testability. Each generation specifies how scientific judgments and new proposals reshape the population, making collaboration effects on hypothesis quality directly testable. Moreover, we design our evaluation around scientifically meaningful hypotheses that explain how a proposed intervention could work. Drug repurposing links these explanations to target-level biological claims assessed against external evidence. Specifically, we adapt DepMap and Open Targets into complementary external measures grounded in experimental, genetic, and clinical evidence. Across 34 cancer types, HypoEvolve achieves the highest scores against six baselines on both measures. DepMap selectivity reaches 0.171, versus 0.115 for the strongest baseline. Gains over single-pass generation also generalize to held-out cancer types. HypoEvolve advances a vision of autonomous science in which AI research teams achieve a capacity for discovery beyond that of individual models.",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.15938v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15989v1",
+    "title": "Corrupt Plans, Clean Traces: Evading Chain-of-Thought Monitoring with Plan Injection",
+    "published": "2026-09-14T18:33:27Z",
+    "authors": [
+      "Keertana Chidambaram",
+      "Andrew Ilyas",
+      "Vasilis Syrgkanis"
+    ],
+    "abstract": "Chain-of-thought (CoT) monitoring is a safety strategy where the reasoning of a large language model \"actor\" is inspected by a \"monitor\" (often another language model) for signs of unsafe planning, deception, or misalignment. We find that planting harmful but benign-sounding reasoning in the actor's context can steer it to perform adversarial actions while evading monitors, an attack we term \"plan injection\". We initially discover this attack in the multiple-choice question-answering monitorability setting proposed by Lanham et al. (2023), using the investigator-agent elicitation framework of Li et al. (2025). We generalize the attack and show that the discovered behavior scales to harder tasks (achieving 25-33% monitor evasion rates across different monitorability benchmarks) and larger models such as DeepSeek-R1. Across the settings we study, actor models not only follow injected plans but also paraphrase them as their own reasoning, without explicit attribution to the injections. Finally, we find cases where extra monitor resources cause harm - giving the monitor access to the injected plan drops detection by as much as 50% in the Bio-Math task and in a case study on monitor reasoning budget, we find transcripts where additional thinking tokens are spent rationalizing the injected plan rather than flagging it.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.15989v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15939v1",
+    "title": "Vulnerability Localization Benchmark: Measuring Agentic Security Analysis at Repository Scale",
+    "published": "2026-09-14T17:44:51Z",
+    "authors": [
+      "Aman Priyanshu",
+      "Supriti Vijay",
+      "Kimia Majd",
+      "Xuhong He",
+      "Fraser Burch",
+      "Takahiro Matsumoto",
+      "Jianliang He",
+      "Baturay Saglam",
+      "Arthur Goldblatt",
+      "Zhuoran Yang",
+      "Amin Karbasi"
+    ],
+    "abstract": "Language-model agents increasingly operate over complete software repositories, yet cybersecurity evaluations primarily measure whether they can detect, reproduce, or repair vulnerabilities rather than whether they can locate the relevant code. We study vulnerability localization: given a weakness class and an unfamiliar repository, identify the implementation files associated with that weakness. We introduce the Vulnerability Localization Benchmark (VLoc Bench), comprising 500 real world vulnerabilities from 290 repositories across six package ecosystems and 147 CWE categories. Each task pairs repository snapshots immediately before and after a security fix. On the vulnerable snapshot, an agent receives only the CWE description and read-only terminal access and must return the affected files; on the patched snapshot, it must determine that the recorded vulnerability is no longer present. We evaluate 27 language models and four static-analysis tools under a common agent interface. Repository-scale vulnerability localization remains difficult: the strongest system achieves 0.229 File F1, and 38.4% of tasks receive no correct localization from any evaluated model. We further find that stronger localization does not imply reliable behavior after remediation: systems that identify vulnerable files effectively can still report unsupported locations on patched repositories. These results establish vulnerability localization as a distinct repository-scale capability and provide a setting for studying both how security agents search for vulnerable code and when they should refrain from reporting it.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.15939v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15932v1",
+    "title": "Recurrent GraphNeural NetworkswithSet-BasedAggregation",
+    "published": "2026-09-14T17:39:41Z",
+    "authors": [
+      "Blai Bonet"
+    ],
+    "abstract": "Recurrent GNNs iterate message passing to convergence, and their logical characterizations to date rely on multi-set aggregation, graded (counting) logics, and halting or acceptance conditions that cannot be verified from the network's parameters. We study recurrent GNNs with set-based aggregation and identify sufficient conditions checkable from the weights for networks to compile into formulas and formulas into networks. The main result is an effective, two-directional equivalence between a class of networks and the Boolean closure of reachability and safety properties, the fragment B$Σ^{\\circ}_1$ of the modal $μ$-calculus. The fragment is not an artifact: it is the exact expressive level of stabilization over finite vocabulary, which supports fixed points of a single polarity and Boolean combinations thereof, but not the composition of fixed points of opposite polarities. The correspondence needs no counting logic, no external halting signal, and no non-effective acceptance condition, yielding a verifiable path from weights to symbolic explanations for networks meeting the conditions.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.15932v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15919v1",
+    "title": "Pilot Early, Commit Late: A Real-Options Model of Enterprise AI Adoption under Rapid Technological Progress",
+    "published": "2026-09-14T17:30:37Z",
+    "authors": [
+      "Gaurav Tewari"
+    ],
+    "abstract": "Artificial intelligence presents firms with an unusual timing problem. The technology frontier is improving rapidly, implementation is partly irreversible, and organization-specific capabilities are accumulated through action. This paper develops a two-period decision model of AI deployment under uncertainty in which a firm chooses among immediate deployment, a limited pilot, and waiting. Deployment earns current operating value but exposes the firm to architectural obsolescence; waiting preserves the option to adopt after the frontier is observed; a pilot sacrifices current operating value to build organization-specific learning without full commitment. The model yields five central timing results and a sixth comparative result on where learning occurs. First, a mean-preserving increase in frontier uncertainty raises the value of waiting and piloting but leaves immediate deployment unchanged when its payoff is affine in the frontier. Second, faster expected frontier progress can reduce the relative attractiveness of immediate deployment when deployed architecture captures only a limited share of future improvement. Third, a pilot dominates waiting exactly when the expected value of the capability it builds exceeds its cost. Fourth, sufficiently valuable organization-specific learning creates a nonempty region in which \"pilot early, commit late\" is optimal. Fifth, there is a closed-form modularity threshold above which immediate deployment dominates the best outside option. Sixth, production learning and pilot-specific learning affect the timing margin differently. A continuous-time extension recovers the standard result that uncertainty raises the adoption threshold while capability and modularity lower it. The paper separates deploying, experimenting, and waiting, and shows why rapid progress can rationally increase experimentation without justifying irreversible commitment.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.15919v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15910v1",
+    "title": "SlipSense: Multimodal Tactile Learning for Low-Latency and Generalized Slip Detection",
+    "published": "2026-09-14T17:23:59Z",
+    "authors": [
+      "Tong Jian",
+      "Aditya Thurvas Senthil Kumar",
+      "Xinyi Li",
+      "Ziling Chen",
+      "Tianyu Dai",
+      "Ali Sengul",
+      "Matteo Grimaldi",
+      "Wenjie Lu",
+      "Saleh Nabi",
+      "Tao Yu"
+    ],
+    "abstract": "Slip detection is fundamental to dexterous manipulation, yet existing systems often lack precise characterization of detection latency and cross-platform generalization. We present SlipSense, a multimodal tactile slip-detection framework built on TacV5, a compact sensor integrating a $32 \\times 32$ piezoresistive array operating at 240 Hz and a 3-axis MEMS accelerometer operating at 8 kHz. The piezoresistive array captures spatial pressure distributions, while the accelerometer captures friction-induced vibrations, providing complementary slip cues. The framework performs modality-specific encoding, intra-sensor fusion, and cross-modal attention with causal temporal prediction at 240 Hz. Experiments on a dataset of 1.4 million frames spanning 37 objects demonstrate the complementarity of the two modalities. SlipSense achieves 96.7% Macro F1 with a false-positive rate below 1.6%, detecting 76% of slip events within 23.1 ms. When trained solely on UMI data, SlipSense generalizes zero-shot to a Tesollo dexterous hand, transferring across unseen objects, distinct sensor units, and robotic platforms without retraining.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.15910v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.15888v1",
+    "title": "Anatomical Grounding and Leakage-Aware Multimodal Contrastive Learning for Alzheimer's Disease Classification from Structural MRI",
+    "published": "2026-09-14T17:13:12Z",
+    "authors": [
+      "Paul-Gabriel Nicolae",
+      "Irina Georgiana Mocanu"
+    ],
+    "abstract": "Deep networks trained on structural MRI for Alzheimer's disease (AD) staging often reach reasonable accuracy while attending to anatomically irrelevant regions, and multimodal models that add clinical tables frequently rely on variables that were used to assign the diagnostic label in the first place. We study both issues with a deliberately lightweight slice-based encoder (ResNet18 with a one-layer Transformer over slices) on 1,075 baseline T1-weighted scans from ADNI-1. First, we use FastSurfer segmentations as an anatomical reference: YOLOv8 models trained on segmentation-derived labels localize Alzheimer-relevant structures with mAP_50 above 0.96, and a Grad-CAM comparison shows that the image-only classifier frequently attends to the skull, orbits and background. Second, we adapt a CLIP-style image - tabular contrastive framework and organize ADNIMERGE variables along a label-leakage spectrum. Fusion with cognitive scores yields 87.3% three-way accuracy, which we treat as a leakage-driven upper bound rather than an imaging result; fusion with regional volumes yields 73.0%. We observe that the choice of contrastive target changes what the image encoder learns: on MCI vs. CN, the image-only head reaches 52.4% when the encoder is aligned to cognitive scores and 73.8\\% when aligned to volumes, although no tabular input is used at inference. Third, restricting the input to a per-subject crop of the medial temporal lobe raises image-only three-way accuracy from 58.7% to 65.1%. All results come from single runs on a small balanced test set, and we report confidence intervals and the protocol differences that prevent direct comparison with published numbers.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.15888v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.13146v1",
+    "title": "SNAP3D: Physically Grounded 3D Parts for Assembly from a Single Image",
+    "published": "2026-09-11T17:59:31Z",
+    "authors": [
+      "Yu-Rou Tuan",
+      "Hao-Tang Tsui",
+      "Nicolas Ugrinovic",
+      "Kris Kitani",
+      "Xiaoxuan Ma"
+    ],
+    "abstract": "Part-aware 3D asset generation enables applications such as editing, articulation, simulation, and fabrication, yet existing methods can generate visually complete individual parts without ensuring that they form a valid physical assembly. Consequently, generated neighboring parts may interpenetrate, lack valid connections, or collapse under gravity. We propose a physics-guided framework for improving single-image part-aware 3D generation with physically compatible geometry and stable connections. Our method resolves inter-part penetration, recovers a contact graph between neighboring parts, and introduces parameterized connectors at their contact surfaces. Using feedback from physical simulation, we refine connector placement, orientation, and dimensions to improve assembly stability while preserving the generated geometry. We further introduce a physics-based evaluation protocol that complements conventional geometric metrics by directly testing assembly validity and stability under gravity. Experiments comparing against multiple part-aware 3D generators show substantial improvements in physical realizability and stability while maintaining geometric quality. We additionally validate the resulting parts through 3D printing and real-world assembly.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.13146v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.13135v1",
+    "title": "Recurrent Dynamic Range Extension",
+    "published": "2026-09-11T17:56:16Z",
+    "authors": [
+      "Sebastian Dille",
+      "Keru Fu",
+      "S. Mahdi H. Miangoleh",
+      "Yağız Aksoy"
+    ],
+    "abstract": "We present an approach to progressively extend the highlights of an image. Instead of reconstructing the full dynamic range of a complex scene directly, we learn a simpler task first: We extend the dynamic range of an input image by a single exposure value. Once this is mastered, we retrieve the full HDR image for the scene by executing our network recurrently, progressively increasing the dynamic range of the input. Our formulation is agnostic to the input dynamic range and targets a bounded output domain. This enables us to use widely available RAW images for the reconstruction task and adapt adversarial losses to construct realistic images. By incorporating Memory Replay for backpropagation, we can train our network recurrently over multiple inference stages and reduce reconstruction errors. As a consequence, our system reconstructs challenging long-tailed HDR scenes robustly and shows powerful recovery of bright light sources and highlights.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.13135v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.13043v1",
+    "title": "Unified CT and MRI Pancreas Segmentation for Label-Efficient Cross-Modality Subregion Transfer",
+    "published": "2026-09-11T16:40:25Z",
+    "authors": [
+      "Ziliang Hong",
+      "Hongyi Pan",
+      "Halil Ertugrul Aktas",
+      "Andrea Bejar",
+      "Elif Keles",
+      "Frank H. Miller",
+      "Michael B. Wallace",
+      "Rajesh N. Keswani",
+      "Gorkem Durak",
+      "Ulas Bagci"
+    ],
+    "abstract": "Robust medical image segmentation across imaging modalities is challenging because of large differences in appearance and intensity distributions. Models trained on a single modality often show substantial performance drops when applied to unseen domains. In this work, we develop a unified 3D pancreas segmentation framework that applies domain-adversarial learning to 4,604 heterogeneous CT and MRI scans to learn anatomical representations. A shared nnU-Net encoder-decoder is trained for whole-pancreas segmentation, with a latent domain discriminator encouraging CT-MRI feature alignment. The learned encoder is subsequently transferred to pancreatic head-body-tail segmentation using limited MRI-only subregion annotations. An average Dice score of 87.31% on the in-distribution test set and Dice scores ranging from 84.20% to 88.09% across external OOD datasets were achieved in whole pancreas segmentation. Dice scores of 80.53% on MRI and 83.05% on CT were achieved for downstream subregion segmentation, without using CT subregion annotations. These results demonstrate that a unified anatomical representation can support both cross-modality pancreas segmentation and label-efficient downstream transfer.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.13043v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.13024v1",
+    "title": "Label-Guided Knowledge Distillation for 3D-CNNs in Action Recognition",
+    "published": "2026-09-11T16:21:21Z",
+    "authors": [
+      "Yanjiang Shi",
+      "Peng Zhao",
+      "Nan Qi",
+      "Guiqin Wang"
+    ],
+    "abstract": "As a key model compression technique, knowledge distillation aims to transfer knowledge from a high-capacity teacher model to a lightweight student model for enhancing the latter's performance. In this work, we reviewed the feature knowledge distillation for 3D-CNNs and observed that most feature distillation methods in video analysis are simple adaptations of those used in image analysis, often neglecting the differences of video features in the temporal dimension. To address this issue, we proposed Label-Guided Knowledge Distillation (LGKD) to guide the distillation of student model features using ground truth labels. Our method entails two components: sample-wise distillation and class-wise distillation, enabling the student model to learn feature representation of the teacher model at two levels. Sample-wise distillation utilizes label information and the teacher's probability distribution to guide the learning of features that significantly impact temporal accuracy while mitigating noise. Meanwhile, class-wise feature distillation employs a prototype network to further capture the relational knowledge among samples within the same category, enhancing the student's ability to learn higher-dimensional semantic information and improving model generalization. To demonstrate the effectiveness and superiority of our method, we conducted comprehensive experiments on two benchmark action recognition datasets, UCF101 and HMDB51, achieving competitive results.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.13024v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.13013v1",
+    "title": "TileNet: Tile-Based CNN-SVM Architecture for Autonomous Unmanned Aerial Systems Inspection of Flat Roofs",
+    "published": "2026-09-11T16:11:35Z",
+    "authors": [
+      "Samuel Dunthorne",
+      "Hashim A. Hashim"
+    ],
+    "abstract": "Flat roofs are among the most influential components of the building envelope, governing both structural performance and thermal efficiency, and thereby contributing directly to household energy consumption, carbon emissions, and long-term environmental sustainability. Timely detection of roof defects is essential for reducing heating and cooling losses, preventing moisture-driven degradation such as mold growth, and supporting national climate-change mitigation goals. This paper presents a real-time, Unmanned Aerial System (UAS)-based deep learning framework that autonomously detects defects using live imagery captured during dual-altitude aerial passes. The multi-resolution flight strategy is designed to aid the identification of both small, fine-scale defects and larger structural issues, enabling more comprehensive assessments. To meet the strict computational and power constraints of embedded UAS hardware, the proposed framework integrates a tile-based architecture with a lightweight Convolution Neural Network-Support Vector Machine (CNN-SVM) classifier designed for low-latency onboard inference. The final model-comprising five convolutional layers and four dense layers, the last a linear SVM head, achieved a mean test accuracy of $94.4\\%$ ($95\\%$ confidence interval $\\pm0.4\\%$ over three seeds) on a photo-level split ($43,383$ training, $3,869$ validation, and $2,540$ test tiled and augmented images), outperforming GoogLeNet ($89.2\\%$) and AlexNet ($79.8\\%$). Experimental evaluations using real UAS imagery collected by onsite visits with DJI Matrice 350 RTK drone demonstrate that the system supports rapid, repeatable, and safe roof inspections while reducing human risk, lowering operational costs, and enabling more sustainable building maintenance.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.13013v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.12997v1",
+    "title": "SV-Cine: Diagnosis-Conditioned Segmentation of Single Ventricle Physiology via Generative Data Augmentation",
+    "published": "2026-09-11T15:59:06Z",
+    "authors": [
+      "Lila Cunge",
+      "Yuehong Liu",
+      "Hang Xu",
+      "Thomas Coudert",
+      "Pierangelo Renella",
+      "J Paul Finn",
+      "William Hsu",
+      "Kim-Lien Nguyen"
+    ],
+    "abstract": "Single Ventricle Physiology (SVP) is a rare subtype of congenital heart disease characterized by the presence of a single functional cardiac ventricle with atypical anatomic configurations that challenge conventional image segmentation approaches. The scarcity of clinical data and the morphological diversity across SVP subtypes make the development of robust segmentation methods particularly difficult. To address these limitations, we propose a cardiac MRI segmentation framework focused on ventricular chambers and myocardium segmentation tailored for SVP. First, we introduce a data augmentation pipeline that generates synthetic 3D cardiac meshes using SDF4CHD and corresponding synthetic cardiac MRI through generative modeling. Second, we introduce SV-Cine, a diagnosis-conditioned adaptation of the foundation model CineMA that incorporates patient-level diagnostic information through Feature-wise Linear Modulation layers, enabling diagnosis-aware feature adaptation during segmentation. We evaluated the framework on an internal cohort with varying SVP subtypes. SV-Cine achieved median Dice scores of 0.89 (IQR: 0.80--0.91) for the left ventricle and 0.72 (IQR: 0.54--0.84) for the right ventricle, outperforming the strongest baseline, nnU-Net, by 0.39 Dice points on right ventricle segmentation. It also yields a median ejection fraction error of 5.55 percentage points (IQR: 3.41--7.69) for the dominant ventricle. Compared with the internal cohort, LV and myocardium segmentation performance was lower for the external cohort; whereas RV Dice scores were comparable for both cohorts. Our findings suggest that a pretrained foundation model can be adapted for highly specialized downstream tasks through usage of diagnosis priors while leveraging anatomic knowledge learned from large-scale MRI datasets during pretraining.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.12997v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.12993v1",
+    "title": "Investigating Temporal Motion Features for Pose-to-Text Indian Sign Language Translation",
+    "published": "2026-09-11T15:55:03Z",
+    "authors": [
+      "Manav Dhamecha",
+      "Praveen Kumar Chandaliya",
+      "Pruthwik Mishra"
+    ],
+    "abstract": "We investigate the effect of pretrained T5 model scale and explicit motion features on pose-to-text Indian Sign Language Translation (SLT) for the WSLP 2026 Shared Task. Pose sequences are projected into the embedding space of T5 through a lightweight pose encoder, with the complete model fine-tuned to generate English text. The shared task data used for this work consists of a test set with 5,334 examples and a validation set with 5,257 examples. We compare T5-small, T5-base, and T5-large, and additionally introduce a motion-augmented variant, T5-small + Motion, that adds explicit frame-to-frame pose differences to the input representation. T5-small achieves the best BLEU and ROUGE scores among the spatial-only models, while T5-large obtains the highest chrF score. Augmenting T5-small with motion features yields the largest single improvement observed in our study, substantially improving BLEU over the spatial-only baseline and making it the strongest model overall on this metric. Our submitted system ranked 5th on the official WSLP 2026 SLT testing leaderboard. The source code and trained models are publicly available on GitHub and HuggingFace.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.12993v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.12965v1",
+    "title": "Generative Retrieval for Unsupervised Text-Based Person Search",
+    "published": "2026-09-11T15:25:00Z",
+    "authors": [
+      "Mang Ye",
+      "Yucheng Ji",
+      "Yang Bai",
+      "Min Cao",
+      "Siyuan Chai",
+      "Bo Du",
+      "Min Zhang"
+    ],
+    "abstract": "Text-based person search (TBPS) aims to retrieve images of a target person from a large image gallery based on a given natural language description. Most existing methods rely on supervised learning with manually annotated image-text pairs. In this paper, we explore unsupervised TBPS, with only unlabeled images. We propose GTR+, a two-stage generation-then-retrieval framework. In the generation stage, we introduce a tiered description generation framework designed to produce fine-grained and stylistically diverse textual descriptions through a three-tier sequential process. The base tier leverages an automated question-and-answer mechanism to generate basic visual attribute descriptions; the intermediate tier enhances fine-grained detail using an inter-sample contrastive mechanism; the advanced tier further enriches textual diversity via a stylized expansion mechanism. In the retrieval stage, to mitigate the impact of noisy pseudo texts, we develop an adaptive confidence-weighted retrieval learning framework. We model image-text pairs as clean or noisy using a Gaussian Mixture Model, calibrated by real-time image-text similarity and static text generation probability from the prior stage, yielding adaptive sample weights during training. Beyond that, we also contribute LargeFine-Person, a large-scale TBPS dataset with high-quality, fine-grained, and diverse textual annotations, enabling a practical and generalizable TBPS pre-training benchmark under unsupervised setting. Experiments on multiple TBPS benchmarks demonstrate the effectiveness and generalization of both GTR+ and LargeFine-Person. Code is available at: https://github.com/Flame-Chasers/GTR.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.12965v1",
+    "topic": "计算机/计算机视觉"
+  }
+]
