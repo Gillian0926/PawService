@@ -8,6 +8,7 @@ import feedparser
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 
 # (arxiv category, topic label)  —— 抓取范围，可自行增删
@@ -62,6 +63,7 @@ def main():
     for entry in CATEGORIES:
         cat, label = entry[0], entry[1]
         cap = entry[2] if len(entry) > 2 else MAX_PER_CAT
+        time.sleep(3)  # arXiv 接口限流：每次请求之间停 3 秒
         try:
             papers = fetch_category(cat, cap)
             for p in papers:
