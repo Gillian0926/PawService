@@ -24,15 +24,21 @@ CATEGORIES = [
     ("cond-mat.mtrl-sci", "材料/材料科学"),
     ("physics.app-ph", "材料/应用物理"),
     ("cond-mat.mes-hall", "材料/介观与纳米"),
+    # 机械（新增；第三个数为该类每次抓取上限，省略则用 MAX_PER_CAT）
+    ("cs.RO", "机械/机器人", 5),
+    ("eess.SY", "机械/系统与控制", 5),
+    ("math.OC", "机械/优化与控制", 4),
+    ("physics.flu-dyn", "机械/流体力学", 5),
+    ("cs.CE", "机械/计算工程", 5),
 ]
 
 MAX_PER_CAT = 8
 DATA_DIR = "data/raw"
 
 
-def fetch_category(cat):
+def fetch_category(cat, cap=MAX_PER_CAT):
     url = (f"http://export.arxiv.org/api/query?search_query=cat:{cat}"
-           f"&sortBy=submittedDate&sortOrder=descending&max_results={MAX_PER_CAT}")
+           f"&sortBy=submittedDate&sortOrder=descending&max_results={cap}")
     d = feedparser.parse(url)
     out = []
     for e in d.entries:
@@ -53,9 +59,11 @@ def main():
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     all_papers = []
     seen = set()
-    for cat, label in CATEGORIES:
+    for entry in CATEGORIES:
+        cat, label = entry[0], entry[1]
+        cap = entry[2] if len(entry) > 2 else MAX_PER_CAT
         try:
-            papers = fetch_category(cat)
+            papers = fetch_category(cat, cap)
             for p in papers:
                 key = p["id"].rsplit("/", 1)[-1]
                 if key in seen:

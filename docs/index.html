@@ -87,6 +87,7 @@
   }
   .badge.topic { background: var(--cs-soft); color: var(--cs); }
   .badge.topic.mat { background: var(--mat-soft); color: var(--mat); }
+  .badge.topic.mech { background: #fef3e2; color: #b45309; }
   .badge.cross { background: var(--cross-soft); color: var(--cross); }
   .badge.date { background: #eef0f3; color: var(--muted); }
   .badge.conf { background: var(--conf-soft); color: var(--conf); }
@@ -101,7 +102,7 @@
 <body>
 <header>
   <h1>🦉 PawService 文献速览</h1>
-  <p>材料 × 计算机 · 每日抓取 · 分类 + 中文摘要</p>
+  <p>计算机 × 材料 × 机械 · 每日抓取 · 分类 + 中文摘要</p>
 </header>
 
 <div class="wrap">
@@ -125,6 +126,7 @@
         <div class="chip cross" data-domain="cross">🔬 交叉学科</div>
         <div class="chip" data-domain="计算机">计算机</div>
         <div class="chip" data-domain="材料">材料</div>
+        <div class="chip" data-domain="机械">机械</div>
       </div>
       <div class="filters" id="crossFilter"></div>
       <div class="count" id="count"></div>
@@ -201,6 +203,7 @@ function matches(p) {
   if (domain === 'cross' && !p.crossover) return false;
   if (domain === '计算机' && !p.topic.startsWith('计算机')) return false;
   if (domain === '材料' && !p.topic.startsWith('材料')) return false;
+  if (domain === '机械' && !p.topic.startsWith('机械')) return false;
   if (crossTag && p.crossover !== crossTag) return false;
   if (query) {
     const q = query.toLowerCase();
@@ -223,7 +226,8 @@ function render() {
 
 function card(p) {
   const isMat = p.topic.startsWith('材料');
-  const topicCls = isMat ? 'topic mat' : 'topic';
+  const isMech = p.topic.startsWith('机械');
+  const topicCls = isMat ? 'topic mat' : (isMech ? 'topic mech' : 'topic');
   const authors = (p.authors || []).slice(0, 3).join(', ') + ((p.authors || []).length > 3 ? ' 等' : '');
   const badges =
     '<span class="badge ' + topicCls + '">' + esc(p.topic) + '</span>' +
