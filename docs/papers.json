@@ -1,7 +1,489 @@
 [
  {
-  "id": "2609.30258",
+  "id": "2609.30219",
   "date": "2026-09-27",
+  "title": "Requirement-Bound Verified Commissioning: A Frozen Four-Billion-Parameter Local Model as a Candidate Generator under an External Acceptance Layer with Verification and Release Authority",
+  "authors": [
+   "Mehmet Iscan"
+  ],
+  "link": "https://arxiv.org/abs/2609.30219",
+  "category": "cs.SE",
+  "topic": "计算机/软件工程",
+  "source": "arxiv",
+  "summary": "提出「需求约束的已验证调试」验收协议：把候选生成与放行权分离，确定性解析器无法支撑的需求交给冻结的 40 亿参数本地模型，只有密封语法下的外部闸门同时推导出两类事实才放行。144 个由隔离 Agent 撰写、无法接触闸门/语法/实验计划的任务上，可答案解析率与放行决定被分开测量：22 个不可答任务中 21 个被模型编造出「就绪计划」但全部被拒；83 次放行零误放（单侧 95% Clopper-Pearson 上界 0.0354），但基准外 seed 0 的 146 次放行中出现 1 次误放；对错误用户答案的防护不足（96 个可答任务仅 13 个事实被原文约束，其余 431 组配对中 169 次误放）。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30216",
+  "date": "2026-09-27",
+  "title": "Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem",
+  "authors": [
+   "Guoming Ling",
+   "Muen Xue",
+   "Zijian Ye"
+  ],
+  "link": "https://arxiv.org/abs/2609.30216",
+  "category": "cs.SE",
+  "topic": "计算机/软件工程",
+  "source": "arxiv",
+  "summary": "对截至 2026-09-22 从 GitHub 收集的 2170 个公开 Jev 项目做大规模数据分析：Jev 生态早期快速增长（既有新项目也有并入既有仓库），跨领域被复用于多种决策目的并混用其接口——属性判断与打分最普及，动作选择/内容过滤/模型与工具选择随领域而异；公众关注集中于路由与接口类 Agent 且与项目数量不相关，表明 Jev 是功能随周边工作流而变的可复用决策组件。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30186",
+  "date": "2026-09-27",
+  "title": "Jev-Mobile: Jev as an Executor for Mobile GUI Agents",
+  "authors": [
+   "Linghua Zhang"
+  ],
+  "link": "https://arxiv.org/abs/2609.30186",
+  "category": "cs.SE",
+  "topic": "计算机/软件工程",
+  "source": "arxiv",
+  "summary": "提出 Jev-Mobile，把移动 GUI Agent 从「VLM 几乎每步都做规划+接地」改为「低频 VLM 规划 + 高频轻量执行」：VLM 只给局部目标，无障碍树定义结构化可执行动作空间，快速类型化决策模型 Jev 在其中反复选动作，使单次 VLM 决策下可执行多个 GUI 动作。AndroidWorld 全任务成功率 79%（SeeAct-V 78%、逐步 VLM 基线 84%），在成功轨迹上端到端耗时较逐步 VLM 降 32.7%、模型 API 成本降 73.4%，表明解耦高层 VLM 推理与底层动作执行可显著提升效率而不失竞争力。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30178",
+  "date": "2026-09-27",
+  "title": "NEUROTESTGEN: Neuro-Symbolic Guided Test Generation with Large Language Models",
+  "authors": [
+   "Ruixin Zhang",
+   "Jiho Shin",
+   "Hung Viet Pham",
+   "Song Wang"
+  ],
+  "link": "https://arxiv.org/abs/2609.30178",
+  "category": "cs.SE",
+  "topic": "计算机/软件工程",
+  "source": "arxiv",
+  "summary": "提出神经-符号混合的测试生成框架 NEUROTESTGEN：先由符号分析引擎（Z3 SMT 求解器）抽取路径相关约束、为目标覆盖构造符号引导规范，再据此指导 LLM 合成既结构有效又语义合理的用例；对 SMT 难处理的复杂对象约束交由 LLM 推断，并加入迭代反馈回路校验生成用例、给出纠正直至覆盖目标行/分支或到达上限。在常用基准上对 Llama 3.3 70B、GPT-4o Mini、Claude 3.5 Haiku 与 Claude Sonnet 4.6 均显著优于现有最先进方法。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30120",
+  "date": "2026-09-27",
+  "title": "Evaluating Agent Skills for Version-Specific Plugin Migration: A Retrospective Study",
+  "authors": [
+   "Beiming Liu",
+   "Haihao Li",
+   "Minjie Chen",
+   "Ning Chen",
+   "Yiran Wang",
+   "Jiming Ye",
+   "Puzhao Zhang",
+   "Tongtao Wang",
+   "Sheng Gao",
+   "William Jin",
+   "Weihao Mu",
+   "Chengzhi Liu",
+   "Yucheng Xia",
+   "Guangren Wang",
+   "Chaoyang Fan",
+   "Changfeng Huang",
+   "Xunming Lin",
+   "Yuanjie Shen"
+  ],
+  "link": "https://arxiv.org/abs/2609.30120",
+  "category": "cs.SE",
+  "topic": "计算机/软件工程",
+  "source": "arxiv",
+  "summary": "以 16 个静态迁移任务、64 份报告（每种条件两次尝试、共 328 条判据决策）回顾性评估一个已发布的插件升级「Agent 技能」：接入技能后平均奖励从 93.83 升至 98.75（+4.92，95% 任务 bootstrap 区间 [0.31,10.86]），但增益集中在一个任务、8 对任务已触顶；把每条决策追溯到其契约域并深读十份报告后暴露双向评分错误（如接受父目录的包含谓词仍获满分，实测探针证实并显示更窄的生命周期规则反而排除了有效的拆卸修复）。修正被复核决策后点估计仍为正（4.61–5.39）但区间跨零；换两个模型家族在无标签无先验下重评，与原评委一致率 91.8%/95.7%（加权 κ=0.64/0.72）、增益 10.63/6.09 分——强调需把聚合奖励连到契约级证据与评委敏感性。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30055",
+  "date": "2026-09-27",
+  "title": "Era by Eon: Benchmarking Enterprise Agents on Hidden Knowledge",
+  "authors": [
+   "Benjamin Gruenbaum",
+   "Doron Porat",
+   "Assaf Natanzon",
+   "Roy Zavida",
+   "Chen Dinachi",
+   "Or Itzahary"
+  ],
+  "link": "https://arxiv.org/abs/2609.30055",
+  "category": "cs.SE",
+  "topic": "计算机/软件工程",
+  "source": "arxiv",
+  "summary": "提出企业 Agent 基准 Era by Eon：每题自述答案规则、由代码从生成的「公司」数据算出精确答案；在可运行代码时四个最强模型 27 题中各答对 22–25 题、几乎无法区分，遂新增 8 个依赖「隐藏事实」的模板——任何问题或文档都不陈述该事实、看似记载它的记录实际指向别处，而需由其它数据推断（如销售系统称客户因时间取消采购，通话录音里客户却归咎于停电）。评测 12 个 Agent（模型+连接公司系统的程序），最好者 24 次尝试（每题 3 次）答对 18 次，6 个模型中 4 个任何程序下均 ≤6/24；最难的「从多个相似记录中择一」（如三份续约优惠中客户签了哪份）全部 Agent 合计 84 次尝试仅 2 次答对。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30048",
+  "date": "2026-09-27",
+  "title": "Style, Not Self: Surface Cues Explain Zero-Shot Code Attribution by Large Language Models",
+  "authors": [
+   "Ehsan Barkhordar",
+   "Surendrabikram Thapa"
+  ],
+  "link": "https://arxiv.org/abs/2609.30048",
+  "category": "cs.SE",
+  "topic": "计算机/软件工程",
+  "source": "arxiv",
+  "summary": "零样本测试当前商用模型能否识别自己写的代码（以评估自我偏好/互评勾结风险）：五个模型在 MBPP/HumanEval/DS-1000 生成解、另七个在 MBPP 生成，共 15 个模型-基准组合在四类任务中充当评委。单解判定任务平衡准确率仅 49–58%（原始 38–67% 主要反映「多容易声称署名」），配对判定 14 组准确率与「评委解更长」的频率相关 r=0.93，指名归属忽对忽反；剥离 docstring/注释/类型标注/局部名的规则化归一化保持 Pass@1 不变，使 12 项重测中 10 项回到随机水平（另 2 项跟随归一化后残留的长度差），Claude Haiku 的自我偏好也随之消失——建议报告平衡准确率、启发式基线与标签一致性。",
+  "crossover": null
+ },
+ {
+  "id": "2609.29981",
+  "date": "2026-09-27",
+  "title": "A Lightweight Ethereum Voting Prototype for Hospital Ethics Committees with Receipt-Based Inclusion Verification",
+  "authors": [
+   "Edwin Clatus",
+   "Madhusudan Singh"
+  ],
+  "link": "https://arxiv.org/abs/2609.29981",
+  "category": "cs.SE",
+  "topic": "计算机/软件工程",
+  "source": "arxiv",
+  "summary": "给出面向医院伦理委员会投票的轻量以太坊原型（Solidity、Hardhat、React、MetaMask、ethers.js）：角色控制、案例状态校验、重复投票控制与收据哈希支持公开审计和交易包含性验证；但因投票事件暴露钱包地址与票值，设计只提供假名可审计性，并非匿名或秘密投票，收据也非无收据/抗胁迫。评估报告 22 项功能测试通过及本地 Hardhat gas 用量（每票 284,137 gas），12 人模拟使用假设概率、不构成人类受试证据；残余风险含多钱包、管理员或前端被攻陷、凭证重分配、抢跑、拒绝服务及未测对抗路径，机密部署需受治登记、加密选票、独立审计、对抗测试、可复现基准与真实用户研究。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30166",
+  "date": "2026-09-27",
+  "title": "CTrex: A Research-Oriented Framework for Kernel- and Projection-Level Algorithm Development in CT Reconstruction",
+  "authors": [
+   "Karel Desplenter",
+   "Wannes Goethals",
+   "Thomas De Schryver",
+   "Marjolein Heyndrickx",
+   "Jan Aelterman",
+   "Matthieu N. Boone"
+  ],
+  "link": "https://arxiv.org/abs/2609.30166",
+  "category": "physics.app-ph",
+  "topic": "材料/应用物理",
+  "source": "arxiv",
+  "summary": "提出面向研究的 GPU 加速迭代 CT 重建框架 CTrex：不把投影/校正/反投影算子当固定黑盒，而是把整条流水线暴露到 kernel 级、以统一迭代结构中的可编辑计算积木表达，从而把非理想采集效应直接嵌入数值算子而非当作外部校正；结合 GPU 级可达性与基于齐次坐标视图矩阵的可扩展几何表述，可一致表达刚体/仿射变换、探测器错位与时变几何，支持圆周、螺旋、偏置与传送带轨迹且 GPU 核与轨迹定义解耦。在运动/形变感知重建、事件型 4D 成像、柱坐标重建与扩展视场 CT 等应用中展示了算子级改造才能实现的策略。",
+  "crossover": "计算建模"
+ },
+ {
+  "id": "2609.30016",
+  "date": "2026-09-27",
+  "title": "Topological-Insulator Heterophase Gate Stacks for Transistor Electrostatics",
+  "authors": [
+   "Minuk Song",
+   "Jiwan Kim",
+   "MD Gius Uddin",
+   "Wonseok Kim",
+   "Jihun Park",
+   "Han Uk Lee",
+   "Dong Won Jeon",
+   "Dohyung Lee",
+   "Lide Yao",
+   "Jouko Lahtinen",
+   "Gyunghyun Jang",
+   "Soohyun Min",
+   "Yonas Tsegaye Megra",
+   "Xiaoqi Cui",
+   "Seungwoo Choi",
+   "Yunyun Dai",
+   "Sang Hoon Chae",
+   "Keun Su Kim",
+   "Dong-Ho Kang",
+   "Hyeon-Jin Shin",
+   "Wooseok Song",
+   "Seth Ariel Tongay",
+   "Chul-Ho Lee",
+   "Manish Chhowalla",
+   "Sung Beom Cho",
+   "Zhipei Sun",
+   "Kibog Park",
+   "Hoon Hahn Yoon"
+  ],
+  "link": "https://arxiv.org/abs/2609.30016",
+  "category": "physics.app-ph",
+  "topic": "材料/应用物理",
+  "source": "arxiv",
+  "summary": "提出用拓扑绝缘体异相栅堆栈工程化晶体管栅侧屏蔽边界：把拓扑绝缘体 Bi2Se3 表面转化为绝缘高 κ 的 BiF3。位置分辨计算揭示出开隙的非晶 BiF3/晶态 Bi2Se3 界面、相邻亚界面层中重构的闭隙 Bi2Se3 派生态及局域界面偶极；电容测量独立解析出与该埋入边界电子压缩率一致、会略微降低而非提高标称堆叠电容的串联系数。尽管有此电容代价，厚度匹配且共享 BiF3/MoS2 沟道侧界面的 MoS2 晶体管仍呈现近热电子极限开关、迟滞可忽略，且漏致势垒降低（DIBL）比纯 BiF3 对照低约 7 倍——把屏蔽边界的位置与电子性质确立为超越标称介电电容的栅静电设计变量。",
+  "crossover": "材料器件"
+ },
+ {
+  "id": "2609.29990",
+  "date": "2026-09-27",
+  "title": "Integration of p-type Cr2O3 on Ultra-Wide Bandgap AlGaN PolFETs with 2.5 kV Breakdown Voltage",
+  "authors": [
+   "Jonathan Pratt",
+   "Yizheng Liu",
+   "Ijaas Mohamed",
+   "Seungheon Shin",
+   "Akilesh Srikanth",
+   "Md Saklain Morshed",
+   "Brianna A. Klein",
+   "Andrew Armstrong",
+   "Andrew A. Allerman",
+   "Sriram Krishnamoorthy",
+   "Siddharth Rajan"
+  ],
+  "link": "https://arxiv.org/abs/2609.29990",
+  "category": "physics.app-ph",
+  "topic": "材料/应用物理",
+  "source": "arxiv",
+  "summary": "在超宽禁带 AlGaN 极化梯度场效应管（PolFET）上集成室温溅射 p 型氧化物 Cr2O3 作为 P-N 异质结栅：相比传统肖特基栅可更好管理横向击穿场。采用反向梯度 n-AlGaN 接触层实现 0.56 Ω·mm 的创纪录低接触电阻；Cr2O3 栅开态电压 VON>3.5 V、阈值电压较肖特基栅正移 +1.63 V（P-N 结增强沟道耗尽）；器件 Imax 590 mA/mm、ION/IOFF 3×10^7。器件击穿电压 >2.5 kV、比导通电阻 11.2 mΩ·cm²（LGD=9.55 μm，平均击穿场 >2.5 MV/cm），更短栅漏器件击穿场高达 5.3 MV/cm（0.28 mΩ·cm²），表明溅射 p-Cr2O3 是高 Al 组分 AlGaN 射频与功率器件可用的低热预算 P-N 结栅技术。",
+  "crossover": "材料器件"
+ },
+ {
+  "id": "2609.29857",
+  "date": "2026-09-27",
+  "title": "Spin-Polarized Magnetic Metal Electrodes for Magnetic Tunnel Junctions",
+  "authors": [
+   "Zhiyuan Duan",
+   "Peixin Qin",
+   "Li Liu",
+   "Guojian Zhao",
+   "Sixu Jiang",
+   "Xiaoyang Tan",
+   "Jingyu Li",
+   "Xiaoning Wang",
+   "Ziang Meng",
+   "Zhiqi Liu"
+  ],
+  "link": "https://arxiv.org/abs/2609.29857",
+  "category": "physics.app-ph",
+  "topic": "材料/应用物理",
+  "source": "arxiv",
+  "summary": "以磁序与自旋选择性隧穿机制为线索综述磁隧道结的磁性金属电极：比较常规铁磁体（CoFeB、半金属 Heusler 合金）的交换劈裂态与对称性滤波隧穿、补偿型共线/非共线反铁磁利用的亚晶格选择性/自旋轨道各向异性/矢量自旋织构/磁多极，以及交错磁体（altermagnet）基于对称性允许的动量依赖自旋劈裂所给的共线零净磁矩路线；并比较各材料类中隧穿极化的来源、势垒渐逝态与界面终端的角色及电写入/读取相关磁序的策略。由此提出更广的设计原则：有效电极极化不是标量体属性，而是动量/轨道/对称性/界面分辨的输运性质；未来进展取决于把新兴磁性金属的非常规自旋极化转化为真实界面上电可寻址、热鲁棒且可复现的隧穿功能，而非仅追求更大的隧穿磁阻。",
+  "crossover": "材料器件"
+ },
+ {
+  "id": "2609.29722",
+  "date": "2026-09-27",
+  "title": "Cavity-waveguide coupling in phononic crystals",
+  "authors": [
+   "Jakub Rosińński",
+   "Benjamin Mayer",
+   "Hubert J. Krenner",
+   "Paweł Machnikowski"
+  ],
+  "link": "https://arxiv.org/abs/2609.29722",
+  "category": "physics.app-ph",
+  "topic": "材料/应用物理",
+  "source": "arxiv",
+  "summary": "用有限元模拟结合实验研究雪花型声子晶体腔与声子晶体波导的耦合：耦合强度主要由孤立腔模与波导模位移场的空间重叠决定；在计入归一化腔位移幅值的有效质量依赖后，跨大量模态组合该空间重叠与相互作用强度呈强相关，偏离这一主导阶的行为与 Bloch 相位效应、波导群速度变化及波导模本征杂化有关。此外在 GaAs 声子晶体薄膜上以嵌入量子点光致发光谱展宽的清晰共振作为机械场局域探针给出实验证据，观测到的约 398 MHz 共振与有限元预测的约 395 MHz 腔共振吻合，从而把空间模重叠确立为腔-波导耦合的主导设计参数并给出控制局域与传播模相互作用的实用准则。",
+  "crossover": "计算建模"
+ },
+ {
+  "id": "2609.29720",
+  "date": "2026-09-27",
+  "title": "Microscopic origin of the Baumgärtel-Schausberger-Winter Relaxation Spectrum in Polymer Melts and Particle Rafts",
+  "authors": [
+   "Dario Nichetti",
+   "H. Henning Winter",
+   "Alessio Zaccone"
+  ],
+  "link": "https://arxiv.org/abs/2609.29720",
+  "category": "physics.app-ph",
+  "topic": "材料/应用物理",
+  "source": "arxiv",
+  "summary": "构建分子理论解释缠结聚合物熔体与非聚合物单分散无序体系中共有的 Baumgärtel–Schausberger–Winter（BSW）双支松弛谱——此前虽被广泛套用却缺乏分子层面的推导。设定链段相对屏蔽且动态响应的多链环境运动，经高斯链预平均得 M_seg(Δm)~(Δm)^{-1/2}，进而 λ_p~p^{3/2}，应力投影后 H(τ)~τ^{-2/3}；纵向原始路径扩散独立给出轮廓长度涨落 H(τ)~τ^{1/4}。以分子量约束的实现、在不拟合谱指数与各模态权重的前提下，同时对照四个单分散聚丁二烯（PBD）熔体的 G′(ω) 与 G″(ω) 实验数据验证：所得 BSW 谱在有限链终端边缘前表现为从快速协同到慢速约束更新的连续过渡，并用统一的双区笼动力学把聚合物与粒子筏联系起来而不假设二者微观机制相同。",
+  "crossover": "计算建模"
+ },
+ {
+  "id": "2609.29532",
+  "date": "2026-09-27",
+  "title": "Dynamical Diversity for Reservoir Computing in Reconfigurable Nanomechanics",
+  "authors": [
+   "Humayun Ahmed",
+   "Inês S. Garcia",
+   "Filipa C. Mota",
+   "Muhammad Asim",
+   "Ghaith Mahook",
+   "Suleyman Celik",
+   "Yunus Selcuk",
+   "Filipe S. Alves",
+   "Alper Demir",
+   "M. Selim Hanay"
+  ],
+  "link": "https://arxiv.org/abs/2609.29532",
+  "category": "physics.app-ph",
+  "topic": "材料/应用物理",
+  "source": "arxiv",
+  "summary": "在单个 NEMS 谐振器、单一读出端口下用两个相互作用模式实现储备池计算：通过互补的模态驱动设置引入「动力学多样性」——同一输入序列在不同模式间驱动幅值分配下重放，把响应拼接成单一特征矩阵，无需额外器件或训练内部参数即扩大读出可用表示。NARMA-2 上相对单模操作把方差归一化测试误差降低逾 28 倍，相对最佳单一双模设置降低逾 3 倍；线性记忆容量测量显示在测试符号时长下可及召回仅数个符号、随延迟迅速衰减（与机械耗散一致），并伴随高阶任务误差上升、复用增益最终消失。又把电馈通作内部参照，用相同录音与匹配驱动/处理训练分别基于馈通特征与 NEMS 响应特征的线性读出，在困难非线性映射上多模 NEMS 特征误差显著更低——说明通过模态驱动幅值变化实现的动力学多样性扩展了单个多模 NEMS 谐振器的计算能力。",
+  "crossover": "计算建模"
+ },
+ {
+  "id": "2609.29300",
+  "date": "2026-09-27",
+  "title": "A low-temperature entropy source for on-chip true random number generation: universal robustness beyond device quality",
+  "authors": [
+   "Y. Q. Chai",
+   "M. Y. Wang",
+   "X. N. Feng",
+   "L. F. Wei"
+  ],
+  "link": "https://arxiv.org/abs/2609.29300",
+  "category": "physics.app-ph",
+  "topic": "材料/应用物理",
+  "source": "arxiv",
+  "summary": "挑战「可靠熵提取需要精确控制器件参数」这一被广泛接受却未经检验的假设：展示单个电流偏置约瑟夫森结无论参数质量如何都可充当密码级真随机数发生器。为确立普适性，特意选取制造中偏离最极端的器件（临界电流偏离理论预测三个数量级、I_cR 积比常规值高一个数量级）作极限压力测试；即便在此极端条件下原始香农熵仍达 0.9981 bit（理论最大值的 99.8%）、最小熵 0.9271 bit。用方波脉冲偏置方案把翻转概率调到 P≈0.5，经 SHA-256 后处理后比特流在比标准推荐更严格的 m=3 判据下通过全部 15 项 NIST SP 800-22 检验，且该认证在整个 100–700 mK 稀释制冷机工作窗口内成立。",
+  "crossover": "量子信息"
+ },
+ {
+  "id": "2609.30173",
+  "date": "2026-09-27",
+  "title": "GridSFM: A Foundation Model for Solving AC Optimal Power Flow",
+  "authors": [
+   "Luke Bhan",
+   "Weiwei Yang",
+   "Margaret Capetz",
+   "Baosen Zhang"
+  ],
+  "link": "https://arxiv.org/abs/2609.30173",
+  "category": "eess.SY",
+  "topic": "机械/系统与控制",
+  "source": "arxiv",
+  "summary": "提出 GridSFM：跨电网拓扑预训练的基础模型 + 物理信息微调，用于大规模求解交流最优潮流（AC-OPF）。其为 1500 万参数、物理启发的图神经网络，在 54 个 500–4000 节点拓扑上预训练，在 10000 节点留出工况上取得 2.45% 的零样本发电成本误差且不随系统规模退化；仅用 100 个已解实例即可适应到 10000 节点未见电网，作为热启动在成本与求解迭代数上均优于用更多数据训练的单一拓扑专用网络。为克服 AC-OPF 可行集可能不连通（阻碍任何连续网络逼近解映射）这一障碍，用对数惩罚松弛提升并放松约束，证明所得弹性可行集可缩、惩罚阈值以上 AC-OPF 极小值仍是弹性问题的极小值、且近似解投影回 AC-OPF 可行集是适定的；模型、数据与代码全部开源。",
+  "crossover": "AI4Science"
+ },
+ {
+  "id": "2609.30082",
+  "date": "2026-09-27",
+  "title": "Real-Time Force Regulation for Whole-Hand Dexterous Grasping",
+  "authors": [
+   "Sang Min Kim",
+   "Alexander Alexiev",
+   "Tzu-Yuan Lin",
+   "Sangbae Kim",
+   "Young Min Kim",
+   "Yonghyeon Lee"
+  ],
+  "link": "https://arxiv.org/abs/2609.30082",
+  "category": "eess.SY",
+  "topic": "机械/系统与控制",
+  "source": "arxiv",
+  "summary": "提出在动态变化的全手接触上做实时力调节的框架：用被跟踪的物体模型与本体重建手部各连杆的几何接触（无需在接触处装触觉传感），在摩擦约束、执行器限幅以及受经典全肢力分析启发的「驱动一致性」约束下反复重算期望接触力分布，并与反应式伸手整合，使手能获取抓取、在扰动下维持、丢失物体后重新抓取。无重力仿真中相对固定分配与仅指尖执行在受控扰动下抓取保持更好；27 自由度臂-手系统真实实验中展示在人为扰动、接触随全手演化时仍能维持并恢复抓取。",
+  "crossover": null
+ },
+ {
+  "id": "2609.29998",
+  "date": "2026-09-27",
+  "title": "Planning electric bus systems with solar photovoltaic integration using open transit data: A case study of the Dakar BRT",
+  "authors": [
+   "Jérémy Dumoulin",
+   "Cheikh Mouhamed Fadel Kebe",
+   "Babacar M. Ndiaye",
+   "Noémie Jeannin",
+   "Christophe Ballif",
+   "Nicolas Wyrsch"
+  ],
+  "link": "https://arxiv.org/abs/2609.29998",
+  "category": "eess.SY",
+  "topic": "机械/系统与控制",
+  "source": "arxiv",
+  "summary": "提出开源框架 GTFS4EV：仅用公开的通用公交数据（GTFS）模拟公交运营并评估电动化情景，输出每车所需最小车载电池容量、充电基础设施需求、经济与环境影响以及太阳能光伏整合潜力，以支持在运营可行性、成本、环境效益与本地电网影响间权衡的决策。用于达喀尔 BRT 系统，比较三种充电策略（仅车场、终点站+车场、仅终点站）在不同光伏容量下的表现：相对「仅车场」，「终点站+车场」把每车最小车载电池从 285 kWh 降到 57 kWh、最大充电负荷从 5.3 MW 降到 1.5 MW；「仅终点站」亦有收益但需更大车载电池（155 kWh）；机会充电结合光伏相对纯电网充电最多降低 46% 充电成本，展示在数据稀缺城市用 GTFS 数据支撑电动公交规划与光伏整合的可行性。",
+  "crossover": null
+ },
+ {
+  "id": "2609.29977",
+  "date": "2026-09-27",
+  "title": "Accelerating Branch MPC with Two-Level Parallel Direct Solves on GPUs",
+  "authors": [
+   "Fenglong Song",
+   "Luyao Zhang",
+   "Liang Wu",
+   "Ján Drgoňa",
+   "Colin N. Jones"
+  ],
+  "link": "https://arxiv.org/abs/2609.29977",
+  "category": "eess.SY",
+  "topic": "机械/系统与控制",
+  "source": "arxiv",
+  "summary": "提出面向分支模型预测控制（branch MPC）的 GPU 加速直接线性求解器：针对全部未来轨迹共享单一根决策节点、此后各自独立演化的形式，在代数层利用其约化系统的对称正定结构，为多种优化算法提供可复用后端；求解器挖掘两级并行——跨情景与沿各预测时域，并用定制变量排序实现时域并行 Cholesky 分解，同时在因子中保留每情景的单根-尾耦合块。数值实验相对最先进稀疏直接求解器取得显著加速：分解较 cuDSS 最高 6.0×、较八线程 PARDISO 最高 27.6×，三角求解分别最高 3.5× 与 15.8×。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30116",
+  "date": "2026-09-27",
+  "title": "Magneto-coalescence phenomena in colliding ferrofluid droplets",
+  "authors": [
+   "Neeladri Sekhar Bera",
+   "Abhishek Kumar Jaiswal",
+   "Devranjan Samanta",
+   "Purbarun Dhar"
+  ],
+  "link": "https://arxiv.org/abs/2609.30116",
+  "category": "physics.flu-dyn",
+  "topic": "机械/流体力学",
+  "source": "arxiv",
+  "summary": "用高速成像研究铁磁流体液滴自由落体撞击同液静置液滴、并施加水平磁场这一耦合了液滴聚合与磁场主导润湿铺展的构型，跨越三种铁磁流体浓度、两种润湿性基底（玻璃与 PET）及一系列撞击速度与磁场强度，追踪冠形成、径向铺展与（特定条件下的）边缘脱落。最大冠高满足 H_{c,max}/D_t ~ Fr^{0.5}（远低于弹道上界 ~Fr）；零场时最大铺展按以合并撞击速度与合并液滴尺寸表示的边界层标度 β_{0,max} ~ (We_0/Oh)^{1/6} 坍缩，加场后体耗散能量平衡预测 β_max ~ Z^{1/5}，而实测却呈现明显更弱的 ~Z^{1/11}，该亏损可追溯到磁黏效应带来的额外耗散（以有效 Ohnesorge 数体现）；边缘脱落发生在超过场与高度相关阈值之后，由与尺寸无关的判据 Fr²Bo≈3550 描述，超过后边缘可碎裂为子液滴。这些标度为磁辅助打印、按需液滴与涂覆等存在重复液滴碰撞的工艺提供预测工具。",
+  "crossover": null
+ },
+ {
+  "id": "2609.29926",
+  "date": "2026-09-27",
+  "title": "Thermal behaviour of settling heavy inertial particles in turbulent natural convection",
+  "authors": [
+   "Hamid Reza Zandi Pour",
+   "Guido Boffetta",
+   "Stefano Musacchio",
+   "Filippo De Lillo"
+  ],
+  "link": "https://arxiv.org/abs/2609.29926",
+  "category": "physics.flu-dyn",
+  "topic": "机械/流体力学",
+  "source": "arxiv",
+  "summary": "用直接数值模拟研究沉降重惯性粒子在体相湍流自然对流中的动力学与热学行为：在均匀 Rayleigh–Bénard 对流构型中，由均匀平均温度梯度驱动出统计均匀的对流湍流并播撒被动惯性粒子，量化动态惯性与热惯性对粒子统计的影响。重点考察粒子速度与温度涨落如何追溯到粒子-流体变量的关联，以及沉降与优先聚集的相互作用如何影响粒子温度统计。",
+  "crossover": null
+ },
+ {
+  "id": "2609.29904",
+  "date": "2026-09-27",
+  "title": "Extracting hydrogel properties by watching hydrogel particles moving through solid ice",
+  "authors": [
+   "Yanxia Feng",
+   "Se-Hyeong Jung",
+   "Camillo Sirvinski",
+   "Dan Balkanyi",
+   "Federico Paratore",
+   "Lucio Isa",
+   "Robert W. Style"
+  ],
+  "link": "https://arxiv.org/abs/2609.29904",
+  "category": "physics.flu-dyn",
+  "topic": "机械/流体力学",
+  "source": "arxiv",
+  "summary": "发现水凝胶颗粒嵌在冰中、在温度梯度下会向暖端移动并随升温而溶胀，其运动源自冰经「低温抽吸」（cryosuction）驱动未冻水穿过水凝胶网孔流动；据此提出一种极高分辨率的测量方法，用皮升级水凝胶体积测出渗透率、可压缩性与孔隙弹性扩散率等（这些性质难以测量却在溶胀、脱水、蒸腾与过滤等过程里广泛重要）及其随水凝胶去溶胀的变化。在聚乙二醇二丙烯酸酯（PEGDA）水凝胶上演示，测量结果与现有文献一致；高分辨率还使其得以检验常用的经典预测（基于理想化均匀聚合物网络），结果显示这些经典预测并不准确，凸显需要能准确描述真实水凝胶的新模型。",
+  "crossover": null
+ },
+ {
+  "id": "2609.29280",
+  "date": "2026-09-27",
+  "title": "A Physics-Driven Framework for Parametric Periodic-Flow Modeling and Finite-Amplitude Aeroelastic Response Analysis",
+  "authors": [
+   "Daiwei Dong",
+   "Wenbo Cao",
+   "Weiwei Zhang"
+  ],
+  "link": "https://arxiv.org/abs/2609.29280",
+  "category": "physics.flu-dyn",
+  "topic": "机械/流体力学",
+  "source": "arxiv",
+  "summary": "提出纯物理驱动的参数化周期流与有限幅值气动弹性响应求解框架：先发展「周期物理信息神经网络」（P-PINN），通过在单个运动周期上施加时间周期性直接求解周期流，从而避免求解周期性建立前冗长的瞬态演化，并把流况与运动参数作为网络输入以构造周期流场与气动力的连续参数化表示；再以该参数化气动力模型经一阶谐波平衡耦合结构动力学方程，求解单自由度气弹系统的响应幅值与频率。用圆柱与翼型的强迫运动算例验证——相对时间推进结果能准确复现不同流况与运动参数下的周期气动力、表面载荷分布与瞬时流场；对亚临界雷诺数弹性支撑圆柱做气弹分析，所得响应与全耦合 CFD/CSD 吻合。离线训练后参数化模型可对不同结构参数反复求值，在线数秒内得到完整气弹响应曲线而无需重复长时流固耦合推进。",
+  "crossover": "AI4Science"
+ },
+ {
+  "id": "2609.29201",
+  "date": "2026-09-27",
+  "title": "Effect of fuel stratification length scale on thermodiffusively unstable lean hydrogen flames",
+  "authors": [
+   "Filippo Fruzza",
+   "Sofiane Al Kassar",
+   "Rachele Lamioni",
+   "Chiara Galletti",
+   "Antonio Attili"
+  ],
+  "link": "https://arxiv.org/abs/2609.29201",
+  "category": "physics.flu-dyn",
+  "topic": "机械/流体力学",
+  "source": "arxiv",
+  "summary": "用含详细化学与输运的直接数值模拟研究进气燃料分层特征长度对贫预混氢气火焰热扩散不稳定性的影响：在保持密度加权全局当量比不变的条件下施加受控正弦燃料质量分数扰动，并用被动示踪剂独立于燃烧化学与差异扩散追踪所施加的分层。结果呈强尺度依赖——当分层波长接近大热扩散结构间距（λ≈20δ_f）时，横向成分梯度破坏热扩散指状结构，使火焰表面积与传播速度低于完全预混参照；波长较大（λ≳40δ_f）时分层把火焰组织成富/贫燃料交替通道，热扩散胞优先在更富区域发育、贫区形成尖点结构，从而增大火焰表面积与全局传播速度。各工况拉伸因子近乎恒定，表明主导机制是几何性的（大尺度结构的尺度依赖生成或抑制）而非局部燃烧行为显著改变——凸显分层长度尺度对控制热扩散不稳定氢火焰的关键作用，对部分预混氢气燃烧器的建模与设计有启示。",
+  "crossover": null
+ },
+ {
+  "id": "2609.30258",
+  "date": "2026-09-25",
   "title": "Temporal Gradient Inversion for Private Trajectory Reconstruction in Embodied Reinforcement Learning",
   "authors": [
    "Sudip Bhujel",
@@ -19,7 +501,7 @@
  },
  {
   "id": "2609.30250",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "Agentic Detection of Online Conspiracies",
   "authors": [
    "Lior Biton",
@@ -34,7 +516,7 @@
  },
  {
   "id": "2609.30227",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "To Trust or Not to Trust: Retrieval-Augmented Fact Checking in Speech",
   "authors": [
    "Debajyoti Mazumder",
@@ -50,7 +532,7 @@
  },
  {
   "id": "2609.30226",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "PoEM: Predicting RL Outcomes from Existing Policies",
   "authors": [
    "Kimia Hamidieh",
@@ -66,7 +548,7 @@
  },
  {
   "id": "2609.30218",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "Minimally Invasive Steering of Language Models",
   "authors": [
    "Taha Entesari",
@@ -83,7 +565,7 @@
  },
  {
   "id": "2609.30215",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "A Nearly Quadratic Lower Bound for Linear Optimization over Convex Bodies in the Membership Oracle Model",
   "authors": [
    "Santosh S. Vempala"
@@ -97,7 +579,7 @@
  },
  {
   "id": "2609.30212",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "Anchored Extra-Proximal Methods: Optimal Higher-Order Methods for Monotone Inclusion Problems",
   "authors": [
    "Ruichen Jiang",
@@ -112,7 +594,7 @@
  },
  {
   "id": "2609.30210",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "The Alignment Illusion in Multimodal Large Language Models",
   "authors": [
    "Hong-Han Wang",
@@ -128,7 +610,7 @@
  },
  {
   "id": "2609.30243",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "JevOut: Natural Context Can Flip Decision Models",
   "authors": [
    "Zixiang Xu"
@@ -142,7 +624,7 @@
  },
  {
   "id": "2609.30238",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "SemMSA: Latent Semantic-Aided Robust Multimodal Sentiment Analysis with Incomplete Data",
   "authors": [
    "Wenhao Li",
@@ -159,7 +641,7 @@
  },
  {
   "id": "2609.30199",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "ExplorationBench: Measuring AI Systems' Exploration in Verifiable Alien Worlds",
   "authors": [
    "Ming Zhang",
@@ -192,7 +674,7 @@
  },
  {
   "id": "2609.30184",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "ARGUS: Role-Aware Event Knowledge Graphs for U.S. Employment-Discrimination Complaints",
   "authors": [
    "Sriram Kannan",
@@ -211,7 +693,7 @@
  },
  {
   "id": "2609.30167",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "Do Audio Language Models Hear and Read Distinctive Features Alike?",
   "authors": [
    "Yuanhao Chen",
@@ -226,7 +708,7 @@
  },
  {
   "id": "2609.30266",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "LLM Agents Can Easily Tamper With Their Own Traces",
   "authors": [
    "Jeremy Qin",
@@ -245,7 +727,7 @@
  },
  {
   "id": "2609.30264",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "AD-WM: Action-Discriminative World Models for Counterfactual Model Predictive Control",
   "authors": [
    "Jiabin Qiu",
@@ -264,7 +746,7 @@
  },
  {
   "id": "2609.30249",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "RAPID: Robot Agentic Programming from Demonstrations",
   "authors": [
    "Yuyao Liu",
@@ -282,7 +764,7 @@
  },
  {
   "id": "2609.30247",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "Rolling-WAM: World Action Models with Rolling Imagination",
   "authors": [
    "Yinghua Zhou",
@@ -306,7 +788,7 @@
  },
  {
   "id": "2609.30233",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "Coding Agents for Generalized Task and Motion Planning Problems",
   "authors": [
    "Matteo Merler",
@@ -326,7 +808,7 @@
  },
  {
   "id": "2609.30222",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "TrackEverything: Long Horizon Dense Tracking via De-Duplicating 3D Scene Representations",
   "authors": [
    "Ayush Jain",
@@ -347,7 +829,7 @@
  },
  {
   "id": "2609.30245",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "Towards Practical Compression of 3D Gaussian Splatting",
   "authors": [
    "Pengpeng Yu",
@@ -367,7 +849,7 @@
  },
  {
   "id": "2609.30234",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "OmniFabric: Coherent UV Space Texture Synthesis for 3D Garment Reconstruction",
   "authors": [
    "Ding-Jiun Huang",
@@ -387,7 +869,7 @@
  },
  {
   "id": "2609.30223",
-  "date": "2026-09-27",
+  "date": "2026-09-25",
   "title": "BiCC: Bidirectional Connected-Component Loss for Instance-Aware Segmentation",
   "authors": [
    "Luc Bouteille",
