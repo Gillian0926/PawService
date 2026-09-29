@@ -1,0 +1,1484 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2609.35768v1",
+    "title": "PDMD: Projected Distribution Matching Distillation for Video Diffusion Models",
+    "published": "2026-09-28T17:59:52Z",
+    "authors": [
+      "Zimo Wang",
+      "Junkun Yuan",
+      "Angtian Wang",
+      "Haotian Yang",
+      "Canyu Zhang",
+      "Siyuan Yuan",
+      "Xingchang Huang",
+      "Bo Liu",
+      "Yizhi Wang",
+      "Yiding Yang",
+      "Chongyang Ma",
+      "Gordon Guocheng Qian"
+    ],
+    "abstract": "Modern video diffusion models require tens of denoising evaluations over long spatiotemporal token sequences. Distribution Matching Distillation (DMD) reduces the number of function evaluations (NFE) to just a few. However, DMD samples can degrade during training, exhibiting progressive oversaturation and artifacts. We trace this instability to critic errors, which enter successive student updates and accumulate over time. We introduce Projected Distribution Matching Distillation (PDMD) to filter critic errors. PDMD projects out the component of the DMD update parallel to the student-critic endpoint residual. At a fixed noisy query, we prove that this residual is an unbiased estimate of the critic's endpoint error. Under high-dimensional assumptions, this projection removes a constant fraction of critic error while discarding only a vanishing fraction of ideal DMD signal. Empirically, the projection stabilizes training and improves sample quality where DMD degrades and develops unnatural textures. PDMD requires only a one-line code change to DMD, with no extra loss, network, data, model pass, or multi-stage training. With Wan2.1, PDMD achieves a VBench total score of 83.73 at 4 NFE, surpassing matched DMD by 1.03 points. On MiniMax-H3 joint video-audio generation, PDMD achieves a VideoGen-Eval visual total score of 83.17, 0.41 points above the strongest distilled baseline. PDMD also achieves the best performance on all six audio metrics among the compared 4-NFE models. Qualitative comparisons and user studies favor PDMD over the distilled baselines in visual quality, motion, and audio quality. Code and models are available at https://pdmd2026.github.io/.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.35768v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35763v1",
+    "title": "Unifying Distributional Training for One-Step Visual Generation",
+    "published": "2026-09-28T17:59:14Z",
+    "authors": [
+      "Chi Zhang",
+      "Haoyang Shi",
+      "Yueyi Liu",
+      "Ruichuan An",
+      "Junkang Zhou",
+      "Chang Li",
+      "Xiuyuan Lu",
+      "Yichi Zhang",
+      "Bo Wang",
+      "Yuhang Wu",
+      "Sen Cui",
+      "Miao Liu"
+    ],
+    "abstract": "\\emph{Distributional training} provides collective supervision for one-step visual generation by matching real and generated features in frozen representation spaces. We introduce \\emph{a unified theoretical framework} that separates distribution modeling from matching discrepancy and connects global objectives to pointwise feature updates through Wasserstein gradient flow. Under this framework, FD-Loss and Gaussian-kernel Drifting are recovered through Gaussian optimal transport and kernel-density-based KL matching, respectively. The framework motivates \\textbf{MGFlow}, which models feature distributions with Gaussian mixtures at an adjustable granularity between global moments and sample-based representations. MGFlow supports both optimal transport and score-based matching, and couples mass-constrained sample assignment with paired component updates to address mode collapse that mixture expressivity alone does not resolve. On ImageNet $256\\times256$, MGFlow substantially surpasses the FD-Loss baseline, achieving state-of-the-art results with \\textbf{1.45} $\\mathrm{FDr}^6$ on pMF-H and \\textbf{1.64} on JiT-H. For text-to-image generation, MGFlow post-trains FLUX.2 [klein] 4B into a one-step generator that outperforms the original four-step model on both GenEval and PickScore. Project page: https://shihaoyang0423.github.io/MGFlow-website/",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.35763v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35760v1",
+    "title": "TokenCast: Forecasting Token Consumption During LLM Agent Execution",
+    "published": "2026-09-28T17:59:09Z",
+    "authors": [
+      "Chaoqian Ouyang",
+      "Ling Yue",
+      "Libin Zheng",
+      "Huanghui Guo",
+      "Shengxiang Xu",
+      "YiShu Wang",
+      "Ran Li",
+      "Jian Yin",
+      "Shaowu Pan",
+      "Shimin Di"
+    ],
+    "abstract": "When a large language model (LLM) agent executes the same task, token consumption can vary by over an order of magnitude across runs. The agent chooses its next steps based on tool feedback and intermediate results, while the growing context steadily inflates the input size of every subsequent call. The total consumption of a task is therefore hard to predict before execution and the prediction must be revised as the run unfolds. In this paper, we propose TokenCast, which learns a composable cost representation for each execution segment, recording its own consumption and the context growth it introduces. Composing adjacent segments yields a cumulative estimate that captures the extra input cost incurred when context from earlier segments is re-read by every later call. As execution unfolds, newly observed evidence refreshes the forecast, requiring no additional LLM calls and incurring a mean cumulative prediction time of 32.8 ms per run on SWE-bench Verified. Across 4 task suites and 6 agent models, TokenCast's mean absolute error reduction against the strongest comparator averages 14.5% over 96 evaluated combinations. In offline budget-control replay, TokenCast uses 21.3% fewer tokens on average than a fixed-budget policy at matched trace completion. The code is available at https://github.com/DEFENSE-SEU/TokenCast.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.35760v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35758v1",
+    "title": "Statistical Learning of Contractive Dynamical Representations for Composite Adaptive Control",
+    "published": "2026-09-28T17:59:07Z",
+    "authors": [
+      "Min Kim",
+      "José Leonardo Brenes",
+      "Fred Hadaegh",
+      "Soon-Jo Chung"
+    ],
+    "abstract": "We present a representation-learning framework for composite adaptive tracking control under dynamically coupled disturbances. The framework connects classical disturbance-accommodating control (DAC) to recent last-layer adaptive disturbance-rejection methods. Specifically, we introduce a statistically principled hard expectation-maximization (hard-EM) procedure, with a Kalman smoother in the hard E-step, to identify dynamical representations of disturbance whose latent evolution is uniformly contractive. The learned representation evolves a latent disturbance-excitation state from measured plant features and control inputs and decodes that state into the time-varying disturbance acting on the nominal plant, thereby extending prior \"fixed-decay\" last-layer adaptive methods to a learned, predictive DAC-style formulation. Combined with Bayesian filtering of the learned latent state, this representation yields a composite adaptive tracking controller with predictive capability and provable exponential convergence to a bounded neighborhood. We validate our approach experimentally on a slippery ground vehicle carrying a liquid-sloshing tank and a pendulum load, and we further assess its robustness on a system of coupled Duffing oscillators. Across both settings, the method achieves accurate disturbance prediction and improved overall tracking performance relative to fixed-decay representation-learning ablations, LTI disturbance-accommodating baselines, and model-based PD baselines.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.35758v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35752v1",
+    "title": "Neural Harmonic Measure Operator",
+    "published": "2026-09-28T17:58:13Z",
+    "authors": [
+      "Jinjin He",
+      "Sinan Wang",
+      "Yuchen Sun",
+      "Bo Zhu"
+    ],
+    "abstract": "We introduce Neural Harmonic Measure Operator (NHMO), a neural solver for elliptic PDE problems on variable-shape domains. The harmonic measure of a domain is the boundary probability distribution that, integrated against any boundary data, returns the Dirichlet Laplace solution. It depends only on the geometry, not on the boundary data. NHMO parameterizes the density of this measure as a transformer-based boundary kernel supervised by Walk-on-Spheres exit samples, so one trained kernel handles different boundary values on a shape with no retraining. We extend it to Poisson via a classical decomposition, with an auxiliary network amortizing the source-induced correction and avoiding the singular volume quadrature that breaks direct evaluation. At inference, new boundary values and new sources both yield PDE solutions by re-integration against the fitted kernel and lift, with no retraining. NHMO improves over four prior baselines on the MCB-B 3D variable-shape Poisson benchmark across all five categories, and is competitive with major neural-operator baselines on a controlled 2D testbed.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.35752v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35751v1",
+    "title": "How to Loop MoE: Flatten the Experts, Untie the Attention",
+    "published": "2026-09-28T17:58:03Z",
+    "authors": [
+      "Shouren Wang",
+      "Chuang Ma",
+      "Mohsen Hariri",
+      "Debargha Ganguly",
+      "Wang Yang",
+      "Xiaoqing Tong",
+      "Qianying Liu",
+      "Xiaotian Han",
+      "Vipin Chaudhary"
+    ],
+    "abstract": "Looped Transformers reuse one block of layers several times: by spending extra computation they push a model of fixed size further, and so use its parameters more fully; while sparse mixture-of-experts (MoE) models activate only a few of many experts for each token. Looped MoE bridges these two design philosophies and gives MoE models new potential for better expert usage, but it raises a question: how to loop a MoE? We answer it with Foil. With the expert parameters and the expert compute per token held fixed, Foil (1) flattens the experts, halving the expert layers, doubling the experts per layer and doubling the passes, so that every routing decision chooses from a larger pool, and (2) unties the attention, giving each pass its own attention parameters while the experts and routers stay shared. Experiments show that Foil clearly outperforms the unflattened looped baseline: at 20B tokens every Foil model has lower pretraining loss than the baseline; at 100B tokens the loss improves monotonically with the degree of flattening, the most flattened Foil ending 0.012 nat below the baseline at equal parameters and compute, with downstream accuracy on par or better; untying the attention also yields more balanced and more confident routing at equal shape. Our ablations analyse why Foil works and turn the findings into design guidance for looped MoE: the returns of looping and of widening the expert layers amplify each other, routing confidence tracks healthy expert use better than load balance, and a sparse looped MoE should therefore use more experts per layer and more passes. Code and configurations are available at https://github.com/SR-A-W/how-to-loop-moe.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.35751v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35750v1",
+    "title": "KV-streams for Efficient Compaction in Agentic Reinforcement Learning",
+    "published": "2026-09-28T17:57:42Z",
+    "authors": [
+      "Emiliano Penaloza",
+      "Dane Malenfant",
+      "Dheeraj Vattikonda",
+      "Roger Creus Castanyer",
+      "Siddarth Venkatraman",
+      "Abhay Puri",
+      "Jonathan Light",
+      "Matthew James Sargent",
+      "Augustine N. Mavor-Parker",
+      "Massimo Caccia",
+      "Lucas Caccia",
+      "Glen Berseth",
+      "Esmeralda S. Whitammer",
+      "Alessandro Sordoni",
+      "Minseon Kim",
+      "Marc-Alexandre Côté",
+      "Laurent Charlin",
+      "Guillaume Lajoie"
+    ],
+    "abstract": "Scaling the horizon of agentic LLMs is bottlenecked by the need to fit ever longer context traces in GPU memory. Context compaction has been the most popular mechanism to alleviate this issue, keeping GPU memory constant for a given trace. Unfortunately, most compaction strategies rely on prefilling the LLM context many times over, hindering training throughput. To alleviate this bottleneck and enable efficient trainable compaction, we propose KV-streams, a plug-and-play strategy compatible with any compaction strategy that substantially increases throughput while showing no evidence of hindering performance. KV-streams enable scalable compaction by streaming the KV cache forward rather than flushing it after each compaction. We show that KV-streams enable three different compaction strategies, achieving a 2.6 to 5x wall-clock speedup in training. Beyond efficiency, we find that the streamed KV cache can act as a recurrent state, carrying forward information that has long since disappeared from the context. Specifically, in a controlled setting we show that, contrary to prior work, RL alone is all that is needed for this behavior to emerge. Overall, we show KV-streams to be an efficient and lightweight plug-and-play addition to any post-training pipeline.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.35750v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35748v1",
+    "title": "Improving Test-Time Scaling with Adaptive Looped Transformers",
+    "published": "2026-09-28T17:56:55Z",
+    "authors": [
+      "Yichen You",
+      "Tianyu Fu",
+      "Aosong Feng",
+      "Xingtai Lv",
+      "Xuefei Ning",
+      "Ning Ding",
+      "Yu Wang"
+    ],
+    "abstract": "Looped transformers have demonstrated promising parameter efficiency by reusing layers for latent computation. Prior studies compare looped and non-looped models at matched parameters or per-token FLOPs. However, to the best of our knowledge, whether looping improves test-time scaling as outputs grow longer remains underexplored. Through post-training looped transformers, we study the accuracy-compute slope, measured as the accuracy gain per doubling of test-time decoding FLOPs. We find that existing looped transformers often yield steeper slopes than their non-looped baseline, yet underperform it at matched compute. While fixed-depth looping spends extra iterations on every token, our analysis shows that many tokens do not benefit from extra iterations. We therefore propose TaH2, which enables the model to focus extra iterations on the tokens that benefit from looping. It jointly post-trains the backbone and an iteration decider through lookahead depth supervision, which uses online labels indicating whether further iteration improves the prediction. TaH2 improves both the efficiency and attainable accuracy of test-time scaling. On challenging AIME benchmarks, TaH2 improves the accuracy-compute slope by 53% (2.74 vs. 1.79) over the non-looped baseline, exceeding the baseline's peak accuracy by about 3.4 points at matched test-time compute. As the maximum iteration depth increases, existing looped models largely plateau, while TaH2's gain over the non-looped baseline continues to grow from +2.8 points at depth 2 to +3.9 points at depth 8. Our code is available at https://github.com/thu-nics/TaH.",
+    "category": "cs.LG",
+    "link": "https://arxiv.org/abs/2609.35748v1",
+    "topic": "计算机/机器学习"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35769v1",
+    "title": "Telescopic Language Models",
+    "published": "2026-09-28T17:59:53Z",
+    "authors": [
+      "Zhilin Guo",
+      "Boqiao Zhang",
+      "Hakan Aktas",
+      "Kyle Fogarty",
+      "Nursena Koprucu Aslan",
+      "Wenzhao Li",
+      "Canberk Baykal",
+      "Albert Miao",
+      "Siyu Hong",
+      "Yixiao Liu",
+      "Adam Wu",
+      "Ashish Kumar Singh",
+      "Sakar Khattar",
+      "Chenliang Zhou",
+      "Weihao Xia",
+      "Cristina Nader Vasconcelos",
+      "Cengiz Oztireli"
+    ],
+    "abstract": "One deployed language model must often serve many compute budgets, yet serving each budget still means a separate training or compression run per point. We train a Telescopic Language Model (TLM) to be that continuum: a nested-capacity Transformer supervised by stochastic prefix supervision with a full anchor. At every step, one randomly truncated prefix of the capacity axis is trained against the full next-token target, alongside one full-capacity pass, so the trained artifact is a valid language model at every depth. Two forward-backward passes per step, no architectural change, nothing extra at inference. Fixed-exit suites such as Matryoshka Language Model Suites (MLMS) occupy one point in this design space, and the point has a cost: supervising only a few fixed exits leaves the nested model at chance level everywhere else (perplexity 10^2-10^5 in our baselines). On a 200M proxy suite (20B FineWeb-Edu tokens, identical data stream for all methods), a single TLM run is a valid language model at every one of its twenty layer prefixes, in perplexity and on perplexity-sensitive downstream tasks, reducing the area under the quality-budget curve by 43-44% relative to the fixed-exit suites while matching them at full capacity, at ~12% lower GPU cost per run. The prefix sampling density is a dial: concentrating it on a few depths recovers fixed-exit quality there at the price of the continuum, so the operating points become a training-time choice rather than an architectural one. These results indicate that the training objective, not the nesting itself, is what makes a model elastic.",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.35769v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35765v1",
+    "title": "Retrieving Biblical Intertextual References in Karen Blixen's Seven Gothic Tales",
+    "published": "2026-09-28T17:59:27Z",
+    "authors": [
+      "András Kovács",
+      "Alexander Conroy",
+      "Daniel Hershcovich",
+      "Jens Bjerring-Hansen"
+    ],
+    "abstract": "Identifying intertextual references is central to literary scholarship, but computationally difficult when source material is transformed through paraphrase, allusion, historical language, and translation. We investigate this problem through biblical intertextuality in Karen Blixen's Seven Gothic Tales. Drawing on the commentary to a critical edition, we construct a benchmark of 189 annotated references and evaluate retrieval against all 31,170 verses of historically plausible Danish Old and New Testament translations. We compare TF-IDF and BM25 with multilingual and Danish sentence encoders, examine the effect of linguistic normalization, and fine-tune a Danish encoder using hard negatives and five-fold cross-validation. We analyze performance across automatically derived lexical-overlap strata representing quotations, paraphrases, and allusions. Linguistically normalized BM25 provides a strong zero-shot baseline, attaining an overall R@10 of 0.365 and retrieving every quotation within its ten highest-ranked verses. The best zero-shot dense model achieves a comparable overall score of 0.360 while performing better on allusions. Fine-tuning DFM-large raises its overall R@10 from 0.265 to 0.508 and more than doubles its performance on allusions, from 0.138 to 0.339. However, evaluation against editorial annotations alone understates the model's scholarly usefulness: a literary scholar judged seven of 30 selected rank-one predictions counted as false positives to be meaningful additional references. These findings show both the potential and the epistemic limits of computational intertextual retrieval. Rather than treating scholarly annotations as exhaustive or model outputs as discoveries, we propose retrieval models as heuristic co-readers that recover documented references and generate candidates for expert-led close reading.",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.35765v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35759v1",
+    "title": "Scaling Long-Form Story Generation via Narrative State Tracking",
+    "published": "2026-09-28T17:59:09Z",
+    "authors": [
+      "Zhennan Wan",
+      "Jianfei Chen"
+    ],
+    "abstract": "LLMs have demonstrated strong capabilities in creative writing. However, scaling them to full-length novels remains challenging, as maintaining narrative consistency becomes increasingly difficult. Existing story-generation methods typically focus on stories of up to about ten thousand words, leaving their ability to scale to full-length novels underexplored. In this work, we introduce Narrative State Tracking Agent (NstAgent), a training-free agentic framework that allows LLMs to track a structured narrative state including characters, past events and future requirements. We extend an existing benchmark to compare narrative consistency across lengths, and use it together with a writing-quality benchmark to systematically evaluate stories ranging from 10K to 100K words. We show that NstAgent achieves better narrative consistency and writing quality as stories grow longer, and neither of them degrades noticeably as length increases, suggesting that it provides an effective approach to scaling story generation toward full-length novels.",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.35759v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35749v1",
+    "title": "Towards Communication-Efficient Social Intelligence in Language Agents",
+    "published": "2026-09-28T17:57:16Z",
+    "authors": [
+      "Linxiao Gong",
+      "Yijie Xu",
+      "Tianfu Wang",
+      "Yin Wu",
+      "Yili Wang",
+      "Xingbo Yao",
+      "Huizai Yao",
+      "Xilin Xia",
+      "Haowen Yang",
+      "Hui Xiong"
+    ],
+    "abstract": "Socially intelligent language agents must negotiate, coordinate, and resolve conflicting preferences while respecting the time and attention of both participants. Balancing these demands is challenging because agents must convey enough to address a partner's constraints and advance their goals without adding words that do not help the interaction. In this paper, we propose Teacher-Assisted Communication Training (TACT) to improve social goal attainment while reducing communication cost, making interactions with agents more productive and less demanding. We first characterize communication efficiency in terms of action strategy and expression, whose effects extend beyond the current utterance to the partner's response and subsequent exchanges. We design TACT to revise student-generated actions, test the revisions through partner responses, and distill useful feedback into the student. An expression specialist removes unnecessary detail while preserving the intended action, while a strategy specialist proposes alternatives that may better address the partner's constraints. To determine which revision helps, TACT samples a partner response for each candidate and selects a teacher reference by balancing local goal support against action-token cost. That reference guides on-policy distillation on the student's own generation prefixes, allowing the student to act independently at deployment. We evaluate TACT on SOTOPIA and AgentSense. On SOTOPIA, it achieves the highest Goal among the evaluated methods on All and Hard while using substantially fewer target tokens than SFT+SDPO. On AgentSense, it improves goal success over the initial student while reducing target tokens and interaction messages.",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.35749v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35741v1",
+    "title": "Shockingly Simple Self-retrospection Improves Agentic Models Without RL",
+    "published": "2026-09-28T17:54:24Z",
+    "authors": [
+      "Jonathan Light",
+      "Christopher Zhang Cui",
+      "Jeonghye Kim",
+      "Roger Creus Castanyer",
+      "Emiliano Penaloza",
+      "Zhengyan Shi",
+      "Alessandro Sordoni",
+      "Marc-Alexandre Côté",
+      "Xingdi Yuan",
+      "Minseon Kim"
+    ],
+    "abstract": "People learn not only by repeating successful actions, but also by recounting and explaining their experiences, revising their understanding to guide future behavior. Can a language-model agent improve its future actions by training only on explanations of its own experience? We investigate this question by studying Retrospection-Only Fine-Tuning (ROFT), a minimal online procedure designed to isolate the effect of explanation-only training on subsequent behavior. The agent attempts a task, observes available feedback, generates a retrospective explanation, and is fine-tuned with a next-token prediction loss on the explanation tokens alone. The procedure uses neither an external teacher nor a reward-based policy update. In software-engineering experiments with Qwen3.5-4B, ROFT is trained on problems with mixed successful and unsuccessful base-model attempts. On held-out SWE-bench Verified and Pro, it reaches 49.2% and 26.8% solve rates after 20 updates without using a verifier, compared with GRPO's 48.0% and 25.3% after 40 updates in the evaluated runs, and makes faster early progress in training time and sampled attempts. It also learns to solve individual tasks on which all 64 sampled base-model attempts failed, showing that learning can begin without any initially successful trajectories. Behavioral analyses find that ROFT indirectly assigns credit to actions, encouraging good actions and discouraging incorrect ones. Moreover, prompting retrospections to emphasize more direct solutions yields shorter subsequent attempts even without an explicit length penalty. Together, these findings show that learning to explain can also improve learning to do, establishing self-generated retrospections as useful training targets and motivating further study of explanation-to-action transfer.",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.35741v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35738v1",
+    "title": "Harness Learning Enables Generalizable Test-Time Adaptation",
+    "published": "2026-09-28T17:52:54Z",
+    "authors": [
+      "Alvin Zhang",
+      "Xuecheng Liu",
+      "Zixuan Wang",
+      "Fahim Tajwar",
+      "Daman Arora",
+      "Ruslan Salakhutdinov",
+      "Daniel Khashabi",
+      "Yuda Song",
+      "Andrea Zanette"
+    ],
+    "abstract": "A language-model agent is jointly defined by its model and its harness, the executable program that organizes model calls, tool use, and information flow. Because different tasks call for different ways of organizing these operations, the harness needs to be adapted using feedback from the task at hand. We introduce harness learning, which trains a proposer model to revise a solver's harness using execution feedback. We formulate this process as meta-learning over executable programs, with harness revisions playing the role of weight updates in gradient-based adaptation. We train the proposer with reinforcement learning, using the task performance of revised harnesses as the reward. At test time, the proposer uses feedback from successive executions on a new task to refine the harness, without performing any parameter-space update. Experiments on reasoning and multi-hop question answering show that harness learning improves revision quality and that the ability to adapt at test time transfers to unseen tasks. Policies trained on individual revisions can continue improving harnesses over multiple rounds, while the benefits of training on revision sequences vary across settings. These findings suggest a path towards continually learning agents that turn accumulated experience into generalizable improvements.",
+    "category": "cs.CL",
+    "link": "https://arxiv.org/abs/2609.35738v1",
+    "topic": "计算机/自然语言处理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35770v1",
+    "title": "FurE: Efficient Instance-Specific 3D Fur Reconstruction without Animal-Fur Datasets",
+    "published": "2026-09-28T17:59:58Z",
+    "authors": [
+      "Srinjay Sarkar",
+      "Prakhar Kaushik",
+      "Soumava Paul",
+      "Alan Yuille"
+    ],
+    "abstract": "Realistic and editable animal fur reconstruction from multi-view images is challenging due to fine-scale detail, self-occlusion and obfuscation, and, unlike human hair, the lack of animal-fur datasets. Fur usually covers most of an animal's body, with large inter-species and intra-species variability. We present FurE, an efficient strand-based animal fur reconstruction method that recovers a per-strand, editable groom by optimizing a root-conditioned latent field, decoded into strand geometry via a PCA-based decoder. We reconstruct a defurred animal body using local fur-thickness cues from a surface-constrained Gaussian Frosting representation together with part-based priors. We further show that a PCA-based decoder learned from human-hair strand data can alleviate animal-data scarcity while enabling substantially faster optimization. FurE achieves a 10x speedup in strand training over current SOTA dense per-strand optimization while retaining strand fidelity and generalizing across synthetic and real-world sequences, with quantitative and qualitative validation despite the reduction in training time.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.35770v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35767v1",
+    "title": "Learning Native Reflection in Unified Models with Interleaved Reinforcement Learning",
+    "published": "2026-09-28T17:59:36Z",
+    "authors": [
+      "Yijia Fan",
+      "Ziqi Huang",
+      "Zhongang Cai",
+      "Yan Li",
+      "Zimo Wen",
+      "Wanqi Yin",
+      "Haiwen Diao",
+      "Ziwei Liu"
+    ],
+    "abstract": "Unified multimodal models can both look at and render images, so in principle they can repair their own generations: diagnose what an image gets wrong, revise it, observe the result, and diagnose again. Whether a revision helps is known only after it is rendered, so the reflection text and the image generation must be learned jointly, over the whole loop. Supervised fine-tuning (SFT) on reflection trajectories gives a cold start but does not find the high-success repair paths, and naive RL that optimizes only the renderer or only one head leaves most of the gain untapped. We introduce UMM-Reflection, which applies reinforcement learning (RL) to complete reflection trajectories inside one unified model: sibling trajectories share one initial image, so the group-relative advantage compares reflection strategies, and one trajectory-level advantage updates both the reflection tokens and the flow-based revisions, avoiding the combinatorial blow-up of per-round credit assignment. Unlike single-round editing or pipelines with an external critic, credit flows across rounds and to both roles of the same model, and no verifier is needed at inference. On BAGEL, UMM-Reflection improves GenEval by 12.05 points over SFT, and the gains transfer to WISE (+10.97), OneIG-Bench (+3.48), and T2I-CompBench++ (+4.63), none of which is used in training.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.35767v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35745v1",
+    "title": "Copy the Same, Distill the Difference: Initializing Linear Vision Transformers",
+    "published": "2026-09-28T17:55:21Z",
+    "authors": [
+      "Huaiyuan Qin",
+      "Muli Yang",
+      "Gabriel James Goenawan",
+      "Shiqi Huang",
+      "Min Kass Chong",
+      "Wahyu Wiratama",
+      "Peng Hu",
+      "Chen Gong",
+      "Wu Liu",
+      "Xi Peng",
+      "Chun Jian Ho",
+      "Hongyuan Zhu"
+    ],
+    "abstract": "Linear Vision Transformers (ViTs) are designed to replace the attention in Softmax ViTs with the linear-complexity attention operator for more efficient token routing, but they require from-scratch pre-training and typically underperform the original Softmax version. How to initialize linear ViTs both efficiently and effectively still remains unclear. In this work, we explicitly ask: given that most foundation ViTs are built on the mainstream Softmax attention, can linear ViTs benefit from their pre-trained weights? Recent works on Attention Transfer show that attention is the effective transferable component between Softmax ViTs, suggesting attention alone suffices for such reuse. However, we find the opposite for Softmax-to-linear transfer. The attention weights are operator-specific: copying them barely helps, and is sometimes even worse than random initialization. Instead, the attention's token routing behavior can be recovered through distillation with a proper loss design, letting linear ViTs reduce the gap and even match Softmax ones. In contrast, the MLP weights, which carry the learned representation, are operator-agnostic: they can be transferred by simple direct copying, which already carries most of the benefit of the pre-trained weights. Thus, copying MLPs can serve as an effective foundation for Softmax-to-linear transfer: paired with the distilled attention, linear ViTs eventually close the remaining gap and even surpass Softmax ones. These findings hold consistently across various linear ViT variants, different model sizes, and diverse datasets. We hope this study deepens the understanding of reusing pre-trained weights across attention operators: copy what stays the same and distill what differs, to recover the benefit across the Softmax-to-linear boundary.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.35745v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35744v1",
+    "title": "FinAutoRubric: Expert-Guided Automatic Rubric Generation for Evaluating Financial Research Agents",
+    "published": "2026-09-28T17:55:06Z",
+    "authors": [
+      "Hoyoung Lee",
+      "Suyeol Yun",
+      "Jack Haverty",
+      "Yunju Cho",
+      "Meesong Kim",
+      "Daekyung Park",
+      "Sumin Kim",
+      "Jihoon Kwon",
+      "Jasmine Jia Geng",
+      "Andrew Chin",
+      "Yin Luo",
+      "Edward Tong",
+      "Yu Yu",
+      "Zach Golkhou",
+      "Minkyu Kim",
+      "Igor Halperin",
+      "Young Cha",
+      "Alejandro Lopez-Lira",
+      "Chanyeol Choi",
+      "Yongjae Lee"
+    ],
+    "abstract": "Evaluating finance research agents requires rubrics that reflect expert standards and fix the values correct as of an information cutoff. Expert-reviewed finance benchmarks rely on fixed, per-item rubrics, which are costly to extend and cannot encode each institution's own standard. In FinAutoRubric, experts specify reusable evaluation guidance, while agents and code carry out query-specific rubric generation, review, and validation. This expert guidance governs every agent, as prompts and as rules that code enforces, and a Task Bank of reusable criteria carries it across tasks. In long-horizon loops that follow the expert guidance, a writer agent researches every expected value and a reviewer agent verifies it, and failures escalate to a human. On three expert-authored finance benchmarks, its rubrics track expert scoring as closely as the strongest evaluated generator while stating the expert rubric's expected value for more criteria, their scores agree with human grading, and in-house analysts prefer them in a blind review. The released 100-query FinAutoRubric Benchmark, built from in-house analysts' key questions across 78 tasks and eight asset classes, shows that rubrics from an earlier model generation still leave headroom for a later one.",
+    "category": "cs.AI",
+    "link": "https://arxiv.org/abs/2609.35744v1",
+    "topic": "计算机/人工智能"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35764v1",
+    "title": "Reliability-Gated Fusion of Consumer Head and Foot IMUs for Lower-Body 3D Pose",
+    "published": "2026-09-28T17:59:22Z",
+    "authors": [
+      "Zhilin Guo",
+      "Boqiao Zhang",
+      "Oszkár Urbán",
+      "Josef Bengtson",
+      "Hakan Aktas",
+      "Wenzhao Li",
+      "Siyu Hong",
+      "Kyle Fogarty",
+      "Chenliang Zhou",
+      "Ali Senguel",
+      "Cengiz Oztireli"
+    ],
+    "abstract": "Sparse inertial pose estimation promises camera-free motion capture from consumer devices, but consumer sensors are unreliable: firmware-fused orientations are biased, mounting varies between sessions, and streams drift or drop out. On a new 35-take single-subject benchmark pairing an earbud head inertial measurement unit (IMU) with two smart-insole foot IMUs (SAM-3D-Body pseudo-ground-truth labels), we show the reliability problem is channel-level: a channel ablation isolates foot acceleration as the most informative input (66.6 mm vs. 79.0 mm head-only) and the firmware-fused foot orientation as the liability that destroys the gain. We therefore let the model learn how much to trust each channel of each stream: one temporal gate per stream per channel block, trained with an auxiliary reliability objective on synthetically corrupted pretraining data. The channel-gated model is the most accurate of our learned fusion arms on clean data (69.4 mm vs. 83.7 static, 86.6 ungated) and under every simulated fault (bias in training; drift, dropout eval-only); its gates suppress the natively biased foot-orientation channels on clean real data without test-time supervision and flag dropout bursts at 0.92-0.999 AUROC. Two contrasts: dropping a channel known a priori to fail is flat across foot faults but collapses when an unanticipated stream fails (head dropout: 92.9 vs. 79.3 mm); and a fine-tuned HMD-Poser is more accurate on clean data (64.4 mm) and nominally under drift, with no significant paired difference under bias or dropout, but a larger worst-case degradation from clean (+16.1 vs. +3.5 mm, single seed). Learning to gate reliability instead of sensor count is the lever for deployable sparse inertial capture. Code is available at https://github.com/ZhilinGuo/reliability-gated-imu-fusion.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.35764v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35743v1",
+    "title": "InfiniHand: Streaming World-Space Hand Motion Estimation from Egocentric Video",
+    "published": "2026-09-28T17:54:32Z",
+    "authors": [
+      "Kerui Ren",
+      "Kaiwen Song",
+      "Weiguang Zhao",
+      "Yuxi Wang",
+      "Yufei Liu",
+      "Bo Dai",
+      "Haoyu Guo",
+      "Chunhua Shen",
+      "Mulin Yu",
+      "Tao Lu",
+      "Junting Dong"
+    ],
+    "abstract": "World-space hand motion estimation from egocentric video requires recovering 3D articulated hand geometry while tracking camera egomotion. Existing approaches heavily rely on cascading independent hand pose estimators and SLAM systems, resulting in error accumulation, complex pipelines, and severe computational overhead. To address these limitations, we present InfiniHand, an end-to-end streaming feed-forward framework that jointly estimates MANO parameters, camera trajectories, and hand locations directly from uncalibrated egocentric video. InfiniHand integrates persistent spatiotemporal memory with hand-centered visual features, explicitly coupling camera motion with local hand geometry within a unified architecture. We train InfiniHand in two progressive stages by first learning robust camera-space hand priors and then extending to streaming world-space reconstruction. To support this process, we aggregate a pretraining corpus of approximately 5,000 hours of egocentric data across multiple public datasets. Extensive evaluations demonstrate that InfiniHand outperforms state-of-the-art baselines on in-domain benchmarks, achieving a 21.4% reduction in ARCTIC PA-p compared to ViDiHand while substantially mitigating world-space drift. Furthermore, InfiniHand generalizes robustly to in-the-wild videos and operates at 11.19 FPS, delivering more than twice the throughput of HaWoR.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.35743v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35734v1",
+    "title": "GeoVerse: World-Consistent Novel View Synthesis in Geometric Latent Space",
+    "published": "2026-09-28T17:51:48Z",
+    "authors": [
+      "Kerui Ren",
+      "Tao Lu",
+      "Linning Xu",
+      "Changjian Jiang",
+      "Mu Huang",
+      "Chunhua Shen",
+      "Mulin Yu",
+      "Bo Dai"
+    ],
+    "abstract": "Novel view synthesis from sparse images must reconcile faithful reconstruction of observed regions with plausible completion of unseen content, while maintaining world consistency across viewpoints. Existing geometry-based methods preserve observed scene structure but often struggle to complete unseen regions, whereas video generative models offer rich appearance priors but accumulate inconsistencies during sequential view generation. We propose GeoVerse, a framework that synthesizes world-consistent novel views by performing generation within the geometric latent space of a pretrained 3D foundation model and injecting appearance priors from a video generative model. Specifically, GeoVerse extracts multilevel features from Wan2.2 VACE and injects them into the geometric latent diffusion model via a ControlNet-style adapter, incorporating video-learned appearance priors to enhance structural completion. To enforce cross-view coherence, a global spatial memory continuously aggregates observed and synthesized content, reprojecting target-aligned guidance to anchor subsequent predictions to a shared scene representation. Extensive experiments across diverse datasets demonstrate improved visual quality and geometric consistency, with a 2.23 dB higher PSNR on DL3DV and 32.4% lower ATE on Mip-NeRF360 compared to GLD.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.35734v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35728v1",
+    "title": "FlowAct-R2: Beyond Talking Avatar via Streaming Multimodal References and Proactive Agent Planning",
+    "published": "2026-09-28T17:50:47Z",
+    "authors": [
+      "Ziyao Huang",
+      "Zhengkun Rong",
+      "Shiyang Qin",
+      "Shuang Liang",
+      "Wentao Hu",
+      "Yuxuan Luo",
+      "Yuan Zhang",
+      "Mingyuan Gao"
+    ],
+    "abstract": "We present FlowAct-R2, a framework for interactive humanoid video generation that combines continuous multimodal control with proactive agent planning. Our method consists of two coupled components. First, a Streaming Multimodal Reference Diffusion Transformer adapts the pretrained Seedance 2.0 Mini reference-to-video backbone to accept rolling action prompts, streaming audio, and dynamically updated image, audio, and video references. Video-driven rotary positional embeddings align reference chunks with the generation timeline, while reference-plus-image conditioning and partially noised historical motion frames preserve appearance and avoid accumulated drift. Second, a Proactive Interaction Agent separates pre-online planning from online scheduling and response: it prepares a persona, a long-horizon agenda, and reusable multimodal skills in advance, then autonomously schedules behaviors, responds to audience input, and handles interruptions during a live session. FlowAct-R2 supports real-time 720p generation and hour-scale streaming across entertainment streaming, live shopping, video chatting, and live vlogging.",
+    "category": "cs.CV",
+    "link": "https://arxiv.org/abs/2609.35728v1",
+    "topic": "计算机/计算机视觉"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35699v1",
+    "title": "Distillation Defenses Easily Break After Reinforcement Learning",
+    "published": "2026-09-28T17:40:32Z",
+    "authors": [
+      "Shidan Javaheri",
+      "Alexander Panfilov",
+      "Oliver Britton",
+      "Yarin Gal",
+      "Yonatan Gideoni"
+    ],
+    "abstract": "Distillation attacks copy the reasoning capabilities of closed-source large language models, allowing bad actors to replicate state-of-the-art performance at low cost. Attackers systematically collect a large volume of frontier model reasoning traces and then train (i.e., \"distill\") their own models on these traces. Existing defenses against distillation attacks are typically evaluated immediately after distillation, implicitly assuming attackers do not train their models any further. In this paper, we argue that a more realistic threat model includes further training with reinforcement learning after distillation. A misspecified threat model can give a false sense of security -- some defenses that seem effective after distillation can be broken after subsequent reinforcement learning. Practically, reinforcement learning lowers the bar for a distillation attack to be effective. We show that simple attacks can steal reasoning capabilities from existing closed-source language models using data easily obtainable from current APIs, yielding reasoning improvements equivalent to more sophisticated attacks that extract the full hidden traces. Results indicate that any distillation defense that leaks sufficient information to reconstruct approximate reasoning traces is likely ineffective. We conclude by discussing broader implications and batch-level distillation defenses which could be more effective.",
+    "category": "cs.CR",
+    "link": "https://arxiv.org/abs/2609.35699v1",
+    "topic": "计算机/安全与隐私"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35659v1",
+    "title": "Tracekit: Tamper-Evident Intent-Reasoning-Action Auditing for Autonomous Coding Agents",
+    "published": "2026-09-28T17:22:04Z",
+    "authors": [
+      "Bravish Ghosh"
+    ],
+    "abstract": "Autonomous coding agents read untrusted files, run shell commands and spawn sub-agents with little supervision, yet their record is usually an editable log. We present Tracekit, an open-source, dependency-free system that captures three channels for every agent session: what the human asked (intent), what the model said of its reasoning (self-report), and what it actually executed (actions). These are written to a hash-chained, externally anchorable ledger and cross-checked. Tracekit hooks into Claude Code's lifecycle events, reconstructs multi-agent hierarchies, gates tool calls with a pre-execution policy, accepts events from other agents via an SDK or HTTP API, and renders a live observer that re-verifies the ledger in the browser. We evaluate Tracekit in five experiments. (1) Across 1,600 random mutations, the chain detects every edit, deletion, reordering, forged insertion and torn write; tail truncation and full re-chaining are caught only by anchors, with detection falling to 0.47 at an anchoring interval of 300 records, matching a closed-form model. (2) A hook costs 23.9 ms median, flat up to 100,000 ledger records, and the chain stays correct under 16 concurrent writers. (3) A regular-expression gate blocks only 18 of 44 harmful tool calls (41%) while wrongly blocking 3 of 40 benign ones; trivial rewrites evade it. (4) In 14 real Claude Code runs, the agent never acted on four planted indirect prompt injections and disclosed each. The provider withheld the text of all 27 thinking blocks, so self-report was limited to visible prose. (5) With seeded-fault splicing, a new method that inserts concealed misaligned steps into real traces, over 63 traces and 126 reviewer calls, rule flags caught 40/49 (82%) of faulted traces and an independent LLM reviewer caught 98/98 (100%), with a false-positive rate of 1/14 on unmodified traces. We release the system, harness and all traces.",
+    "category": "cs.CR",
+    "link": "https://arxiv.org/abs/2609.35659v1",
+    "topic": "计算机/安全与隐私"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35633v1",
+    "title": "Succinct Arguments for QMA from Collapsing Hash Functions",
+    "published": "2026-09-28T17:02:06Z",
+    "authors": [
+      "James Bartusek",
+      "Giulio Malavolta"
+    ],
+    "abstract": "We prove the existence of succinct arguments for QMA, assuming only the existence of collapsing hash functions. This is the first scheme that relies only on unstructured ``Minicrypt'' assumptions, which are not known to imply public-key encryption. Our main technical contribution is a quantum-succinct \\emph{claw-state generation} protocol that allows us to bootstrap a small number of quantum correlations into an arbitrarily large number of claw-state correlations, using classical communication only. This improves upon the work of [Zhang, STOC 2021], having better round complexity, a proof in the standard model, and being overall much simpler. This yields a quantum-succinct blind delegation of quantum computation protocol from one-way functions, which we plug into the communication-compression compiler of [Bartusek, Liu, and Malavolta, EUROCRYPT 2026] to obtain succinct arguments for QMA.",
+    "category": "cs.CR",
+    "link": "https://arxiv.org/abs/2609.35633v1",
+    "topic": "计算机/安全与隐私"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35596v1",
+    "title": "SEABench: Benchmarking Endogenous Misalignment In Self-Evolving Agents",
+    "published": "2026-09-28T16:46:25Z",
+    "authors": [
+      "Saswat Das",
+      "Parvati Viswanathan",
+      "Daniel Donnelly",
+      "Chang Huang",
+      "Sahar Abdelnabi",
+      "Ferdinando Fioretto"
+    ],
+    "abstract": "Self-evolving LLM agents have gained prominence for their ability to improve after deployment by modifying their harness, including their controller instructions, memory management protocols, and reusable tools and skills, in response to user and environment feedback. However, locally useful updates may persist into later tasks where they produce unsafe behavior, even without direct adversarial influence. To study this risk, we introduce SEABench, a benchmark for studying endogenous misalignment arising from agent self-evolution, with 48 longitudinal task sequences that span multiple evolution surfaces, task domains, and harm types in a rich personal-assistant environment. To account for the stochasticity inherent in agentic operations, we provide an adaptive trajectory discovery pipeline that probes for failures while preserving original task intent and supports causal attribution through paired non-evolving agents and attribution scores. Our evaluation across multiple recent LLMs, evolution surfaces, and harm types reveals that self-evolution indeed increases task completion rates but often at the cost of safety failures that are absent for paired non-evolving baseline agents. We also show that qualitatively different safety behaviors emerge across evolution surfaces and harm types. Further, we show that this divergence in safety behavior is reflected in agents' chain-of-thought reasoning, which yields an effective monitoring strategy that can mitigate unsafe behavior with a low false positive rate.",
+    "category": "cs.CR",
+    "link": "https://arxiv.org/abs/2609.35596v1",
+    "topic": "计算机/安全与隐私"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35576v1",
+    "title": "Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents",
+    "published": "2026-09-28T16:34:52Z",
+    "authors": [
+      "Sidharth Pulipaka",
+      "Ansh Sharma",
+      "Stanislau Hlebik",
+      "Leonidas Raghav",
+      "Vyas Raina",
+      "Ivaxi Sheth",
+      "Mario Fritz"
+    ],
+    "abstract": "Large language models are increasingly deployed as stateful assistants that retain information across interactions and use tools to read, modify, and create persistent artifacts. As these artifacts are shared between users, they form an indirect communication channel between otherwise independent assistants. We study a failure mode in which this channel enables self-propagating attacks. We introduce artifact-mediated propagation, where adversarial content introduced through an artifact (e.g. a report), is stored in an assistant's persistent memory, reproduced in a subsequently created artifact, and acquired by another assistant that later reads it. We evaluate this process in temporal human-agent universes that model artifact exchange between independently operated assistants over time, measuring whether an attack survives successive hand-offs, how many hops it reaches, and how broadly it spreads. We find that attacks can propagate across multiple independent assistants and persist over extended interaction sequences. In larger simulated environments, even GPT-5.6 Luna exhibits substantial spread, reaching 60-80% of agents with propagation chains extending to eight hops. These results show that persistent artifacts can act as durable carriers of adversarial state, allowing attacks to outlive individual interactions and spread across isolated assistants.",
+    "category": "cs.CR",
+    "link": "https://arxiv.org/abs/2609.35576v1",
+    "topic": "计算机/安全与隐私"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35557v1",
+    "title": "The Compiler May Read It, the Agent May Not: Keeping Part of a Research Code Away from a Coding Agent",
+    "published": "2026-09-28T16:27:41Z",
+    "authors": [
+      "Shobhan Roy"
+    ],
+    "abstract": "The compiler must read modules a physics-based solver cannot build without; the coding agent must not read that intellectual property. The harness does not ship that rule. We classified fifteen read routes against a container, permission rules and a sandbox. None of the three can tell which program is reading.",
+    "category": "cs.CR",
+    "link": "https://arxiv.org/abs/2609.35557v1",
+    "topic": "计算机/安全与隐私"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35552v1",
+    "title": "INTCC: A Framework for Interactive Confidential Computing",
+    "published": "2026-09-28T16:25:38Z",
+    "authors": [
+      "Qingzhe Bing",
+      "Kaiyuan Zhang",
+      "Yinqian Zhang"
+    ],
+    "abstract": "Confidential computing leverages Trusted Execution Environments (TEEs) to ensure the confidentiality and integrity of data in use. However, TEEs rely on remote attestation to guarantee the integrity of their initial memory state. This model is fundamentally at odds with interactive development workflows. In scenarios like LLM fine-tuning and exploratory data analysis, data processors need human-in-the-loop capabilities, including dynamic code injection, intermediate state inspection, and hyperparameter tuning, all of which inherently violate the static, one-time integrity guarantees of traditional remote attestation. To reconcile this tension, we propose the interactive confidential computing paradigm, a system architecture enabling untrusted data processors to execute dynamic, non-deterministic operations within TEEs without compromising data confidentiality. Driven by the insight that inherently unmeasurable human interaction must be excluded from the Trusted Computing Base (TCB), we logically partition the TEE into an interactive controller and a verifiable runtime. To realize this paradigm, we present INTCC, a framework featuring three key mechanisms: (1) a proxy-based dispatch system to preserve the native development experience; (2) a fine-grained information flow control mechanism based on a security lattice to prevent data leakage; and (3) a privacy-preserving verifiable execution mechanism to guarantee the runtime compliance of dynamic workflows. We implement INTCC on AMD SEV-SNP using Confidential Containers and evaluate it across diverse real-world workloads. Our experiments demonstrate that INTCC effectively balances security and interactivity, incurring a practical overhead of less than 5% for LLM fine-tuning and under 17% for data analysis relative to baseline execution.",
+    "category": "cs.CR",
+    "link": "https://arxiv.org/abs/2609.35552v1",
+    "topic": "计算机/安全与隐私"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35506v1",
+    "title": "Detecting False Data Injection and Unstable Operation in Smart Grid via System-Aware Graph Boundary Learning",
+    "published": "2026-09-28T16:05:42Z",
+    "authors": [
+      "Emad Efatinasab",
+      "Denis Donadel",
+      "Mirco Rampazzo",
+      "Chuadhry Mujeeb Ahmed"
+    ],
+    "abstract": "Cyber-physical power systems increasingly rely on data-driven tools to detect instability and support reliable grid operation. However, reliable stability prediction is difficult when unstable operating configurations are rare, sensitive, or unavailable during model development, since collecting such data safely and at scale is often impractical. At the same time, False Data Injection (FDI) attacks can manipulate reported system parameters to trigger false instability alarms or conceal unsafe operation, and such threats in Decentral Smart Grid Control (DSGC) systems remain largely unexplored. These challenges are rarely addressed jointly, leaving a gap between stability prediction and attack detection that this work aims to close. In this paper, we introduce StarGNN, a graph learning framework that learns the stable operating region exclusively from clean stable configurations and uses a single abnormality score to flag reported configurations that should not be trusted as evidence of safe operation, covering both genuine instability and unseen FDI manipulations. Each configuration is represented as a producer-consumer star graph and processed by a role aware graph neural network, with physics constrained pseudo-negatives generated by perturbing reaction time and price response parameters standing in for the unavailable unstable and attack data. A single threshold, calibrated only on held-out stable data, is used without task or attack specific adjustment. Evaluated on nine unseen FDI scenarios, StarGNN detects between 0.780 and 0.973 of attacks on stable configurations and retains a post attack instability recall between 0.972 and 0.999 on unstable ones, with 0.899 recall against a stronger adaptive attacker, showing that stable-only boundary learning can support both stability prediction and attack detection without access to genuine unstable labels or attack samples during training.",
+    "category": "cs.CR",
+    "link": "https://arxiv.org/abs/2609.35506v1",
+    "topic": "计算机/安全与隐私"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35434v1",
+    "title": "LLM-Assisted Automatic Security Proofs for Cryptographic Protocols: How Far Are We?",
+    "published": "2026-09-28T15:38:52Z",
+    "authors": [
+      "Tianjian Liu",
+      "Shicheng Feng",
+      "Jin'ao Shang",
+      "Xiaoting Lyu",
+      "Bin Wang",
+      "Zonghua Zhang",
+      "Lei Xue",
+      "Wei Wang"
+    ],
+    "abstract": "Large language models (LLMs) have shown strong potential for assisting software and security analysis tasks, yet their effectiveness in cryptographic symbolic protocol verification remains insufficiently understood. In this paper, we conduct the first systematic evaluation of the capability of state-of-the-art LLMs in cryptographic symbolic protocol verification. To quantify this capability, we propose \\textsc{CRoST} (Coverage Rate of Solve Tree), a proof-based metric derived from the verifier's proof skeleton that measures the similarity between generated lemmas and reference lemmas. We then establish the rationale of \\textsc{CRoST} through both theoretical analysis and empirical validation. The evaluation results show that state-of-the-art models achieve 38.82\\% coverage on average, with 14.4\\% of generated lemmas exceeding 80\\% coverage, indicating that LLMs can already generate useful lemmas to a certain extent. However, they still exhibit non-trivial failure modes on complex multi-phase protocols, show diminishing returns under naive scaling, and incur substantial verification overhead. These findings clarify the practical potential and limitations of LLMs for protocol verification and motivate future work on complex real-world protocols.",
+    "category": "cs.SE",
+    "link": "https://arxiv.org/abs/2609.35434v1",
+    "topic": "计算机/软件工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35381v1",
+    "title": "MCP Error Messages Written for Developers Hurt the Most Capable Agents Most",
+    "published": "2026-09-28T15:14:46Z",
+    "authors": [
+      "Xiaonan Xu",
+      "Wenjing Wu"
+    ],
+    "abstract": "Many Model Context Protocol (MCP) servers wrap web APIs built for human developers, and their error messages tell the reader to run a command, edit a configuration, open a web page or wait. Many agents that read them can only call the server's tools. In 150 widely used MCP servers, 949 of 3,001 error messages tell the caller what to do next, and half of these steps depend on something the server cannot see about the caller. On credential errors, 62 of 67 steps ask for a terminal command, a configuration change or a web page; on rate limits, 20 of 30 say to wait and retry without naming the call to repeat. We tested five OpenAI models that act only through the tools of Berkeley Function Calling Leaderboard tasks, and the agents did what the step said. On expired credentials, a terminal command in the step left 45% of tasks recovered, and the loss it caused grew from 18 points for GPT-5.5 to 69 for GPT-6 Astra. On a rate limit, GitHub's \"Wait before retrying.\" left 6%. We tested two remedies. For MCP developers, naming a server tool in the step raised recovery on expired credentials to 84%, with the login tool in place of the command, and on a rate limit to 88%, with the call to repeat in place of the bare wait. For agent developers, deleting the step with a one-sentence prompt before the model reads it raised recovery on expired credentials to 82%.",
+    "category": "cs.SE",
+    "link": "https://arxiv.org/abs/2609.35381v1",
+    "topic": "计算机/软件工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35357v1",
+    "title": "Do Coding Agents Reuse Existing Code or Reinvent the Wheel?",
+    "published": "2026-09-28T15:04:27Z",
+    "authors": [
+      "Dongsheng Ma",
+      "Sizhe Wang",
+      "Xinyi Huang",
+      "Zhengren Wang",
+      "Yuhan Wang",
+      "Luyang Si",
+      "Xincheng Wei",
+      "Wentao Zhang"
+    ],
+    "abstract": "Coding agents are increasingly deployed for iterative development on real repositories, yet existing evaluation barely answers a basic question: \\emph{do coding agents reuse existing code or reinvent the wheel?} The question matters: every duplicated implementation is a fix applied twice and agents produce code far faster than humans can audit, so redundancy accumulates unsupervised. Thus, we present \\textbf{RepoReuse}, a multi-turn benchmark for auditing code reuse in real repositories, where requirements are revealed turn by turn and the workspace accumulates across turns. It is built by a fully automated pipeline combining AST-based dependency graphs, guided evidence collection, and execution-verified task synthesis, and scales readily to new repositories. Beyond pass rates, we measure the reuse rate together with recall and cross-turn structural redundancy. An audit over 3{,}000 turns shows that agents progressively stop exploring relevant repository code, reuse their own history less even when it is fully in the workspace, and leave duplicated logic in 50.8\\% of task chains by turn~5---all while pass rates barely move. Such deficiencies are invisible to pass rates, underscoring the need to evaluate code generation beyond functional correctness.",
+    "category": "cs.SE",
+    "link": "https://arxiv.org/abs/2609.35357v1",
+    "topic": "计算机/软件工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35281v1",
+    "title": "Is there a future for models in the LLM era?",
+    "published": "2026-09-28T14:33:09Z",
+    "authors": [
+      "Marco Calamo",
+      "Massimo Mecella",
+      "Monique Snoeck"
+    ],
+    "abstract": "In an era where software development is deeply tied with Large Language Models, does Model Driven Engineering (MDE) still make sense? This raises the question of the extent to which MDE can be successfully combined with an LLM approach to address the downsides of each approach separately. In this paper, we try to answer that question by investigating a central Research Question: Can Agents powered by Large Language Models improve code generated from UML diagrams and text specifications by Model Driven Engineering (MDE) tools? To investigate this problem, we developed a novel LLM-powered Multi-Agentic approach called ARTHUR (Architecture Refactoring Through Hybrid UML Reasoning), a framework that aims at combining the reliability of MDE and the ease of use of LLMs. ARTHUR is designed to refactor legacy Java code produced by traditional, rule-based, MDE code generators from UML diagrams. To asses the answer to our question, we have refactored the legacy code of several projects from our custom dataset crafted for this purpose. \\name{} which made it possible to add support for modern frameworks like Spring Boot, while ensuring compliance with Model-Based Testing techniques to verify that the code still corresponds to the initial model's specifications. We then measured the results obtained in terms of time and cost, passing test rate, and \\texttt{compile@k}, \\texttt{pass@k} and \\texttt{pass$^k$} metrics. We also observed the effect of generating code directly from the conceptual model without the refactoring. Our preliminary test results show that MDE could not be more far from retirement, after all.",
+    "category": "cs.SE",
+    "link": "https://arxiv.org/abs/2609.35281v1",
+    "topic": "计算机/软件工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35199v1",
+    "title": "Trajectory-Level Security Debt in LLM Coding Agents",
+    "published": "2026-09-28T13:57:29Z",
+    "authors": [
+      "Prateek Kumar Rajput",
+      "Abdoul Kader Kabore",
+      "Yewei Song",
+      "Melissa Tessa",
+      "Tailia Malloy",
+      "Jacques Klein",
+      "Tegawendé F. Bissyandé"
+    ],
+    "abstract": "LLM coding agents can traverse hundreds of intermediate code states before submitting a solution. Evaluating only the final artifact leaves the evolution of security findings unmeasured. We introduce the Security Debt Line Integral (SDLI), which accumulates static-analysis risk when an agent reaches a new best test pass ratio. We instantiate it with four static application security testing (SAST) tools and study artifacts from 830 passing SWE-bench runs, 712 ProgramBench final workspaces, and 13 public MirrorCode trajectories. The two large populations use the final-state special case of SDLI. Two-tool Common Weakness Enumeration (CWE) class agreement occurs in 3.9% of SWE-bench runs and 26.2% of the 80 ProgramBench runs passing at least 90% of official tests. These are scanner findings, not validated vulnerability rates. Excluding three advisory-heavy classes reduces the latter rate to 6.2%. Same-task runs differ in their measured scores, while one reconstructed ProgramBench run exposes persistent findings from its first implementation write. A repair case study reduces the scanner signal while preserving tested behavior, but also reveals sensitivity to equivalent API rewrites. SDLI offers a way to study progress and security findings together. Its value for steering agents and confirming exploitable vulnerabilities remains to be established.",
+    "category": "cs.SE",
+    "link": "https://arxiv.org/abs/2609.35199v1",
+    "topic": "计算机/软件工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35182v1",
+    "title": "Research-Native by Construction: Minimal Nodes, Re-verifiable Workflows, and Compounding Memory for Long-Horizon Scientific Agents",
+    "published": "2026-09-28T13:47:05Z",
+    "authors": [
+      "Di Wang",
+      "Yu Liu",
+      "Bing Cui",
+      "Chaoqun Ji",
+      "Dongyuan Ni",
+      "Jingyu Lu",
+      "Kunlei Cui",
+      "Pu Qin"
+    ],
+    "abstract": "We describe AfS (Agent for Science), a platform built for long-horizon scientific work, where a project runs for tens of hours across dozens of agent runs with a human present only occasionally. Most agents for science are general coding agents with a skills folder attached, and they inherit that lineage's failure mode: under pressure to finish, they fabricate, skip, or smooth over. Our design rests on one claim: most of the credibility of machine-made research can be moved from asking the model to behave to making the non-compliant state unrepresentable. We encode research discipline as mechanically enforced laws (commitment before measurement; unforgeable freezing; reports are not facts; evidence persists but verdicts do not; negative results are first-class; mechanical questions to the framework and semantic judgment to the model), organized around three time horizons: a minimal set of research nodes within a run, an inquiry contract with frozen closure conditions and a hash-chained artifact ledger within a project, and a two-tier knowledge base with promotion by rewriting across projects. This is a system description written under one rule: each mechanism appears in exactly one place, with the invariant it enforces, the failure it prevents, the way it is realized, and the cost it imposes. It covers the node contract, the write-path gates, the two-tier memory, and the runtime substrate. Three traces walk real failure attempts through the mechanisms that catch them, and two closed campaigns are included as worked illustrations rather than as an evaluation. We report no benchmark: a process-integrity suite that would support quantitative comparison is under construction, and what we can measure today is only the operating cost of the machinery.",
+    "category": "cs.SE",
+    "link": "https://arxiv.org/abs/2609.35182v1",
+    "topic": "计算机/软件工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35746v1",
+    "title": "Near-Optimal Bounds for Testing Residual-String Equality and Parenthesis Languages",
+    "published": "2026-09-28T17:56:02Z",
+    "authors": [
+      "Hadar Strauss"
+    ],
+    "abstract": "Residual-String Equality, denoted $\\texttt{ResStringEq}$, is the property consisting of all pairs of strings over $\\{0,1,*\\}$ that are equal after deleting all `$*$' symbols from them. This property was first introduced by Fischer, Magniez, and Starikovskaya (SODA 2018), who used it to show a lower bound on testing the $\\texttt{Dyck}$ languages, where $\\texttt{Dyck}_m$ is the language consisting of balanced sequences of parentheses over $m$ parenthesis types. They showed that testing $\\texttt{ResStringEq}$ on inputs of length $n$ requires $Ω(n^{1/5})$ queries, and presented a reduction from testing $\\texttt{ResStringEq}$ to testing $\\texttt{Dyck}_m$ where $m \\geq 2$. Furthermore, they showed that $\\texttt{Dyck}_m$ can be tested with $O(n^{2/5+δ})$ queries for every constant proximity parameter, where $δ>0$ is an arbitrarily small constant. In this work, we nearly close the remaining gap, by showing that testing $\\texttt{ResStringEq}$, and hence $\\texttt{Dyck}_m$ where $m\\geq 2$, requires $Ω(n^{2/5})$ queries. We also show a stronger lower bound of $Ω(\\sqrt{n})$ for testers that make non-adaptive queries. We establish that the $Ω(\\sqrt{n})$ bound is nearly tight, by presenting a non-adaptive tester for $\\texttt{ResStringEq}$ that uses $O(n^{1/2+δ})$ queries for an arbitrarily small constant $δ>0$. Furthermore, we extend this non-adaptive tester to the $\\texttt{Dyck}$ languages, with the same query complexity. Finally, we improve the dependence on the proximity parameter $ε$ in the tester of Fischer, Magniez, and Starikovskaya, reducing it from $O(1/ε)^{\\mathrm{poly}(1/δ)}$ to $O(1/ε)^{O(\\log(1/δ))}$.",
+    "category": "cs.DS",
+    "link": "https://arxiv.org/abs/2609.35746v1",
+    "topic": "计算机/数据科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35693v1",
+    "title": "More Efficient Parallel $(Δ+1)$-Edge Coloring",
+    "published": "2026-09-28T17:38:43Z",
+    "authors": [
+      "Jeremy T. Fineman",
+      "Seyed Ali Mohammadi"
+    ],
+    "abstract": "This paper gives two parallel algorithms for $Δ+1$ edge coloring, where $Δ$ denotes the maximum degree of any vertex. The first is a deterministic parallel algorithm with $\\tilde{O}(Δ^3)$ span and $\\tilde{O}(m Δ^3)$ work. Our second algorithm and our main result is a more efficient randomized algorithm, achieving $\\tilde{O}(Δ^2)$ span and $\\tilde{O}(m Δ^2 )$ work both with high probability. These bounds substantially improve over the recent deterministic parallel algorithm of Elkin and Khuzman, which has $\\tilde{O}(Δ^4)$ span and $\\tilde{O}(m Δ^5)$ work. Our deterministic algorithm thus represents a $\\tilde{O}(Δ)$ improvement on span and $\\tilde{O}(Δ^2)$ on work compared to their algorithm, and our randomized algorithm improves the span and work by $\\tilde{O}(Δ^2)$ and $\\tilde{O}(Δ^3)$ factors, respectively. Moreover, our improvements do not come at the expense of larger logarithmic factors.",
+    "category": "cs.DS",
+    "link": "https://arxiv.org/abs/2609.35693v1",
+    "topic": "计算机/数据科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35668v1",
+    "title": "Optimal Query Complexity for Ground-State Preparation",
+    "published": "2026-09-28T17:26:19Z",
+    "authors": [
+      "Boyang Chen",
+      "Minbo Gao",
+      "Xinzhao Wang",
+      "Shuo Zhou"
+    ],
+    "abstract": "We determine the optimal query complexity of ground-state preparation to trace-distance error $\\varepsilon$ when an energy threshold in the spectral gap is known. Let $U_H$ be an $α$-block-encoding of a Hamiltonian with unique ground state $|ψ_0\\rangle$, and suppose $|\\langleψ_0|U_I|0\\rangle|\\geγ$ for a state-preparation oracle $U_I$. The threshold lies at least $Δ/2$ above the ground-state energy and at least $Δ/2$ below every excited-state energy. We give two algorithms that prepare a state within trace distance $\\varepsilon$ of the ground state. One uses $O((α/Δ)(γ^{-1}+\\log(1/\\varepsilon)))$ calls to $U_H$ in expectation; the other uses $O((α/(γΔ))\\log(1/\\varepsilon))$ calls to $U_H$ in the worst case. We prove a lower bound matching the expected query count; the corresponding worst-case lower bound follows from Somma and de Wolf [SdW26]. The respective bounds on calls to $U_I$ are $O(1/γ)$ in expectation and $O(γ^{-1}\\log(1/\\varepsilon))$ in the worst case. On $(N+1)$-dimensional systems, these $U_I$ bounds are also optimal when the expected or worst-case count of $U_H$ calls, respectively, is $o((α/Δ)\\sqrt N)$. Both algorithms use a constant-accuracy spectral filter to construct a purifier, which we then sequentially compose during amplitude amplification to prepare a state with constant overlap with the ground state. The expected-query algorithm repeats the preparation followed by one high-accuracy spectral filter until success. The worst-case algorithm uses filters of increasing accuracy and limits the total number of queries.",
+    "category": "cs.DS",
+    "link": "https://arxiv.org/abs/2609.35668v1",
+    "topic": "计算机/数据科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35648v1",
+    "title": "Learning sparse quantum states from single-qubit measurements",
+    "published": "2026-09-28T17:17:45Z",
+    "authors": [
+      "Su-un Lee",
+      "Liang Jiang",
+      "Kunal Sharma"
+    ],
+    "abstract": "We study the problem of learning a sparse quantum state, an $n$-qubit quantum state whose density matrix has at most $s$ nonzero matrix entries in an unknown product basis. While such states admit compact classical descriptions, they can carry long-range entanglement that prevents reconstruction from local reduced density matrices alone. Therefore, previous learning approaches addressed such long-range-entangled states using many entangling gates to extract the necessary information. In this work, we show that sparse states can nevertheless be efficiently learned using only single-qubit measurements. Specifically, when the sparsity $s$ is constant, our algorithm can learn sparse states from single-qubit measurements with polynomial sample complexity and classical computational complexity. When $s$ grows polynomially with $n$, sparse states can still be learned from single-qubit measurements with polynomial sample complexity, although efficient classical computation is not guaranteed in general. In this regime, however, the classical computational complexity becomes quasipolynomial when the state is sparse in an unknown basis that is a product of a known fixed finite set of single-qubit bases (e.g., eigenbases of Pauli operators). These results establish efficient learning of sparse states with long-range entanglement without entangling gates, and the single-qubit measurement requirements make our algorithms compatible with current quantum devices.",
+    "category": "cs.DS",
+    "link": "https://arxiv.org/abs/2609.35648v1",
+    "topic": "计算机/数据科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35555v1",
+    "title": "Competitive Random-Order Correlation k-Clustering",
+    "published": "2026-09-28T16:26:33Z",
+    "authors": [
+      "Mahsa Derakhshan",
+      "Andisheh Ghasemi",
+      "Rajmohan Rajaraman",
+      "Omer Wasim",
+      "Tegan Wilson"
+    ],
+    "abstract": "Correlation clustering has been extensively studied over the last two decades in many different computational models owing to its wide-ranging practical applications. The goal is to compute a partition of the vertex set such that the total number of disagreements, i.e. the sum of edges between clusters, and non-edges within clusters, is minimized. In this paper, we study correlation $k$-clustering, in which the total number of clusters is restricted to $k$. Correlation $k$-clustering is NP-hard, and while previous work has presented a polynomial time approximation scheme for constant $k$, there are no known results for general $k$. Our first result is a polynomial-time constant-factor approximation algorithm for correlation $k$-clustering for general $k$. The main focus of this work is in the more challenging online setting. Noting that the best competitive ratio under adversarial arrivals is known to be $Ω(n)$, we concentrate on the well-studied random-order model, where vertices arrive in random order and on arrival of a vertex, edges to its earlier-arrived neighbors are revealed. We prove a surprising lower bound of $Ω(\\log k)$-competitiveness for any online algorithm, which can be extended to $Ω(\\log n)$ when $k = \\text{poly}(n)$. Finally, the main result of this paper is a polylogarithmic upper bound on the competitive ratio for correlation $k$-clustering, using an algorithm inspired by the classic Pivot algorithm for correlation clustering.",
+    "category": "cs.DS",
+    "link": "https://arxiv.org/abs/2609.35555v1",
+    "topic": "计算机/数据科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35453v1",
+    "title": "Hermite Brings a Laptop: Analyzing Frieze-Jerrum Rounding Yields Improved Approximations for Clustering Problems",
+    "published": "2026-09-28T15:45:46Z",
+    "authors": [
+      "David García-Soriano",
+      "Atsushi Miyauchi"
+    ],
+    "abstract": "The Frieze-Jerrum rounding is a standard tool for rounding SDP relaxations of graph partitioning and clustering problems, assigning nodes to at most $k$ clusters using $k$ independent Gaussian vectors. Its analysis hinges on the collision probability $P_k(ρ)$ that two nodes whose SDP vectors have inner product $ρ$ are assigned to the same cluster. No tractable closed form for $P_k$ is known for $k\\geq 4$, making it difficult to certify approximation guarantees and hindering the systematic search for better algorithms. We develop a Hermite-coefficient certification framework to derive accurate and tractable bounds on $P_k$. Using the Hermite expansion of Gaussian noise stability, we express $P_k$ as a power series with nonnegative coefficients, reduce these coefficients to one-dimensional Gaussian integrals, and certify finitely many of them, yielding rigorous bounds on $P_k$ over the entire correlation range. Our framework yields strengthened polynomial-time approximations for several clustering problems. For MaxAgree Correlation Clustering, we derive a $0.7818$-approximation, the first improvement in two decades over the $0.7666$ ratio of Swamy (2004). On the hardness side, we show that the integrality ratio of the standard SDP relaxation is at most $0.802$, and that approximation beyond that is Unique Games-hard. We also improve the best known ratios for the variant with at most $K$ clusters, MaxAgree$[K]$ (e.g., from $0.77$ to $0.8151$ for $K=3$). For Max $K$-Cut we resolve, via a structural property of the Hermite expansion, a conjecture of de Klerk et al. (2004) characterizing the Frieze--Jerrum approximation ratio for every $K\\ge3$; we show that this ratio is tight, and determine it to within $10^{-6}$ accuracy for $K\\le16$. Finally, we reduce the additive approximation error for modularity maximization from $0.42084$ (Kawase et al., 2021) to $0.3790$.",
+    "category": "cs.DS",
+    "link": "https://arxiv.org/abs/2609.35453v1",
+    "topic": "计算机/数据科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35369v1",
+    "title": "A polylogarithmic higher-order Cheeger inequality",
+    "published": "2026-09-28T15:09:47Z",
+    "authors": [
+      "Yunpeng Li"
+    ],
+    "abstract": "Let $λ_k(G)$ be the $k$th eigenvalue of the normalized Laplacian of a finite undirected weighted graph, and let $ρ_G(k)$ be the minimum possible maximum conductance of $k$ disjoint nonempty vertex sets. We prove \\[ ρ_G(k)\\le C[1+\\log(k+1)]^5\\sqrt{λ_k(G)} \\] for an absolute constant $C$. The construction gives exactly $k$ sets and a bound in terms of $λ_k(G)$, with all boundaries and volumes measured in the original graph. More strongly, it yields $k$ nonnegative functions with pairwise disjoint supports and Rayleigh quotients $O([1+\\log(k+1)]^{10}λ_k(G))$. The proof uses independent local cutoffs whose lost covariance is controlled by conditioning on the loss along a principal direction in each cell. A regularized spectral embedding bounds cutoff energy on the entire original low eigenspace, while an adaptive construction reduces the remaining coefficient dimension by at least half at each stage. A dimension argument then converts almost rank-one local covariances into exactly $k$ scalar witnesses.",
+    "category": "cs.DS",
+    "link": "https://arxiv.org/abs/2609.35369v1",
+    "topic": "计算机/数据科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35337v1",
+    "title": "Pure Tail Constraints for Online Problems",
+    "published": "2026-09-28T14:58:08Z",
+    "authors": [
+      "Mateusz Basiak",
+      "Marcin Bienkowski",
+      "Yongho Shin",
+      "Agnieszka Tatarczuk"
+    ],
+    "abstract": "Controlling tail risk is an important objective in online optimization, and recently it has been studied in the context of competitive analysis. Continuing this line of research, we investigate pure tail constraints, which capture the tradeoff between expected and worst-case competitiveness. For two fundamental search problems, online bidding and line search, we derive the Pareto-optimal frontiers of this tradeoff. We then investigate another classic problem, TCP acknowledgment, which has structure similar to the iterated ski rental problem. There, we construct an algorithm whose tradeoff coincides with the known Pareto-optimal tradeoff for ski rental. The lower bounds for this problem are substantially more involved as the problem exhibits adaptive structure: an online algorithm observes requests of the adversary (packet arrivals) and may adaptively adjust its actions (acknowledgments) on this basis. We emphasize that all previous work on tail risk in the context of competitive analysis was restricted to non-adaptive problems, where the feedback given to an algorithm was essentially limited to a binary indicator of whether the algorithm has succeeded or not. Nonetheless, we identify a set of constraints implied by tail bounds in this adaptive setting, and show that they imply a nontrivial lower bound on the TCP acknowledgment problem.",
+    "category": "cs.DS",
+    "link": "https://arxiv.org/abs/2609.35337v1",
+    "topic": "计算机/数据科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35712v1",
+    "title": "Catalogue of Collinear Magnetic Structures in Stoichiometric Materials",
+    "published": "2026-09-28T17:45:59Z",
+    "authors": [
+      "Liangliang Huang",
+      "Houhao Wang",
+      "Yuanze Song",
+      "Ruixi Pu",
+      "Xiangang Wan",
+      "Feng Tang"
+    ],
+    "abstract": "Magnetic materials persistently serve as a fertile platform for exploring novel quantum emergent phenom ena and advancing information technologies. Reliably determining their magnetic structures (MSs), which is essential for understanding their emergent quantum properties, usually depends on experiments such as neutron scattering. Here, noting that around half of the MSs in MAGNDATA (a database of experimentally determined MSs) are collinear, we adopt the spin space groups (SSGs) to preset the candidate MSs for a given nonmagnetic crystal structure to be collinear from the outset. On the other hand, more than 80% of the collinear magnets in MAGNDATA are subject to maximal subgroups of nonmagnetic groups which are collinear SSGs, and we then enumerate all collinear MSs formed at Wyckoff positions by the maximal collinear SSG subgroups of the 230 nonmagnetic space groups. With such exhaustive enumeration, we categorize all symmetry-allowed collinear MSs for the 72,075 nonmagnetic stoichiometric structures in Inorganic Crystal Structure Database, obtaining 365,639 collinear MSs. We then determine the ground-state SSG symmetries of 7,824 collinear magnets among the 21,315 selected materials using first-principles calculations. These magnets then undergo a comprehensive topological classification combining SSGs and magnetic space groups, outputting thousands of new magnetic topological materials. The experimentally determined MSs in MAGNDATA represent the tip of the iceberg in our computational database of collinear magnets, expected to guide MS characterization by experimentalists and further investigation towards spintronics applications.",
+    "category": "cond-mat.mtrl-sci",
+    "link": "https://arxiv.org/abs/2609.35712v1",
+    "topic": "材料/材料科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35702v1",
+    "title": "A Si-on-SiC Platform for Interfacing with Vanadium Dopants in the Telecom O-Band",
+    "published": "2026-09-28T17:42:25Z",
+    "authors": [
+      "Timothy Draher",
+      "Nolan Bitner",
+      "Vasileios Niaouris",
+      "Claire E. McDermott",
+      "David Czaplewski",
+      "Supratik Guha",
+      "David D. Awschalom",
+      "F. Joseph Heremans",
+      "Alan M. Dibos"
+    ],
+    "abstract": "Vanadium color centers in silicon carbide (SiC) offer telecom O-band emission, sub-microsecond optical lifetimes, and second-scale spin relaxation times, rendering them promising candidates for quantum network nodes. However, efficient photon extraction from the high-refractive-index SiC host remains challenging. Here, we introduce a silicon-on-SiC heterogeneous photonic platform in which silicon nanocavities evanescently couple to shallow vanadium dopants in commercial 4H-SiC, enabling efficient zero-phonon line (ZPL) collection under resonant excitation. In as-grown ensembles, we observe Purcell-enhanced photoluminescence with transient spectral hole burning linewidths of 50 MHz on microsecond timescales. In dilute implanted samples, we isolate individual vanadium centers with high-purity single photon emission and a Purcell-enhanced lifetime of 109 ns. The entire optical interface operates through a single lensed fiber, including a 905 nm repump laser that recovers the vanadium charge state with 95% efficiency. These results establish Si-on-SiC as a scalable, foundry-compatible platform for telecom-wavelength spin-photon interfaces.",
+    "category": "cond-mat.mtrl-sci",
+    "link": "https://arxiv.org/abs/2609.35702v1",
+    "topic": "材料/材料科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35667v1",
+    "title": "Pyroelectric thermo-wave probing of BaZr0.2Ti0.8O3 ceramics",
+    "published": "2026-09-28T17:26:13Z",
+    "authors": [
+      "Nicholas V. Morozovsky",
+      "Yuriy O. Zagorodniy",
+      "Mykola Yelisieiev",
+      "Oleksandr S. Pylypchuk",
+      "Mykola O. Semenenko",
+      "Iryna V. Kondakova",
+      "Lesya P. Yurchenko",
+      "Viktor Bovtun",
+      "Valentin V. Laguta",
+      "Eugene A. Eliseev",
+      "Volodymyr O. Dzhagan",
+      "Anna N. Morozovska"
+    ],
+    "abstract": "BaxZr1-xTiO3 ceramics with 0.15 < x < 0.25, which have high dielectric permittivity, small leakage currents and low dissipation factor, are promising materials for tunable capacitor devices, multilayered ceramic capacitors and piezoelectric actuators. These materials reveal relaxor properties due to the local chemical strains caused by the isovalent substitution of Ti4+ ions by Zr4+ ions with a larger ionic size. However, to the best of our knowledge, the pyroelectric properties of BaxZr1-xTiO3 ceramics with x~0.2 have not been studied. To fill the gap in knowledge, we perform the pyroelectric thermo-wave probing of BaZr0.2Ti0.8O3 ceramics prepared by the solid-state synthesis. Results of the thermo-wave probing of the most interesting polar states, namely polarized, depolarized, relaxed and restored polarized states, reveal the pronounced pyroelectric response that can be strongly asymmetric with respect to the opposite surfaces of the ceramics. The asymmetry and profiles of pyroelectric response depend significantly on the pre-history of the electric field cycling indicating possible non-ergodic relaxor-type polar states in the ceramic sample. X-ray diffraction spectrum, recorded at room temperature, reveals the virtual absence of the macroscopic tetragonality and the weak asymmetry of the (200) peak, which indicate the small tetragonality inside the Ti-enriched polar nanoregions. Decrease of the relative intensity of the Raman band at 714 cm-1 occurring upon heating evidences the diffuse ferroelectric-paraelectric phase transition between 30 C and 40 C. The temperature dependence of the dielectric permittivity obeys modified Curie-Weiss law with power 1.4, indicating that both ordered ferroelectric and relaxor states coexist in the BaTi0.8Zr0.2O3 ceramics.",
+    "category": "cond-mat.mtrl-sci",
+    "link": "https://arxiv.org/abs/2609.35667v1",
+    "topic": "材料/材料科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35635v1",
+    "title": "Bounding Retraining Equivalence and the Deletion Floor in Materials Machine Unlearning",
+    "published": "2026-09-28T17:03:08Z",
+    "authors": [
+      "Can Polat",
+      "Mustafa Kurban",
+      "Erchin Serpedin",
+      "Hasan Kurban"
+    ],
+    "abstract": "In materials machine learning, closely related retained structures can sustain accurate property predictions even after removing a specific record, rendering post-deletion prediction error an ambiguous metric for machine unlearning. To resolve this ambiguity, we define the deletion floor as the expected target loss under a specified retraining procedure at the deleted request. Standard indistinguishability constraints yield a sharp interval bounding an update's target loss around this baseline reference. Theoretically, a conditional neighbor bound links a low deletion floor directly to retained fit, prediction regularity, and local label agreement, while an exact ridge identity isolates residual fit from the prediction change induced by record deletion. Empirically, controlled redundancy sweeps show an $\\approx 8\\times$ drop in median normalized retraining loss when one retained relative remains after deletion. Across two distinct fitting regimes in a paired Materials Project study, the lower-floor regime also exhibits a larger prediction change on more than 50% of the shared requests. Systematic comparisons against approximate updates and the original model decouple deliberate target suppression from preserved overall model utility. Consequently, request-level unlearning evaluations should report reference loss, prediction change, and retained utility together, interpreting post-deletion accuracy against what retraining itself leaves behind.",
+    "category": "cond-mat.mtrl-sci",
+    "link": "https://arxiv.org/abs/2609.35635v1",
+    "topic": "材料/材料科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35572v1",
+    "title": "Density functional perturbation theory of meta-generalized gradient approximations using algorithmic differentiation",
+    "published": "2026-09-28T16:33:03Z",
+    "authors": [
+      "Bruno Ploumhans",
+      "Niklas Frederik Schmitz",
+      "Michael F. Herbst"
+    ],
+    "abstract": "Density functional perturbation theory (DFPT) is an established framework for the computation of derivatives in plane-wave density functional theory. We present an implementation of DFPT for exchange-correlation (XC) functionals $E_\\mathrm{xc}(ρ,τ)$ that incorporate an explicit dependence on both the density $ρ$ and the kinetic energy density $τ$. This covers the popular class of semilocal meta-generalized gradient approximations (meta-GGAs) as well as broader nonlocal parametrizations. We sidestep the derivation of cumbersome XC second energy derivative expressions by recasting these derivatives as a Jacobian-vector product of the XC potentials, which we evaluate with algorithmic differentiation (AD) techniques. Integration with our previously developed AD-DFPT framework [N. F. Schmitz et al., npj Comput. Mater. 12, 6 (2026)] provides access to derivatives of arbitrary ground state quantities with respect to arbitrary perturbations. We employ AD-DFPT to compute a range of response properties for ZnO and BaTiO3, and find that the recent r2SCAN01 meta-GGA functional generally outperforms LDA and PBE. Finally, we showcase the optimization of a neural-network meta-GGA to self-consistently reproduce hybrid-DFT reference densities of bulk silicon, using AD-DFPT gradients. Overall, these results establish AD-DFPT as a versatile route for computing DFT derivatives at the meta-GGA level, be they common response properties or the unusual derivatives required for the gradient-based training of novel XC functionals.",
+    "category": "cond-mat.mtrl-sci",
+    "link": "https://arxiv.org/abs/2609.35572v1",
+    "topic": "材料/材料科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35566v1",
+    "title": "AI-Assisted Identification of Magnetic Orders and Skyrmions",
+    "published": "2026-09-28T16:30:17Z",
+    "authors": [
+      "Haowen Yang",
+      "Sophia Huerta",
+      "Yingying Wu"
+    ],
+    "abstract": "Exotic magnetic orders in two-dimensional (2D) materials are attracting huge interest for energy-efficient spintronic applications, yet realizing robust high-temperature van der Waals antiferromagnets and topological magnetic states remains challenging. In this work, we develop a machine-learning framework for identifying magnetic orders and predicting magnetization using structural, compositional, and electronic information derived from the Materials Project. Fixed-length descriptors are constructed for two complementary tasks: ferromagnetic (FM) versus antiferromagnetic (AFM) classification and quantitative magnetization prediction. Magnetic order is classified using a LightGBM model trained on structure-derived descriptors without explicitly including magnetic descriptors. Five-fold cross-validation grouped by chemical system is used to reduce chemical leakage, together with hyperparameter and classification-threshold optimization. On an isolated test set, the classifier achieves a balanced accuracy of 93.6% in the testing set. Magnetization is predicted using a residual multilayer perceptron with compositional, structural, electronic, and task-specific initial-state descriptors. A logarithmic target transformation and robust weighted loss are used to account for the broad magnetization distribution, while three independently trained models are combined into a final ensemble. The model achieves a mean absolute error of 0.686 μB/formula unit. For selected magnetic candidates, simulated magnetic imaging and phase-reconstruction analysis are further used to investigate magnetization textures and skyrmion-like features through normalized magnetization profiles and topological charge. This framework provides an efficient approach for screening 2D magnetic materials and prioritizing candidates for antiferromagnetic and topological spintronic applications.",
+    "category": "cond-mat.mtrl-sci",
+    "link": "https://arxiv.org/abs/2609.35566v1",
+    "topic": "材料/材料科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35556v1",
+    "title": "Ultra-high vacuum Raman platform for in situ characterization of graphene nanoribbons",
+    "published": "2026-09-28T16:27:15Z",
+    "authors": [
+      "Jeong Ha Hwang",
+      "Amogh Kinikar",
+      "Lukas Rotach",
+      "Andres Ortega-Guerrero",
+      "Carlo A. Pignedoli",
+      "Klaus Muellen",
+      "Thorsten G. Englmann",
+      "Xinliang Feng",
+      "Pascal Ruffieux",
+      "Roman Fasel",
+      "Mickael L. Perrin",
+      "Gabriela Borin Barin"
+    ],
+    "abstract": "Atomically precise graphene nanoribbons (GNRs) exhibit tunable electronic and magnetic properties governed by edge topology and finite-size effects, which make them versatile platforms for next-generation electronic and spintronic applications. However, the unpaired pi-electrons responsible for their magnetic properties simultaneously make them highly susceptible to chemical degradation under ambient conditions. This intrinsic reactivity poses a central experimental challenge: accessing vibrational and electronic signatures of air-sensitive GNRs during synthesis and under controlled environments without breaking vacuum. Once the material has been exposed to air, standard characterization techniques would probe oxidized or chemically modified species rather than the pristine form. Here, we overcome this limitation by developing a home-built ultra-high vacuum (UHV) Raman platform designed to preserve sample integrity by preventing air exposure and to enable in situ investigation of material properties. The portable Raman vacuum suitcase (RVS) integrates temperature control and precise gas dosing, allowing direct monitoring of growth kinetics, lattice dynamics, and reactive-edge responses under well-defined thermal and chemical environments. Using this platform, we monitor the on-surface synthesis of 7- and 9-atom-wide armchair GNRs (7- and 9-AGNRs), quantify the evolution of 7-AGNR Raman modes over a wide temperature range (162-748 K), and resolve chemical changes upon controlled O2 exposure that are consistent with oxidation at the reactive zigzag sites. These results establish UHV Raman spectroscopy with the RVS as a route to accessing the intrinsic vibrational signatures of low-dimensional quantum materials under controlled environments.",
+    "category": "cond-mat.mtrl-sci",
+    "link": "https://arxiv.org/abs/2609.35556v1",
+    "topic": "材料/材料科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35510v1",
+    "title": "High-Throughput Imaging of Degradation-Inducing Microscopic Impurities in Perovskite Solar Cells",
+    "published": "2026-09-28T16:06:10Z",
+    "authors": [
+      "Sofiia Kosar",
+      "Anil R. Pininti",
+      "Vladyslav Hnapovskyi",
+      "José P. Jurado",
+      "Subhashri Mannar",
+      "Lorenzo Mardegan",
+      "Anand S. Subbiah",
+      "Frédéric Laquai",
+      "Stefaan De Wolf"
+    ],
+    "abstract": "The scalable fabrication of high-quality, large-area perovskite thin films is hindered by microscopic inhomogeneities, particularly residual compositional impurities formed during processing. Identifying these impurities, understanding their impact on device operation, and enabling their rapid detection are essential for upscaling perovskite solar cells (PSCs). Here, nano-Fourier transform infrared spectroscopy combined with high-resolution optical and scanning probe techniques was used to identify detrimental impurities in wide-bandgap perovskite films relevant to tandem solar cells. Photo-stress experiments revealed that degradation of the perovskite layer initiates at impurity-perovskite interfaces, demonstrating that impurities act as failure nucleation sites. Leveraging these insights, a rapid, non-invasive, and high-throughput framework based on high-resolution reflected light microscopy and machine learning-supported image analysis was developed, enabling detection and quantification of harmful impurities in as-prepared films within seconds. Films with higher impurity density show accelerated early degradation, establishing this parameter as an early-warning metric for stability screening. Extending this framework to degradation tracking further reveals coupled photo- and thermo-chemical contributions to impurity-mediated instability. Overall, this work establishes a practical chemically-validated diagnostic imaging framework for rapid pre-screening of perovskite films to enable stable and scalable PSCs.",
+    "category": "cond-mat.mtrl-sci",
+    "link": "https://arxiv.org/abs/2609.35510v1",
+    "topic": "材料/材料科学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35125v1",
+    "title": "Capacitance sensing in bilayer graphene with gate reflectometry",
+    "published": "2026-09-28T13:20:58Z",
+    "authors": [
+      "Tamás Kalmár",
+      "Gergő Fülöp",
+      "Bálint Szentpéteri",
+      "Olivér Kürtössy",
+      "Kenji Watanabe",
+      "Takashi Taniguchi",
+      "Szabolcs Csonka",
+      "Péter Makk"
+    ],
+    "abstract": "In the search for topological states in bilayer graphene, capacitance measurement methods are widely utilized in bridge type readouts or source-drain reflectometry setups. In this paper we demonstrate an alternative readout method based on gate reflectometry. We probe the capacitance of a BLG flake encapsulated between hBN and WSe$_2$ through a lumped-element LC resonator coupled to the top gate electrode of the heterostructure. The microwave readout reliably tracks the opening of a displacement field-induced band gap in the device. Compared to simultaneous DC transport measurements, the RF signal proves to be less affected by the percolating transport channels caused by sample disorder. Furthermore, we use the gate based readout to identify a small-angle alignment between the hBN and BLG flake. From the fixed frequency microwave readout, we extract the device capacitance change between the insulating and metallic state of the bilayer and utilize a comprehensive capacitance network model to explain its origin. Finally, we propose an advanced, multiplexed double-resonator readout scheme capable of simultaneously measuring top and bottom gate capacitances to extract the layer polarizability of the system. This work establishes gate reflectometry as a highly scalable and powerful methodology for exploring topological phases and internal charge dynamics in van der Waals heterostructures.",
+    "category": "physics.app-ph",
+    "link": "https://arxiv.org/abs/2609.35125v1",
+    "topic": "材料/应用物理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35091v1",
+    "title": "Low-Temperature Stabilization of $δ$-NbN Superconducting Thin Films through Energy-Selective Ion Beam Sputtering",
+    "published": "2026-09-28T13:06:57Z",
+    "authors": [
+      "Yifan Liu",
+      "Junwoo Lee",
+      "Mingyu Xu",
+      "Weiwei Xie",
+      "Robert J. Cava",
+      "Qi Hua Fan"
+    ],
+    "abstract": "Achieving high-quality superconducting thin films at low temperatures is a central challenge for scalable quantum device integration and Complementary Metal-Oxide-Semiconductor (CMOS)-compatible fabrication. Here, we demonstrate a room-temperature magnetron sputtering approach for synthesizing niobium nitride (NbN) thin films using a novel energy-selective ion source that enables independent control of ion energy and ion flux. This capability provides a powerful route to precisely tailor surface kinetics and crystallization pathways, overcoming longstanding limitations in stabilizing high-quality NbN at reduced temperatures. The resulting films were characterized by superconducting transport measurements, X-ray diffraction, X-ray photoelectron spectroscopy, and transmission electron microscopy. Compared with conventional reactive sputtering, ion beam-assisted growth yields a substantial narrowing of the transition width at the superconducting temperature, indicating improved phase purity and electronic homogeneity. Furthermore, this work introduces energy-selective ion control as a general, non-equilibrium route to stabilize metastable superconducting phases at low temperatures, offering a new design paradigm for thin-film quantum materials.",
+    "category": "physics.app-ph",
+    "link": "https://arxiv.org/abs/2609.35091v1",
+    "topic": "材料/应用物理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.34979v1",
+    "title": "Far-field excitation of symmetry-protected bound states in the continuum by nonlinear virtual sources",
+    "published": "2026-09-28T11:56:25Z",
+    "authors": [
+      "Marc Martí-Sabaté",
+      "Yijie Zhang",
+      "Shengming Sun",
+      "Ruxin Li",
+      "Yabin Jin",
+      "Junfei Li",
+      "Daniel Torrent Martí"
+    ],
+    "abstract": "Bound states in the continuum (BICs) enable complete wave confinement within open systems through destructive interference or symmetry protection, giving rise to ideally infinite quality factors and extreme field enhancement. Their practical exploitation, however, is hindered by a fundamental paradox: the same mechanism that suppresses radiation also prevents efficient excitation from the far field. Existing experimental approaches typically overcome this limitation by introducing external coupling channels that inevitably perturb the protected state and reduce its confinement. Here we demonstrate the non-invasive excitation of a symmetry-protected acoustic BIC through nonlinear virtual sources generated directly at the surface of the structure. By focusing time-modulated ultrasonic beams onto a metamirror, nonlinear demodulation produces localized low-frequency sources whose spatial phase matches the symmetry of the target mode while avoiding any physical coupling to the resonator. This approach injects energy into the BIC without opening additional radiative channels, preserving its intrinsic non-radiative character. We develop a theoretical framework describing the formation and symmetry protection of the mode, realize a compact experimental implementation through symmetry reduction, and directly measure the confined pressure field and its quality factor. Our results establish nonlinear virtual sources as a route to accessing symmetry-protected states in open systems while maintaining their exceptional confinement properties, providing a general strategy for wave manipulation and high-sensitivity resonant devices across physical platforms.",
+    "category": "physics.app-ph",
+    "link": "https://arxiv.org/abs/2609.34979v1",
+    "topic": "材料/应用物理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.34755v1",
+    "title": "Phase-field simulation of interfacial stability in structured gas-liquid contactors: design rules for gas diffusion electrodes",
+    "published": "2026-09-28T09:42:14Z",
+    "authors": [
+      "Alexander J. Wagner",
+      "Hari Murali Krishna Varma Gottumukkala",
+      "Henning Bonart"
+    ],
+    "abstract": "Many process engineering applications hold a gas-liquid interface stationary inside a structured solid by a controlled pressure difference. Gas diffusion electrodes (GDEs) are one such case, where the interface separates the liquid electrolyte from the gaseous reactant. Maintaining it is particularly challenging in organic electrosynthesis, where low surface tensions lower the admissible pressures throughout and small contact angles leave the electrode with little margin against flooding. Here, we quantify how the shape, wettability, and three-dimensional topology of a structured medium set this window, using phase-field simulations of the Cahn-Hilliard-Navier-Stokes equations. Each geometry is characterised by its Laplace pressure curve, which yields both the maximum admissible pressure difference and the stiffness of the interface against pressure fluctuations. For single flat orifices at constant open area, elongating the opening from an aspect ratio of one to six raises the admissible pressure difference by 40 % and the stiffness by a factor of 3.3. Comparison with slits of equal width shows that this gain originates entirely from the reduced opening width. Sheared, diamond shaped openings are markedly less effective. In woven meshes, the wettability displaces the operating window several times as far as it stretches it. A less wetting surface therefore buys flooding margin largely at the expense of breakthrough margin, whereas the geometric route, established here for flat openings, widens the window itself. From these results we derive design rules for structured gas-liquid contactors and improved GDE architectures for organic electrosynthesis.",
+    "category": "physics.app-ph",
+    "link": "https://arxiv.org/abs/2609.34755v1",
+    "topic": "材料/应用物理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.34632v1",
+    "title": "Adaptive metamaterial resonators: a discrete and continuous mechanism",
+    "published": "2026-09-28T08:50:29Z",
+    "authors": [
+      "Vanessa Cool",
+      "Elke Deckers",
+      "Frank Naets"
+    ],
+    "abstract": "Locally resonant metamaterials are an established route to lightweight attenuation of vibration and noise, but their performance is tied to a bandgap fixed at the design stage. In practice, excitation frequencies are rarely constant, as they can vary with operating conditions and loading, causing fixed-frequency resonators to lose effectiveness as conditions drift from their design point. Existing strategies to address this rely on active control, introducing sensors, actuators, and a continuous power supply, or on broadband and multi-resonator designs that trade attenuation depth for bandwidth. A passive alternative, capable of adapting its resonance characteristics directly within the operating environment, would remove this trade-off and open locally resonant metamaterials to a much wider range of real-world, time-varying applications. In this work, we present two adaptive resonator concepts that enable in-situ modification of local resonance characteristics through discrete and continuous adaptation mechanisms.",
+    "category": "physics.app-ph",
+    "link": "https://arxiv.org/abs/2609.34632v1",
+    "topic": "材料/应用物理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.34365v1",
+    "title": "Cavity magnonics and bound states in the continuum with Bragg and anti-Bragg mirrors",
+    "published": "2026-09-28T05:41:30Z",
+    "authors": [
+      "B. -Y. Wu",
+      "K. -P. Li",
+      "G. Chen",
+      "W. -M. Zhou",
+      "C. -X. Run",
+      "K. -M. Hsieh",
+      "A. F. Kockum",
+      "Z. -R. Lin",
+      "W. Nie",
+      "I. -C. Hoi"
+    ],
+    "abstract": "A periodic resonant emitter array coupled to a one-dimensional waveguide can act as a mirror. A typical example is a Bragg mirror, where emitters are spaced by multiples of half wavelengths and collectively enhance light reflection. Two such mirrors form an effective cavity that hosts bound states in the continuum (BICs). However, generating and detecting the spatial profiles of such BICs has proven challenging. Here, we experimentally demonstrate BICs in cavity magnonics using two periodic ferrimagnetic-sphere arrays and a probe sphere in a dual-open-waveguide architecture. We realize both Bragg and anti-Bragg cavities, whose mirrors have different lattice constants. In the Bragg cavity, there are degenerate supermodes formed by mirror spheres. We show that a single dark supermode coherently couples to the probe magnon in the cavity region, forming two polaritons whose splitting scales with both the probe-sphere size and the number of mirror spheres. By contrast, the anti-Bragg cavity has bright and dark supermodes in a bandgap, substantially changing the magnon-cavity interaction. Moreover, by moving the probe sphere, we perform position-dependent detection of the cavity field, highlighting the role of BICs in these cavities. Our flexible experimental setup with a scanning probe opens possibilities to detect other exotic states created by light-matter interaction, to interface with superconducting circuits in hybrid quantum networks, and to study non-Hermitian physics with Bragg and anti-Bragg cavities.",
+    "category": "physics.app-ph",
+    "link": "https://arxiv.org/abs/2609.34365v1",
+    "topic": "材料/应用物理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.34355v1",
+    "title": "Observing Colossal and Tunable Near-field Thermal Radiation with A Highly Sensitive Annular Micro-thermocouple Junction",
+    "published": "2026-09-28T05:30:55Z",
+    "authors": [
+      "Ken Araki",
+      "Wei Han Won",
+      "Liping Wang"
+    ],
+    "abstract": "Near-field radiative heat transfer between two objects has been theoretically predicted and experimentally demonstrated to exceed far-field blackbody limit across nanoscale vacuum gap distance enabled by evanescent surface waves coupling, while significant enhancement by more than 100 times usually requires sub-50-nm vacuum gaps around room temperature. This is challenging for parallel-plate configuration with millimeter sample sizes due to intrinsic wafer bow and contaminant particles. Sphere-plate configuration with a microsphere attached to bimaterial cantilevers or micro-thermocouple tips has been used to experimentally demonstrate near-field radiative heat transfer down to 30-nm gaps, but it is much less developed because of the challenges in the sophisticated sensor fabrication, low sensitivity and weak signals. In this work, we overcome these challenges by an annular micro-thermocouple junction fabricated at the end of a glass fiber with straightforward thin-film deposition to achieve high measurement accuracy with large Seebeck coefficient 25 uV/K and thermal resistance 8.7e6 K/W. With a silica microsphere attached underneath the micro-thermocouple junction, we report experimental observation of colossal near-field radiation heat transfer over blackbody limit down to 10-nm gap up to 2600 times with quartz and 900 times with doped silicon. Upon phase transition of VO2 thin film emitter, tunable near-field heat transfer up to 430-fold enhancement is experimentally demonstrated at 15-nm gap with 64% reduction. Experimental data agrees well with rigorous modeling based on fluctuational electrodynamics and Derjaguin approximation, and underlying mechanism is understood by energy transmission calculations. The results will advance the experimental study and fundamental understanding of energy transport at nanoscale gaps.",
+    "category": "physics.app-ph",
+    "link": "https://arxiv.org/abs/2609.34355v1",
+    "topic": "材料/应用物理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.33729v1",
+    "title": "Wave-Domain Semantic Equalization Using a Practical Dynamic Metasurface Antenna with Strong Mutual Coupling",
+    "published": "2026-09-27T16:30:47Z",
+    "authors": [
+      "Yassine Sghaier",
+      "Emilio Calvanese Strinati",
+      "Philipp del Hougne"
+    ],
+    "abstract": "Semantic mismatch between independently trained AI-native agents in heterogeneous networks can impair semantic communications. Hybrid analog-digital semantic equalization can align the incompatible latent representations without retraining the semantic transceivers. We study a practical realization of this approach based on a fabricated dynamic metasurface antenna (DMA), an emerging low-cost, low-power, ultracompact technology for hybrid analog-digital beamforming. We model the DMA-assisted channel using multiport-network theory (MNT), accounting for mutual coupling (MC), structural scattering, and binary lossy tuning states. We use the experimentally estimated MNT parameters of our fabricated 19-GHz DMA prototype with strong MC. We jointly optimize digital pre- and post-equalizers and the DMA at a reference receiver geometry for latent-space alignment, then freeze the digital stages and adapt only the DMA after receiver motion. In our CIFAR-10 image-classification task at the receiver, the jointly optimized system achieves 94.5% accuracy, while DMA-only adaptation restores a median accuracy of 90.3% after receiver motion. Our semantic-aware wave-domain adaptation substantially outperforms semantic-unaware benchmarks. We further observe that varying the DMA configuration across channel uses provides little additional benefit for either semantic-aware or semantic-unaware optimization.",
+    "category": "physics.app-ph",
+    "link": "https://arxiv.org/abs/2609.33729v1",
+    "topic": "材料/应用物理"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35513v1",
+    "title": "Superfluid Spin Transport in the Van der Waals Antiferromagnet CrCl$_3$",
+    "published": "2026-09-28T16:07:42Z",
+    "authors": [
+      "Peisen Yuan",
+      "Xiaomin Guo",
+      "Vincent Flynn",
+      "Benedetta Flebus",
+      "Fèlix Casanova",
+      "Luis E. Hueso"
+    ],
+    "abstract": "Over the past decade, the quest for spin superfluidity has moved to the forefront of spintronics, driven by the promise of phase-gradient-driven, ultra-low-loss spin transport. However, experimental investigations remain limited, primarily due to the lack of suitable material systems. Here, we report on the discovery and control of a superfluid spin transport in the easy-plane van der Waals antiferromagnetic (AFM) insulator CrCl$_3$ by a nonlocal device structure. Combining nonlocal magnon transport measurements with theoretical modelling, we demonstrate that spin superfluidity emerges in CrCl$_3$ under canted AFM spin configurations, where it gives rise to ultra-long range (around 90 $μ$m), weakly decaying spin transport. We also provide direct evidence that strong magnetic fields and elevated temperatures suppress the superfluid state, restoring the rapid exponential decay with distance of incoherent magnons. These findings underscore the potential of spin superfluidity in two-dimensional magnetic insulators and establish CrCl$_3$ as a promising platform for energy-efficient, long-distance spin transport in next-generation spintronic applications.",
+    "category": "cond-mat.mes-hall",
+    "link": "https://arxiv.org/abs/2609.35513v1",
+    "topic": "材料/介观与纳米"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35498v1",
+    "title": "Electron decoherence in cylindrical holes and circular apertures",
+    "published": "2026-09-28T16:02:58Z",
+    "authors": [
+      "Cruz I. Velasco",
+      "F. Javier García de Abajo"
+    ],
+    "abstract": "The coherence of free electrons sets fundamental limits on the resolution and contrast of phase-sensitive electron microscopy because coherence is lost whenever the electron leaves a distinguishing excitation in its environment. We develop a quantitative theory of fast-electron decoherence in two canonical geometries: a cylindrical hole drilled through a realistic metal and a circular aperture in a thin perfectly conducting film. By combining an electromagnetic Green-tensor formulation with the fluctuation--dissipation theorem while fully retaining retardation, we obtain the decoherence probability and elastic phase as functions of the electron trajectory, temperature, and material response. For the cylindrical hole, we obtain a closed-form, azimuthally resolved expression that separates the dependences on path position, temperature, and conductivity. In the high-conductivity and high-temperature limits, this result reduces to a universal expression that is linear in temperature and independent of both conductivity and electron velocity. For the circular aperture, which we solve using a cylindrical-wave modal expansion, the energy-loss probability diverges as $1/ω$ at low frequency, whereas the decoherence probability remains finite and reaches a maximum when the aperture radius is comparable to the relevant electromagnetic wavelength. Because the interaction is spatially localized, aperture-induced decoherence is generally weaker than that produced by a cylindrical hole, except for sufficiently large apertures at high temperature. Finally, we show that, for sufficiently large holes, decoherence can dominate the spatial broadening of a focused electron probe and must therefore be incorporated into the design of coherent electron-beam instruments.",
+    "category": "cond-mat.mes-hall",
+    "link": "https://arxiv.org/abs/2609.35498v1",
+    "topic": "材料/介观与纳米"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35492v1",
+    "title": "Dynamical transition in non-Hermitian Chern insulator",
+    "published": "2026-09-28T16:01:13Z",
+    "authors": [
+      "Zhi-Qiang Zhang",
+      "Yuan-Hang Ren",
+      "Ming Lu",
+      "Hua Jiang"
+    ],
+    "abstract": "We unveil a peculiar dynamical transition for the propagation of wave packets in non-Hermitian Chern insulators, where the evolution of the topological wave packets at the edge is not solely determined by the topological Chern number. Unlike the Hermitian Chern insulator, where a wave packet initiated at the edge propagates along the system boundary, here it may instead penetrate into the bulk. This behavior is attributed to the competition between the localization induced by conventional topology and the non-Hermitian skin effect. Specifically, when the former dominant, the wave packet will evolve along the boundary; otherwise, it will spread into the bulk. These features demonstrate that while the generalized-Brillouin zone framework reliably predicts topological phase transitions, it does not on its own specify the dynamical transitions.",
+    "category": "cond-mat.mes-hall",
+    "link": "https://arxiv.org/abs/2609.35492v1",
+    "topic": "材料/介观与纳米"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35484v1",
+    "title": "Improving the Stability of the Hierarchical Equations of Motion for Open Quantum Systems with Strong Coupling to Structured Bosonic Baths",
+    "published": "2026-09-28T15:58:15Z",
+    "authors": [
+      "Salvatore Gatto",
+      "Samuel L. Rudge",
+      "Bokang Hou",
+      "Eran Rabani",
+      "Michael Thoss"
+    ],
+    "abstract": "The hierarchical equations of motion (HEOM) approach is one of the most powerful methods avail- able to simulate the dynamics of open quantum systems. Although the HEOM approach has been shown to be stable and efficient in many parameter regimes and physical scenarios, it is also well known that the unavoidable finite truncation of the hierarchy can lead to fundamental numeri- cal instabilities for bosonic environments. In this work, we apply recently developed techniques to analyze these issues. We use an auxiliary Fock-space picture of the hierarchy to first identify the unbalanced hierarchy-raising terms responsible for the strong transient amplification associated with the non-normal algebraic structure of the HEOM generator. We then apply a non-unitary similarity transformation that converts these terms into balanced combinations of hierarchy-raising and hierarchy-lowering terms, thereby suppressing their numerical impact. We first demonstrate the efficacy of this approach via a spin-boson model with a simple Brownian oscillator spectral den- sity and subsequently extend the analysis to a structured spectral density, showing for both cases that the transformed HEOM approach allows simulations of much larger system-bath coupling than would otherwise be possible.",
+    "category": "cond-mat.mes-hall",
+    "link": "https://arxiv.org/abs/2609.35484v1",
+    "topic": "材料/介观与纳米"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35480v1",
+    "title": "Extracting the anyonic exchange phase from co-tunneling through an open quantum dot",
+    "published": "2026-09-28T15:56:58Z",
+    "authors": [
+      "Felix Puster",
+      "Matthias Thamm",
+      "Bernd Rosenow"
+    ],
+    "abstract": "The elementary excitations of fractional quantum Hall states obey anyonic statistics, described by an exchange phase $θ$ intermediate between the bosonic and fermionic values. We study an interferometer in which three chiral edge segments are pairwise connected by three quantum point contacts, so that, depending on the applied voltages, one of the segments acts as an open quantum dot: its spectrum is continuous, and tunneling through it is resonant without any gate tuning. This setup realizes the co-tunneling mechanism of a recently proposed antidot interferometer in a particularly simple setting. Using a non-equilibrium Keldysh calculation to third order in the tunneling amplitudes, we show that the interference current contains a co-tunneling contribution in which two quasiparticles are exchanged, so that for Laughlin states the exchange phase $θ=πν$ appears as the phase shift between the Aharonov-Bohm oscillations measured in two voltage configurations. We obtain a closed analytic expression for the interference current at finite temperature and finite separation between the quantum point contacts and show that, provided voltage-induced changes of the enclosed area are sufficiently screened, the exchange phase can be extracted from a robust phase-plateau difference. Alternatively, simultaneous measurements of the interference currents at two drains avoid this screening assumption and time-of-flight phases can be quantified analytically, allowing the exchange phase to be extracted by a controlled extrapolation with a few-percent systematic error.",
+    "category": "cond-mat.mes-hall",
+    "link": "https://arxiv.org/abs/2609.35480v1",
+    "topic": "材料/介观与纳米"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35477v1",
+    "title": "Plasmon-Enhanced Second-Harmonic Generation in Atomically Thin Crystalline Silver Nanostructures",
+    "published": "2026-09-28T15:55:41Z",
+    "authors": [
+      "Saad Abdullah",
+      "Philipp K. Jenke",
+      "Andrew P. Weber",
+      "Álvaro Rodríguez Echarri",
+      "Vahagn Mkhitaryan",
+      "Fadil Iyikanat",
+      "Frederik Schiller",
+      "Philip Walther",
+      "J. Enrique Ortega",
+      "Lee A. Rozema",
+      "F. Javier García de Abajo"
+    ],
+    "abstract": "The intrinsically weak nonlinear optical response of existing materials, further constrained by symmetry-forbidden second-order processes in centrosymmetric media, severely limits efficient frequency conversion in deeply subwavelength, ultrathin volumes. Addressing this challenge is crucial for the development of nonlinear nanophotonics. Here, we show that atomically thin, epitaxially grown crystalline silver films circumvent these restrictions through the interplay of vertical electronic quantum confinement and lateral plasmonic enhancement. We fabricate atomically thin films that exhibit an enhanced nonlinear response associated with electronic quantum wells, and subsequently pattern them into periodic nanoribbon and nanotriangle arrays sustaining infrared localized surface plasmon resonances. Strong near-field confinement in these structures further boosts second-harmonic generation compared to unpatterned films. Precise control over nanostructure geometry enables spectral tuning of the plasmonic resonance, and consequently, the enhanced harmonic frequency. Our findings establish an approach for activating robust second-order nonlinearities in quantum-confined metals, where intrinsic size effects and plasmonic resonances act synergistically. The compatibility of high-quality epitaxial growth with microchip fabrication technology offers a scalable route toward ultracompact nonlinear optical components for on-chip frequency conversion, sensing, and quantum photonic applications.",
+    "category": "cond-mat.mes-hall",
+    "link": "https://arxiv.org/abs/2609.35477v1",
+    "topic": "材料/介观与纳米"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35373v1",
+    "title": "Plasmon modes in three-dimensional nodal-ring semimetals: tilt and gap effects",
+    "published": "2026-09-28T15:12:42Z",
+    "authors": [
+      "Ipsita Mandal"
+    ],
+    "abstract": "We study plasmon modes in three-dimensional nodal-ring semimetals, considering both the gapless $\\mathcal{PT}$-symmetric nodal ring (PTNR) and its gapped counterpart (GNR). Working in the low-doping regime where the linearised Hamiltonian is valid, we compute the non-interacting density-density response function, the Drude weight, and the plasmon dispersion within the random-phase approximation. We treat the untilted configuration as well as in-plane tilt along $k_x$ and axial tilt along $k_z$. For the in-plane tilted GNR, a strong-enough tilt or a small enough chemical potential pushes part of the ring into a partially-gapped regime. Only part of the Fermi surface survives there. We obtain closed-form results for this regime in two limits: a small tilt and a small gap. The small-gap limit produces a fractional-power correction to the Drude weight and the plasmon frequency. For the axially-tilted GNR, the partially-gapped window has a double-valued local Fermi surface for which we obtain the density-of-states and the Drude weights in closed forms. We analyse how the tilt and the mass-gap affect the plasmon dispersion and the anisotropy between axial and in-plane directions. Our results provide a systematic comparison between the gapless and gapped cases and between different tilt directions.",
+    "category": "cond-mat.mes-hall",
+    "link": "https://arxiv.org/abs/2609.35373v1",
+    "topic": "材料/介观与纳米"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35761v1",
+    "title": "DexRoam: Learning Mobile Bimanual Dexterous Manipulation from Egocentric Whole-Body Human Demonstrations",
+    "published": "2026-09-28T17:59:10Z",
+    "authors": [
+      "Rui Zhou",
+      "Yibo Yuan",
+      "Junkai Zhao",
+      "Fangyuan Zhao",
+      "Xiaoguang Zhao",
+      "Shanghang Zhang",
+      "Sirui Han"
+    ],
+    "abstract": "Mobile bimanual dexterous manipulation requires continuous coordination of locomotion, whole-body motion, and finger-level dexterity within a single trajectory, creating a severe robot demonstration bottleneck. Egocentric human demonstrations offer a scalable alternative, but prior approaches ease the transfer by simplifying human motion, discarding exactly the fine-grained, coupled structure such tasks depend on. We present DexRoam, a complete system for learning mobile bimanual dexterous manipulation from human demonstrations, in which whole-body motion remains continuous and coupled throughout the human-to-robot transfer process. To enable scalable collection of whole-body human manipulation demonstrations, we develop a tracker-free capture system using only a consumer VR headset and a head-mounted stereo camera, without external cameras or motion trackers. We then perform three explicit alignment stages---embodiment, action-semantic, and temporal---to map captured motion into the robot action space, preserving fine-grained whole-body motion and allowing human and robot demonstrations to be jointly learned by standard VLA policies. Real-world experiments with different VLA backbones show that human demonstrations consistently improve policy learning across training paradigms, raising average success from 29% to 56% on GR00T N1.7 and from 32% to 57% on pi0.5, while matching robot-only training with half the robot demonstrations. Ablations confirm that each alignment stage is necessary. These results highlight the potential of human demonstrations for scalable whole-body mobile manipulation with preserved fine-grained motion structure.",
+    "category": "cs.RO",
+    "link": "https://arxiv.org/abs/2609.35761v1",
+    "topic": "机械/机器人"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35717v1",
+    "title": "RoboCompiler: Graph-Native Compilation of Closed-Chain Robots for Consistent Modeling, Control, and Simulation",
+    "published": "2026-09-28T17:46:49Z",
+    "authors": [
+      "Mehdi Heydari Shahna",
+      "Joongheon Kim",
+      "Jouni Mattila"
+    ],
+    "abstract": "Robots with kinematic loops, coupled actuators, and changing contacts require consistent models of configuration, motion, force, and dynamics. Yet these interfaces are often reconstructed separately for control and simulation, making closure and actuation consistency difficult to maintain. This paper presents RoboCompiler, a graph-native framework that compiles a canonical mechanism graph into a shared mechanical interface. From bodies, joints, frames, inertias, and actuator ports, it constructs closure paths and analytic residual Jacobians, then assembles feasible configurations through rank-checked continuation and correction. A tangent lift maps independent velocities to full robot and task motion, while paired actuator-port maps preserve virtual work. A constraint-curvature correction extends the reduction to accelerations and projected rigid-body dynamics, including floating-base and support modes. Cycle-local evaluation, generated Jacobians, and dependency-aware reuse enable localized updates when closure inputs change. We evaluate physical loops and task-induced constraints on a Komatsu excavator, Unitree Go2, Franka Panda, Kangaroo, and a six-UPS Stewart platform. High-precision constrained-dynamics and independent Pinocchio checks confirm mechanical consistency; MuJoCo and Isaac Sim/PhysX executions demonstrate task performance and model reuse under native contact. For Kangaroo, compilation reduces residual-and-Jacobian evaluation time by 96.7% and closed-loop rollout wall time by 66.8%, with dynamics and control held fixed.",
+    "category": "cs.RO",
+    "link": "https://arxiv.org/abs/2609.35717v1",
+    "topic": "机械/机器人"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35715v1",
+    "title": "X-Reset: Scaling Object-Centric Reinforcement Learning via Cross-Embodiment Resets",
+    "published": "2026-09-28T17:46:42Z",
+    "authors": [
+      "Prithwish Dan",
+      "Chenyang Ma",
+      "Wei Zhan"
+    ],
+    "abstract": "Reinforcement learning (RL) in simulation can train dexterous manipulation policies without robot demonstrations, but training a single generalist policy with task-agnostic rewards faces a severe exploration problem: approaching, grasping, and reorienting diverse objects with many degrees of freedom is difficult to discover from scratch. Prior works make exploration tractable with high-quality robot demonstrations, per-task reward shaping, or by restricting policies to narrow modes of behavior. We propose X-Reset, a framework that instead resolves exploration with human hand-object demonstrations. Rather than imitating or tracking retargeted human motion, X-Reset kinematically retargets hand-object states to noisy robot states, filters out states that are unstable in simulation, and samples the remainder as resets during RL training with general-purpose object-centric rewards. The resulting policy depends only on object state and goal, with demonstrations entering training through the reset distribution. We show that X-Reset trains generalist policies on 20 objects across three embodiments---a 22-DoF hand on two different arms and a parallel-jaw gripper---and resolves the exploration challenges of RL from scratch. X-Reset scales with the number of training objects, generalizes to unseen objects, can learn from imperfect hand-pose estimates, and transfers behaviors zero-shot from sim-to-real.",
+    "category": "cs.RO",
+    "link": "https://arxiv.org/abs/2609.35715v1",
+    "topic": "机械/机器人"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35709v1",
+    "title": "Humanoid Loco-Manipulation With Discrete VLA Model",
+    "published": "2026-09-28T17:44:15Z",
+    "authors": [
+      "Wenxin Shao",
+      "Siqi Chai",
+      "Kun Li",
+      "Kerou Zhang",
+      "Xinzhou Jiang",
+      "Wei Xu",
+      "Qiang Liu"
+    ],
+    "abstract": "Vision-language-action (VLA) models using discrete action tokens have proven effective for controling robotic arms on manipulation tasks. For a humanoid, however, the whole-body action space -- legs, torso, arms, and hands -- is far higher-dimensional and heterogeneous, raising tokenization, training, and real-time inference challenges that the previous VLA models do not address. We present Holo-M, to our knowledge the first discrete VLA model for humanoid loco-manipulation that intrinsically exploits the language model by extending its vocabulary with action tokens. In this model, we devise a unified action tokenizer that decomposes the humanoid action space into four body-part-specific tokenizers -- end-effector, body, hand, and kinematics -- enabling training across drastically different embodiments and data sources, including humanoid teleoperation, ego-centric human video, and simulation. By extending the language model's vocabulary with these action tokens, we avoid the knowledge-insulation problem inherent to the models that use separate continuous action experts. To meet real-time control requirements, we decode each body part's action tokens through grouped discrete diffusion decoding, rather than using autoregression on the action tokens. We have conducted extensive experiments on the SIMPLE humanoid loco-manipulation benchmark, in which Holo-M achieves the highest success rates in both the generalist and specialist evaluations, leading the second best by significant margins. We will release all the code and model weights.",
+    "category": "cs.RO",
+    "link": "https://arxiv.org/abs/2609.35709v1",
+    "topic": "机械/机器人"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35742v1",
+    "title": "MINT: Modeling GenAI Impact on Network Traffic",
+    "published": "2026-09-28T17:54:31Z",
+    "authors": [
+      "Andrew Nguyen",
+      "Samson Kempiak",
+      "Agrim Gupta",
+      "Koushik Kar",
+      "Ish Kumar Jain"
+    ],
+    "abstract": "Generative AI (GenAI) is becoming a mainstream network workload, yet packet-level simulators lack measure\\-ment-driven GenAI traffic models. Currently researchers must approximate GenAI services using traditional sources such as file transfer and video streaming, limiting realistic network evaluation of scheduling and capacity planning. We present MINT, a measurement and modeling framework for GenAI network traffic. Using an isolated net\\-work-namespace capture pipeline, we collect client-side traces from three LLM providers across four modalities, cloud and edge servers, and wired and wireless network access points. We find that GenAI modalities exhibit distinct upload/download asymmetry and burst structures that differ from traditional applications. MINT clusters and models these burst regimes and validate empirical burst timing distribution behavior in ns-3 with normalized Wasserstein distances of 2--25\\%. Our results also reveal that realistic packet bursts have significantly more variability than constant token generator models. MINT open-sources the first measurement-driven GenAI traffic model for packet-level network simulation.",
+    "category": "eess.SY",
+    "link": "https://arxiv.org/abs/2609.35742v1",
+    "topic": "机械/系统与控制"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35700v1",
+    "title": "LQR-ArUco Fusion: Robust Hierarchical Control for Navigation and Asymmetric Manipulation in Two-Wheeled Robots",
+    "published": "2026-09-28T17:41:14Z",
+    "authors": [
+      "Anupam Chatterjee",
+      "Arpita Kumari"
+    ],
+    "abstract": "We propose a hierarchical control framework to address severe dynamic instabilities and navigational drift that arise when a two-wheeled inverted pendulum (TWIP) robot attempts asymmetric object manipulation. While two-wheeled platforms are highly manoeuvrable, their constant balancing adjustments make onboard odometry highly unreliable for precise navigation. Furthermore, the addition of a side-mounted robotic arm introduces unactuated lateral roll moments when a payload is lifted, a challenge heavily compounded on uneven terrain. To solve these coupled problems, our architecture divides the workload. An offboard vision system tracks overhead ArUco markers to provide high-latency global waypoint navigation, bypassing odometry drift. Simultaneously, a low-latency onboard control loop rejects active physical disturbances using inertial and encoder data. In our physical experiments, this dual-loop approach enabled the custom-built robot to navigate accurately, reject transient impacts from speed bumps, adapt to a dynamic seesaw ramp, and carry a payload securely without falling over its narrow wheelbase.",
+    "category": "eess.SY",
+    "link": "https://arxiv.org/abs/2609.35700v1",
+    "topic": "机械/系统与控制"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35454v1",
+    "title": "Manifold-Stable Flow Matching",
+    "published": "2026-09-28T15:45:58Z",
+    "authors": [
+      "Amirhossein Nazerian",
+      "Ali Pezeshki",
+      "Jianguo Zhao"
+    ],
+    "abstract": "Flow matching (FM) learns generative dynamics through velocity regression. Geometric FM variants commonly assume a prior supported on the data manifold, requiring geometric knowledge that is often unavailable. Without such knowledge, low regression error alone does not guarantee manifold adherence. Adherence keeps generated samples within valid configurations and is empirically associated with better task performance. We introduce manifold-stable flow matching (MSFM), which can start from an arbitrary ambient prior, not necessarily supported on the manifold. Using tools from nonlinear dynamics, namely contraction theory, MSFM combines learned tangential transport with prescribed normal contraction. The construction uses analytical projectors for known manifolds and local affine proxies estimated by principal component analysis for unknown data geometry. By implementing contraction theory in both cases of known and unknown manifolds, we guarantee manifold invariance and transverse convergence to the manifold within a desired time window (e.g., one second). We derive a family of compatible probability paths and decompose the training loss into a learnable tangential term and a normal residual. An ellipse experiment attains a mean terminal off-manifold error of order $10^{-6}$. In Push-T robotic experiments, MSFM raises success from $74\\%$ to $82\\%$. In the Robomimic Square task, success increases from $60\\%$ to $72\\%$, while rotation-manifold deviation decreases from order $10^{-2}$ to $10^{-7}$. The MSFM terminal geometric errors are controlled by the chosen numerical tolerance. These results demonstrate stronger geometric adherence and higher observed task performance, supporting prescribed normal contraction as a complement to learned generative transport.",
+    "category": "eess.SY",
+    "link": "https://arxiv.org/abs/2609.35454v1",
+    "topic": "机械/系统与控制"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35424v1",
+    "title": "Scalable Small-Signal Stability Assessment of Power Systems Based on Frequency-Domain Quadratic Constraints",
+    "published": "2026-09-28T15:33:54Z",
+    "authors": [
+      "Xiaoying Liu",
+      "Linbin Huang",
+      "Hangyu Chen",
+      "Huanhai Xin"
+    ],
+    "abstract": "Small-signal stability analysis of power electronics-dominated power systems is becoming increasingly challenging due to the large-scale integration of heterogeneous grid-following (GFL) and grid-forming (GFM) converters. Classical centralized methods, such as eigenvalue analysis and the generalized Nyquist criterion, provide direct stability assessment tools but exhibit limited scalability as the system size increases. This motivates scalable analysis methods for stability assessment and device-level diagnosis, and calls for less conservative stability conditions. To this end, this paper proposes a scalable small-signal stability assessment method with quantitative stability indices for multi-converter systems based on frequency-domain quadratic constraints (FQCs). It is shown that several existing stability conditions, including geometric conditions based on the Davis-Wielandt (DW) shell, numerical range, $x$-$z$ graph, scaled relative graph (SRG), mixed gain-phase condition, and passivity condition, are special cases of the FQC-based stability condition. This FQC-based formulation also clarifies the requirements for decentralized verification of these existing stability conditions. To further reduce conservatism, a full-multiplier FQC-based stability condition is developed, based on which an optimization problem is formulated for scalable stability certification and device-level diagnosis using quantitative stability indices without relying on graphical inspection. Combined with the mixed gain-phase condition, this optimization problem forms a hierarchical screening-diagnosis procedure that improves efficiency. Case studies demonstrate that the proposed method is less conservative than existing criteria and can effectively identify problematic devices associated with potential instability risks.",
+    "category": "eess.SY",
+    "link": "https://arxiv.org/abs/2609.35424v1",
+    "topic": "机械/系统与控制"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35762v1",
+    "title": "Peppy: An AI-Assisted Workflow for Tight Convergence Analysis of Optimization Algorithms",
+    "published": "2026-09-28T17:59:12Z",
+    "authors": [
+      "Jaewook J. Suh",
+      "TaeHo Yoon",
+      "Edward Duc Hien Nguyen",
+      "Bicheng Ying",
+      "Shiqian Ma"
+    ],
+    "abstract": "This paper presents Peppy, an AI-assisted workflow for discovering tight, analytic convergence proofs for first-order optimization algorithms. Generic approaches to using LLMs to conduct mathematical research target an unspecified, broad spectrum of problems and sometimes use the Lean 4 proof assistant for formalization. On the other hand, Peppy leverages domain-specific knowledge more heavily and is thereby capable of constructing the proofs in a more structured manner, which allow a minimal and accessible verification through SymPy. We experimentally demonstrate through examples that Peppy provides a rigorous, practical, and reproducible paradigm for AI-assisted theorem synthesis in optimization. We further highlight its capability of closing several open problems on tight convergence analysis of first-order optimization algorithms, including conjectures for Nesterov's FGM. Overall, Peppy is designed to turn the art of optimization algorithm analysis into a science.",
+    "category": "math.OC",
+    "link": "https://arxiv.org/abs/2609.35762v1",
+    "topic": "机械/优化与控制"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35735v1",
+    "title": "From detectability of abstract linear systems to exponential output-to-state stability and back",
+    "published": "2026-09-28T17:52:04Z",
+    "authors": [
+      "Qiaoling Chen",
+      "Andrii Mironchenko",
+      "Fabian Wirth"
+    ],
+    "abstract": "We study exponential output-to-state stability (eOSS) of linear infinite-dimensional systems in Banach spaces with bounded output operators. It is shown that eOSS is equivalent to the existence of a coercive eOSS Lyapunov function in implication form. Also exponential detectability guarantees the existence of a coercive eOSS Lyapunov function in dissipation form and therefore eOSS. Counterexamples demonstrate that the converse implications fail in general: exponential zero-detectability does not imply eOSS, eOSS does not imply the existence of an eOSS Lyapunov function in dissipation form, which, in turn, does not imply exponential detectability. If the unstable subspace is finite-dimensional, zero-detectability implies exponential detectability and yields equivalent characterizations of eOSS. The results are illustrated with a parabolic equation.",
+    "category": "math.OC",
+    "link": "https://arxiv.org/abs/2609.35735v1",
+    "topic": "机械/优化与控制"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35665v1",
+    "title": "Learned Preconditioning for a Primal-Dual Interior-Point Method",
+    "published": "2026-09-28T17:24:54Z",
+    "authors": [
+      "Abhinav Madabhushi",
+      "Jialin Liu",
+      "Minxin Zhang"
+    ],
+    "abstract": "Interior-point methods (IPMs) are among the most widely used algorithms for constrained optimization, yet their Newton-based search directions require costly second-order information and large linear-system solves. Learning to optimize offers cheaper updates learned from data, but the singular behavior of logarithmic barriers near constraint boundaries makes IPMs highly sensitive to perturbations, complicating both warm starting and learning reliable updates. We introduce pdLIP, an IPM for smooth nonlinear programs that integrates learned preconditioning with pdProj, an all-shifted primal-dual projected-search IPM. A shared coordinate-wise recurrent network predicts a positive diagonal preconditioner that scales the right-hand side of the reduced Newton system for the primal step, and the remaining slack and multiplier directions are recovered analytically. The learned iterations avoid Hessian evaluations and Newton-system solves, using only first-order and coordinate-wise operations amenable to GPU parallelization. Training is self-supervised, with a loss based on a penalty-barrier merit function and the residual of perturbed optimality conditions, requiring neither target directions nor precomputed solutions. Primal and dual shifts mitigate the barrier's sensitivity to perturbations near constraint boundaries, enabling effective warm starting. Across four classes of 200-dimensional convex and nonconvex constrained problems, pdLIP warm starts reduce pdProj refinement iterations by 63-67% compared with cold starts at the same KKT residual tolerance of $10^{-8}$, with negligible warm-start generation cost relative to the subsequent pdProj solve. Improvements persist on box-constrained QPs with 1000 variables and extend to applications including portfolio optimization, support vector machines, and a nonlinear control example.",
+    "category": "math.OC",
+    "link": "https://arxiv.org/abs/2609.35665v1",
+    "topic": "机械/优化与控制"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35631v1",
+    "title": "Accelerated Algorithms for Stochastic Monotone Inclusions with Fixed Queries",
+    "published": "2026-09-28T17:01:14Z",
+    "authors": [
+      "Sucheol Lee",
+      "Donghwan Kim"
+    ],
+    "abstract": "We study acceleration of stochastic first-order methods for monotone Lipschitz inclusions with a fixed number of oracle queries per iteration, measured by the expected squared residual. Existing methods either have suboptimal oracle complexity, require an increasing number of oracle queries per iteration, or both. Under same-sample oracle access and mean-square Lipschitz stochastic noise, we develop variance-reduced anchored forward-backward (VRAF), an anytime composite method that makes two oracle queries per iteration. VRAF attains the first log-free $O(1/ε)$ complexity under these oracle assumptions and hence the optimal $O(σ^2/ε)$ variance dependence. This, however, leaves open whether the optimal $O(1/\\sqrtε)$ deterministic term can also be attained. We establish an impossibility result by extending the lower bound of Foster et al. (2019) to stochastic oracles permitting repeated queries to sampled stochastic operators, showing that $O(LD/\\sqrtε+σ^2/ε)$ oracle complexity is unattainable in general. We therefore develop recentered regularized stochastic extragradient (RRSEG), which attains the near-optimal oracle complexity previously achievable only with an increasing number of queries per iteration, while using a fixed number of queries.",
+    "category": "math.OC",
+    "link": "https://arxiv.org/abs/2609.35631v1",
+    "topic": "机械/优化与控制"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35529v1",
+    "title": "Conservative local grid refinement for the vectorial lattice Boltzmann method",
+    "published": "2026-09-28T16:13:29Z",
+    "authors": [
+      "S. A. Hosseini",
+      "R. Strassle",
+      "I. V. Karlin"
+    ],
+    "abstract": "We present a conservative local grid-refinement coupling for the vectorial lattice Boltzmann method (VLBM), a kinetic-type scheme for hyperbolic conservation laws in which each conserved field is carried by its own population rather than by moment truncation of a Maxwellian. Coarse and fine regions share a common link speed and are advanced with different time steps, sub-cycled at a fixed ratio; a mean-preserving reconstruction in time supplies the missing coarse-to-fine boundary data, and a matched, Berger--Colella-style reflux returns the fine-to-coarse data, together conserving mass, momentum, and energy exactly, independent of the equation of state, the local relaxation parameter, or the time step. In addition, we propose an adaptive mesh refinement extension through a conservative pair of splitting and merging operators that require no modification to the underlying coupling. The approach is validated on a sequence of increasingly demanding two-dimensional cases, in every case recovering exact conservation and the expected accuracy gains over an equivalent uniform grid.",
+    "category": "physics.flu-dyn",
+    "link": "https://arxiv.org/abs/2609.35529v1",
+    "topic": "机械/流体力学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35258v1",
+    "title": "A Conservative Multi-Level Adaptive Velocity-Space Method for the Discrete Unified Gas-Kinetic Scheme",
+    "published": "2026-09-28T14:20:38Z",
+    "authors": [
+      "Weijie Ren",
+      "Hang Yu",
+      "Zhengyu Tian",
+      "Wenjia Xie",
+      "XiaoQiang Fan"
+    ],
+    "abstract": "Multiscale gas flows often span a wide range of Knudsen numbers, within which the flow varies from near-continuum to highly rarefied and strongly nonequilibrium states. Such flows require kinetic solvers that remain accurate across the entire range. The discrete unified gas-kinetic scheme (DUGKS) provides such a unified description, but its computational cost and memory consumption are dominated by the size of the discrete velocity space. To alleviate this bottleneck, this work improves the DUGKS with multi-level adaptive velocity-space discretization (MLVS-DUGKS), reducing velocity-space redundancy while preserving accuracy and conservation. This method identify the velocity-space requirements of each physical cell from its distribution function, and then groups these requirements into a small number of representative velocity spaces. This organization retains sensitivity to different local flow states without constructing an independent velocity space for every physical cell. A linear moment-constrained correction is incorporated to maintain discrete compatibility and conservative data transfer between representative velocity spaces. Benchmark simulations spanning near-continuum to highly rarefied regimes show close agreement with the uniform-velocity-space DUGKS (UVS-DUGKS). For the computationally demanding cases, the average number of discrete velocity points is reduced by approximately one order of magnitude, yielding speedups of 6.67--7.51 and GPU-memory reductions by factors of 6.15--6.88. A threshold study further shows that the actual computational performance is governed by a balance between velocity-space compression and cross-level coupling overhead. The MLVS-DUGKS thus provides an accurate, conservative, and computationally efficient framework for multiscale nonequilibrium-flow simulations.",
+    "category": "physics.flu-dyn",
+    "link": "https://arxiv.org/abs/2609.35258v1",
+    "topic": "机械/流体力学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35154v1",
+    "title": "Equal-response probing with replicate calibration identifies scaling relations from noisy observations of complex systems",
+    "published": "2026-09-28T13:32:46Z",
+    "authors": [
+      "Dingbang Yan",
+      "Zhaoyue Xu",
+      "Hua-Dong Yao"
+    ],
+    "abstract": "Dimensionless descriptions of complex physical systems can sometimes be reduced further when multiple input groups combine into a single composite scaling coordinate. Identifying such structure from noisy response evaluations is difficult because apparent departures may reflect either genuine response structure or evaluation noise. Here we develop equal-response probing with replicate calibration to assess whether two dimensionless inputs support a one-group representation under prescribed directional and collapse tolerances. Equal-response geometry provides a candidate coordinate without direct numerical differentiation, while a second stage evaluates the accuracy of the resulting one-dimensional collapse. Replicate evaluations estimate the noise contribution to both stages, enabling reducible, not-red and unresolved outcomes. We evaluate the framework across eight model-based benchmark regimes spanning rough-pipe flow, cell-monolayer wound closure, microfluidic droplet generation and column buckling. Six regimes satisfy both criteria and two fail both, while known reduced coordinates are recovered in exact-reduction benchmarks. Controlled synthetic tests assess false-alarm behaviour, sensitivity to structural departures and noise calibration. These results show how replicate-calibrated equal-response probing distinguishes regime-specific scaling structure from variation attributable to evaluation noise while retaining an unresolved outcome when evaluation noise precludes a definitive verdict at the prescribed tolerances.",
+    "category": "physics.flu-dyn",
+    "link": "https://arxiv.org/abs/2609.35154v1",
+    "topic": "机械/流体力学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35050v1",
+    "title": "Handling geometric singularities efficiently with the immersed-boundary method: application to riblets",
+    "published": "2026-09-28T12:45:35Z",
+    "authors": [
+      "Stefano Cipelli",
+      "Alessandro Chiarini",
+      "Maurizio Quadrio",
+      "Davide Gatti",
+      "Paolo Luchini"
+    ],
+    "abstract": "We present an enhancement of classical immersed boundary methods for the direct numerical simulation of the incompressible Navier-Stokes equations, designed to efficiently cope with geometrical singularities. The method, while general, is described here in the context of the flow over a plane wall covered by small longitudinal riblets. The enhancement consists in prescribing that the solution near the boundary matches the steady Stokes solution. In this way, sharp corners, where velocity gradients are strongest and viscous effects dominate, become tractable with grids comparable to those necessary for a smooth wall. The method requires the availability of a local Stokes solution, that can be obtained either analytically or numerically. Two test cases are discussed: the laminar flow over one riblet, which allows to measure protrusion heights, and a fully turbulent channel flow with ribbed walls. In both cases, the method reproduces reference results at a substantially lower computational cost.",
+    "category": "physics.flu-dyn",
+    "link": "https://arxiv.org/abs/2609.35050v1",
+    "topic": "机械/流体力学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.34998v1",
+    "title": "A generalized, quasi-universal subgrid model for macroscopic moving contact line flows",
+    "published": "2026-09-28T12:05:21Z",
+    "authors": [
+      "Vyankatesh Manoj Mundhada",
+      "Manoj Kumar Tripathi"
+    ],
+    "abstract": "Predictions of moving contact line flows are challenging due to the stress singularity associated with the no-slip boundary condition on solid surfaces and the inherently multiscale nature of the phenomenon. Resolving the microscopic length scale renders the numerical simulations intractable for macroscopic flows due to extremely high computational costs. Affordable and predictive numerical solutions for macroscopic flows require a subgrid model, free of case-specific calibration, that mitigates the grid-dependence observed otherwise. We demonstrate a coupling between Cox's matched asymptotic relation and the empirical contact angle models to obtain a quasi-universal subgrid model. The coupling requires a one-time knowledge of the observation length scale or resolution of the experiments used to formulate the empirical models. The present model eliminates the need for prescribing phenomenological parameters such as the microscopic slip length and wall contact angle, allowing for the predictive simulations of such flows. We demonstrate the reduction in error due to grid-dependence by conducting axisymmetric simulations of droplet spreading for a wide range of Reynolds and Weber numbers for three different contact angle models in the advancing and receding contact line motion scenarios.",
+    "category": "physics.flu-dyn",
+    "link": "https://arxiv.org/abs/2609.34998v1",
+    "topic": "机械/流体力学"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35584v1",
+    "title": "Mixed-Dimensional Electromechanical Coupling of Embedded Beam Networks in Soft Dielectric Composites",
+    "published": "2026-09-28T16:38:14Z",
+    "authors": [
+      "L. River Spencer",
+      "Manuel K. Rausch",
+      "Chad Landis",
+      "Jan N. Fuhg"
+    ],
+    "abstract": "Soft electroactive composites can exhibit strongly architecture-dependent mechanical and electrical responses, but explicitly resolving dense fiber networks in three dimensions is computationally expensive. We develop a mixed-dimensional finite-element formulation in which electroactive fibers are represented by geometrically exact beams embedded in a deformable dielectric matrix. Unlike existing electroactive beam formulations in which the electric potential is defined directly on the beam, the embedded fibers here are driven by the three-dimensional electric field of the surrounding matrix. The matrix field is sampled along the beam centerlines and enters the beam dielectric enthalpy directly, providing two-way electromechanical coupling without introducing independent electric-potential degrees of freedom on the beams. Beam and matrix mechanics are coupled through projected mortar constraints, and the electromechanical problem is solved monolithically. We use the formulation as the microscale model in a periodic homogenization framework to compute effective stress and electric displacement. Verification studies quantify discretization and field-sampling sensitivity, followed by structured and irregular network examples that demonstrate architecture-dependent mechanical and electrical responses without body-fitted three-dimensional fiber meshes.",
+    "category": "cs.CE",
+    "link": "https://arxiv.org/abs/2609.35584v1",
+    "topic": "机械/计算工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35531v1",
+    "title": "Latent Twin Operator",
+    "published": "2026-09-28T16:13:38Z",
+    "authors": [
+      "Deepanshu Verma",
+      "Riley Chen",
+      "Matthias Chung"
+    ],
+    "abstract": "Surrogate models deployed on real physical systems rarely see data at fixed resolutions: sensor configurations vary across deployments and may evolve over time as sensing infrastructure changes. We introduce the Latent Twin Operator (LTO), a latent-space surrogate for time-evolving PDEs with a Convolutional Conditional Neural Process (ConvCNP)-style encoder and decoder that accepts a context set of $N$ sensor observations with arbitrary placement and can be queried at any resolution. A learned latent evolution map advances the encoded state directly between arbitrary time points, decoupling temporal evolution from the observation and query discretizations. We derive an explicit $\\mathcal{O}(N^{-2/(3D)})$ rate for the context discretization error in spatial dimension $D$ under quasi-uniform refinement. We verify the predicted decay empirically on a 2D heat-equation benchmark. Across time-dependent PDE benchmarks, LTO achieves strong accuracy under one-step comparisons and transfers from native to coarser spatial resolutions with fixed parameters. On Navier--Stokes, its direct latent evolution further reduces error over longer prediction horizons relative to recursive evaluation.",
+    "category": "cs.CE",
+    "link": "https://arxiv.org/abs/2609.35531v1",
+    "topic": "机械/计算工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.35301v1",
+    "title": "Experimental Investigation of Heat-generating Cheese Pallets During an International Export Cold Chain",
+    "published": "2026-09-28T14:42:22Z",
+    "authors": [
+      "Dihia Aguenihanai",
+      "Jean Moureh",
+      "Yasmine Salehy",
+      "Yvanne Paviet-Salomon",
+      "Evelyne Derens-Bertheau"
+    ],
+    "abstract": "This study presents an industrial experiment conducted with a dairy partner to investigate the temperature evolution of heat-generating soft cheeses within pallets during export cold chain. In the production factory, four homogeneous pallets of soft cheese were instrumented with temperature probes placed at three levels (bottom, medium, and top). Temperature was monitored over a 13 days export cold chain from France to Northern Europe. The objective was to evaluate the influence of air ventilation and pallet wrapping film on product temperature. The results clearly highlight the effect of ventilation: pallets placed in a well-ventilated area showed temperatures approximately 3{\\textdegree}C lower than those in less ventilated zones. The study also underlines the importance of maintaining good ventilation of pallets before loading them into refrigerated transport vehicles. However, the effect of wrapping film remains unclear and does not allow definitive conclusions. This field study provides practical recommendations for better conditioning of heat-generating products in the cold chain.",
+    "category": "cs.CE",
+    "link": "https://arxiv.org/abs/2609.35301v1",
+    "topic": "机械/计算工程"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.34794v1",
+    "title": "Where Do Embodied Decisions Come From? Rethinking Latent and Explicit Reasoning",
+    "published": "2026-09-28T10:01:00Z",
+    "authors": [
+      "Yuan Lin",
+      "Ziyue Zhou",
+      "JinLong Zhao",
+      "Pei Liu",
+      "Haipeng Liu",
+      "Pan Zhou",
+      "Kun Zhan"
+    ],
+    "abstract": "Chain-of-Thought (CoT) reasoning is increasingly incorporated into Vision-Language-Action (VLA) models, yet it can degrade the performance of stronger embodied agents. We investigate this capability-dependent effect by distinguishing explicit reasoning from latent decision computation, i.e., perception-grounded computation that directly supports action prediction. Under the standard \\textit{think-then-act} (TTA) paradigm, intervening on the generated CoT while fixing the visual input and model parameters causes a substantial performance collapse, with Navigation F1 dropping from 72.14% to 11.84%, demonstrating the strong influence of explicit reasoning on action generation. We then propose \\textit{decide-then-explain} (DTE), which predicts actions before generating explanations, and introduce Visual Conditional Contribution (VCC) and Reasoning Conditional Contribution (RCC) to characterize the resulting decision process. Across autonomous driving and robotic manipulation, DTE consistently outperforms TTA and conventional \\textit{no-CoT} baselines, while exhibiting greater reliance on perception-grounded computation. Further TTA-trained, DTE-inference experiments show that this benefit is not solely attributable to retraining under the new factorization. Our results suggest that for capable embodied agents, explicit CoT may be better used to shape decision computation during training rather than mediate action generation at inference time. Code: https://github.com/ocean-luna/openvla-decide-then-explain.",
+    "category": "cs.CE",
+    "link": "https://arxiv.org/abs/2609.34794v1",
+    "topic": "机械/计算工程"
+  }
+]
